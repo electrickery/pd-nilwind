@@ -5,7 +5,7 @@
 ;
 #N canvas 599 339 377 257 META 0;
 #X text 0 31 LICENSE SIBSD;
-#X text 0 139 LIBRARY cyclone;
+#X text 0 139 LIBRARY nilwind;
 #X text 0 121 OUTLET_0 signal;
 #X text 0 67 INLET_0 signal;
 #X text 0 85 INLET_1 float;
@@ -72,12 +72,12 @@ It's particularly useful for envelope following and lowpass filtering.
 #X obj 82 248 osc~ 440;
 #X obj 82 273 *~;
 #X obj 82 301 output~;
-#X obj 191 302 cyclone/Snapshot~ 100;
+#X obj 191 302 nilwind/Snapshot~ 100;
 #X msg 266 64 44100;
 #X msg 355 65 44100;
 #X msg 307 64 220500;
 #X msg 395 65 220500;
-#X obj 190 161 cyclone/slide~ 44100 44100;
+#X obj 190 161 nilwind/slide~ 44100 44100;
 #X text 183 384 - slideup value in samples;
 #X text 183 411 - slidedown vlaue in samples;
 #X text 183 488 - initial slideup value in samples;

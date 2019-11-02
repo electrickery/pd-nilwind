@@ -5,7 +5,7 @@
 ;
 #N canvas 612 296 379 338 META 0;
 #X text 0 19 LICENSE SIBSD;
-#X text 0 152 LIBRARY cyclone;
+#X text 0 152 LIBRARY nilwind;
 #X text 0 0 KEYWORDS output peak max maximum;
 #X text 0 38 DESCRIPTION output only numbers greater than previous
 ;
@@ -64,7 +64,7 @@ adapted the patch to pd-extended 2015-02-02;
 1;
 #X obj 151 299 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
 1;
-#X obj 70 226 cyclone/Peak 4;
+#X obj 70 226 nilwind/Peak 4;
 #X msg 99 129 3 2;
 #X text 108 472 float;
 #X text 181 363 - sends current maximum value out the left outlet;

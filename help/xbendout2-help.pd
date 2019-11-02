@@ -5,7 +5,7 @@
 ;
 #N canvas 617 289 382 345 META 0;
 #X text 0 33 LICENSE SIBSD;
-#X text 0 163 LIBRARY cyclone;
+#X text 0 163 LIBRARY nilwind;
 #X text 0 0 KEYWORDS midi pitchbend pitch bend 14 bit channel msb lsb
 most significant bit least;
 #X text 0 143 OUTLET_0 midi;
@@ -33,9 +33,9 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 322 427 428 127 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 36 37 cyclone/xbendin;
-#X obj 36 62 cyclone/xbendout;
-#X obj 36 87 cyclone/xbendin2;
+#X obj 36 37 nilwind/xbendin;
+#X obj 36 62 nilwind/xbendout;
+#X obj 36 87 nilwind/xbendin2;
 #X obj 161 36 midiin;
 #X obj 162 62 midiout;
 #X restore 209 505 pd Related_objects;
@@ -72,8 +72,8 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 12 23 construct extra precision midi pitchbend objects 14 bit
 ;
 #X obj 241 75 t b f;
-#X obj 189 145 cyclone/xbendout2 1;
-#X obj 189 224 cyclone/xbendin2 1;
+#X obj 189 145 nilwind/xbendout2 1;
+#X obj 189 224 nilwind/xbendin2 1;
 #X connect 21 0 34 0;
 #X connect 23 0 34 2;
 #X connect 24 0 33 0;

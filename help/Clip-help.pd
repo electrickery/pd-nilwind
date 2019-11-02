@@ -5,7 +5,7 @@
 ;
 #N canvas 515 371 430 247 META 0;
 #X text 1 20 LICENSE SIBSD;
-#X text 1 113 LIBRARY cyclone;
+#X text 1 113 LIBRARY nilwind;
 #X text 1 0 KEYWORDS range constrain filter pass;
 #X text 1 40 DESCRIPTION constrains an int \, float \, or list within
 a certain range;
@@ -28,10 +28,10 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 76 484 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 8 30 cyclone/minimum;
-#X obj 114 30 cyclone/Clip~;
-#X obj 8 52 cyclone/maximum;
-#X obj 8 75 cyclone/split;
+#X obj 8 30 nilwind/minimum;
+#X obj 114 30 nilwind/Clip~;
+#X obj 8 52 nilwind/maximum;
+#X obj 8 75 nilwind/split;
 #X restore 201 571 pd Related_objects;
 #X obj 80 339 cnv 17 3 50 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -57,7 +57,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 93 530 2) float;
 #X text 171 531 - sets maximum number of range;
 #X obj 508 3 Clip;
-#X obj 108 233 cyclone/Clip 10 50;
+#X obj 108 233 nilwind/Clip 10 50;
 #X obj 80 402 cnv 17 3 17 empty empty 1 5 9 0 16 -228856 -162280 0
 ;
 #X text 110 403 float;

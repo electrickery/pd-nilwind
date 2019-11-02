@@ -5,7 +5,7 @@
 ;
 #N canvas 552 276 413 321 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 180 LIBRARY cyclone;
+#X text 0 180 LIBRARY nilwind;
 #X text 0 160 OUTLET_0 signal;
 #X text 0 0 KEYWORDS signal comb filter buffer delay;
 #X text 0 40 DESCRIPTION comb filter;
@@ -108,7 +108,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 113 428 message;
 #X text 225 428 - can clear buffer;
 #X obj 130 334 output~;
-#X obj 131 258 cyclone/comb~ 100 0.2 0.2 0.3 0.9;
+#X obj 131 258 nilwind/comb~ 100 0.2 0.2 0.3 0.9;
 #X text 175 146 D;
 #X text 225 146 a;
 #X text 276 146 b;

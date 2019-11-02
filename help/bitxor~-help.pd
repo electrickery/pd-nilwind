@@ -5,7 +5,7 @@
 ;
 #N canvas 626 407 427 265 META 0;
 #X text 1 20 LICENSE SIBSD;
-#X text 1 113 LIBRARY cyclone;
+#X text 1 113 LIBRARY nilwind;
 #X text 1 73 INLET_0 signal;
 #X text 1 93 OUTLET_0 signal;
 #X text 1 40 DESCRIPTION performs bitwise boolean operations on a floating
@@ -119,7 +119,7 @@ as bits;
 0 0 0 0 0 0 0 0 0;
 #X msg 42 117 bits;
 #X text 169 91 bitwise operation on a signal as bits;
-#X obj 42 328 cyclone/bitxor~;
+#X obj 42 328 nilwind/bitxor~;
 #X obj 43 476 output~;
 #X obj 86 537 cnv 17 3 75 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -171,7 +171,7 @@ is max.;
 #X text 213 780 use signal/float as is;
 #N canvas 729 507 450 348 mask 0;
 #X obj 22 217 clip~ -1 1;
-#X obj 24 54 cyclone/cycle~ 220;
+#X obj 24 54 nilwind/cycle~ 220;
 #X obj 22 246 output~;
 #X msg 155 52 -1;
 #X msg 166 74 65535;
@@ -195,7 +195,7 @@ is max.;
 sure the signal is larger than +/- 1;
 #X obj 106 245 tabwrite~ \$0-bitxor2;
 #X obj 155 28 loadbang;
-#X obj 23 133 cyclone/bitxor~ -1 1;
+#X obj 23 133 nilwind/bitxor~ -1 1;
 #X text 5 1 bitxor~ mask with integers;
 #X connect 0 0 2 0;
 #X connect 0 0 17 0;

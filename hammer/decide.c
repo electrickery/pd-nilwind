@@ -77,6 +77,6 @@ void decide_setup(void)
 		    gensym("ft1"), A_FLOAT, 0);
     /* CHECKED list is auto-unfolded */
     /* CHECKED doesn't understand "seed" */
-//    logpost(NULL, 4, "this is cyclone/decide %s, %dth %s build",
+//    logpost(NULL, 4, "this is nilwind/decide %s, %dth %s build",
 //	CYCLONE_VERSION, CYCLONE_BUILD, CYCLONE_RELEASE);
 }

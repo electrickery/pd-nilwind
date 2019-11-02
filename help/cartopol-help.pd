@@ -5,7 +5,7 @@
 ;
 #N canvas 315 385 441 256 META 0;
 #X text 1 18 LICENSE SIBSD;
-#X text 1 126 LIBRARY cyclone;
+#X text 1 126 LIBRARY nilwind;
 #X text 1 54 INLET_0 float;
 #X text 1 0 KEYWORDS coordinate graph cartesian polar conversion;
 #X text 1 36 DESCRIPTION cartesian to polar conversion;
@@ -63,7 +63,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 82 425 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
 #X text 58 46 resets to zero;
-#X obj 155 283 cyclone/cartopol;
+#X obj 155 283 nilwind/cartopol;
 #N canvas 532 594 432 355 cosc 0;
 #X obj 131 253 sin;
 #X obj 217 253 cos;

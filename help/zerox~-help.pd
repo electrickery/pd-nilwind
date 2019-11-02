@@ -5,7 +5,7 @@
 ;
 #N canvas 598 348 359 228 META 0;
 #X text 1 31 LICENSE SIBSD;
-#X text 1 121 LIBRARY cyclone;
+#X text 1 121 LIBRARY nilwind;
 #X text 1 85 OUTLET_0 signal;
 #X text 1 67 INLET_0 signal message;
 #X text 1 0 KEYWORDS signal zero cross crossing couter transient detector
@@ -62,13 +62,13 @@ the default value is 1;
 #X text 28 69 (accuracy is dependent on signal vector size):;
 #X text 169 134 sets the volume;
 #X text 169 147 of the click (impulse);
-#X obj 379 225 cyclone/zerox~;
-#X obj 451 277 cyclone/edge~;
+#X obj 379 225 nilwind/zerox~;
+#X obj 451 277 nilwind/edge~;
 #X text 334 106 synchronize a control event;
 #X text 333 119 with the zero-crossing of an lfo:;
 #X obj 341 161 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 3539 1;
-#X obj 388 170 cyclone/snapshot~ 100;
+#X obj 388 170 nilwind/snapshot~ 100;
 #X text 329 153 1;
 #X text 323 276 -1;
 #X text 327 215 0;
@@ -79,7 +79,7 @@ the default value is 1;
 #X obj 84 97 osc~ 100;
 #X obj 10 469 tabwrite~ \$0-osc;
 #X obj 32 448 tabwrite~ \$0-zerox;
-#X obj 83 187 cyclone/zerox~ 0.7;
+#X obj 83 187 nilwind/zerox~ 0.7;
 #X obj 188 286 *~ 0;
 #X obj 209 259 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -94,7 +94,7 @@ value is 1.0.;
 #X text 205 240 detection click;
 #X obj 10 425 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 82 352 cyclone/snapshot~ 100;
+#X obj 82 352 nilwind/snapshot~ 100;
 #X text 488 346 1;
 #X text 485 476 -1;
 #X text 475 346 2;

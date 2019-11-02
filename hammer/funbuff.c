@@ -228,7 +228,7 @@ static void funbuff_dowrite(t_funbuff *x, t_symbol *fn)
     t_binbuf *bb = binbuf_new();
     char buf[MAXPDSTRING];
     t_hammernode *np;
-    /* specifying the object as cyclone/funbuff breaks the file writing/
+    /* specifying the object as nilwind/funbuff breaks the file writing/
      * reading as the it doesn't start with 'funbuff'. A call to 
      * libgen/basename fixes this.  fjk, 2015-01-24 */
     t_symbol *objName = atom_getsymbol(binbuf_getvec(x->x_ob.te_binbuf));
@@ -530,6 +530,6 @@ void funbuff_setup(void)
 		    gensym("debug"), A_DEFFLOAT, 0);
 #endif
     hammerfile_setup(funbuff_class, 1);
-//    logpost(NULL, 4, "this is cyclone/funbuff %s, %dth %s build",
+//    logpost(NULL, 4, "this is nilwind/funbuff %s, %dth %s build",
 //	CYCLONE_VERSION, CYCLONE_BUILD, CYCLONE_RELEASE);
 }

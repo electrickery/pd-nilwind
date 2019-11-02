@@ -1,5 +1,5 @@
 #N canvas 304 91 587 409 12;
-#X obj 51 371 cyclone;
+#X obj 51 371 nilwind;
 #X obj 51 340 sprintf import ../../../ref/c74help/text/%s.help;
 #X msg 62 281 slide~;
 #X msg 51 253 deltaclip~;

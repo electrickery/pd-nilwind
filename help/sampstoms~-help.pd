@@ -5,7 +5,7 @@
 ;
 #N canvas 594 208 385 259 META 0;
 #X text 1 19 LICENSE SIBSD;
-#X text 1 127 LIBRARY cyclone;
+#X text 1 127 LIBRARY nilwind;
 #X text 1 89 OUTLET_0 signal;
 #X text 1 70 INLET_0 signal float;
 #X text 1 0 KEYWORDS signal samples sample ms milliseconds convert
@@ -30,7 +30,7 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 364 623 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 10 31 cyclone/mstosamps~;
+#X obj 10 31 nilwind/mstosamps~;
 #X restore 201 435 pd Related_objects;
 #X obj 79 275 cnv 17 3 35 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -55,17 +55,17 @@ adapted the patch to pd-extended 2015-02-02;
 ;
 #X text 13 44 Use as a calculator;
 #X text 13 57 or for float parameters:;
-#X obj 32 143 cyclone/sampstoms~;
-#X obj 292 145 cyclone/sampstoms~;
-#X obj 292 96 cyclone/Line~;
-#X obj 292 219 cyclone/Snapshot~ 100;
+#X obj 32 143 nilwind/sampstoms~;
+#X obj 292 145 nilwind/sampstoms~;
+#X obj 292 96 nilwind/Line~;
+#X obj 292 219 nilwind/Snapshot~ 100;
 #X obj 518 229 dspSwitch~;
 #X text 179 274 - duration in samples;
 #X text 179 294 - duration in samples;
 #X text 179 334 - duration in ms;
 #X floatatom 397 198 0 0 0 0 - - -;
 #X floatatom 33 229 0 0 0 0 - - -;
-#X obj 33 207 cyclone/Snapshot~ 100;
+#X obj 33 207 nilwind/Snapshot~ 100;
 #X text 179 360 - duration in ms (equal to the last sample of the block)
 ;
 #X connect 13 0 26 0;

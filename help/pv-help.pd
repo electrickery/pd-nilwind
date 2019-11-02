@@ -5,7 +5,7 @@
 ;
 #N canvas 608 214 369 225 META 0;
 #X text 0 19 LICENSE SIBSD;
-#X text 0 95 LIBRARY cyclone;
+#X text 0 95 LIBRARY nilwind;
 #X text 0 0 KEYWORDS private variable patch store;
 #X text 0 38 DESCRIPTION private variables for patch and its subpatches
 ;
@@ -51,12 +51,12 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 342 95 also works here:;
 #X text 41 149 ...then access it here:;
 #X text 13 23 private variables for patch and its subpatches;
-#X obj 57 109 cyclone/pv my_private_bar;
-#X obj 293 199 cyclone/pv my_private_bar;
-#X obj 57 198 cyclone/pv my_private_bar;
+#X obj 57 109 nilwind/pv my_private_bar;
+#X obj 293 199 nilwind/pv my_private_bar;
+#X obj 57 198 nilwind/pv my_private_bar;
 #N canvas 1007 304 433 300 mysubpatch 0;
 #X msg 72 96 bang;
-#X obj 72 122 cyclone/pv my_private_bar;
+#X obj 72 122 nilwind/pv my_private_bar;
 #X obj 72 151 print my_private_subpatch_bar;
 #X obj 2 3 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 3 26;

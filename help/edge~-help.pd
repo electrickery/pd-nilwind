@@ -5,7 +5,7 @@
 -228856 -1 0;
 #N canvas 603 276 362 257 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 113 LIBRARY cyclone;
+#X text 0 113 LIBRARY nilwind;
 #X text 0 59 INLET_0 signal;
 #X text 0 133 VERSION 0.2-beta1;
 #X text 0 151 AUTHOR Krzysztof Czaja;
@@ -55,15 +55,15 @@ adapted the patch to pd-extended 2015-02-02;
 -1 -1;
 #X obj 92 284 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 239 125 cyclone/Line~;
+#X obj 239 125 nilwind/Line~;
 #X msg 239 82 1 \, 0 500 0 200 -1 500 -1 200 0 500 0 200 1 500;
 #X text 134 258 zero;
 #X text 112 282 non-zero;
-#X obj 399 163 cyclone/Snapshot~ 100;
+#X obj 399 163 nilwind/Snapshot~ 100;
 #X obj 374 180 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 6350 1;
 #X floatatom 399 187 5 0 0 0 - - -;
-#X obj 92 189 cyclone/edge~;
+#X obj 92 189 nilwind/edge~;
 #X obj 93 128 sig~;
 #X msg 62 81 1;
 #X msg 93 81 0;
@@ -73,7 +73,7 @@ adapted the patch to pd-extended 2015-02-02;
 -1 -1;
 #X text 280 256 zero;
 #X text 258 280 non-zero;
-#X obj 238 185 cyclone/edge~;
+#X obj 238 185 nilwind/edge~;
 #X msg 124 81 -1;
 #X obj 520 305 dspSwitch~;
 #X connect 21 0 25 0;

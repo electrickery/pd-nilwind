@@ -5,7 +5,7 @@
 ;
 #N canvas 601 222 355 207 META 0;
 #X text 1 19 LICENSE SIBSD;
-#X text 1 95 LIBRARY cyclone;
+#X text 1 95 LIBRARY nilwind;
 #X text 1 0 KEYWORDS integer to number send;
 #X text 1 38 DESCRIPTION distribute an integer to a numbered outlet
 ;
@@ -50,14 +50,14 @@ the outlet number;
 #X msg 90 59 0 1;
 #X msg 148 59 2 3;
 #X text 99 40 outletnumber / value pairs;
-#X obj 148 156 cyclone/spray 3;
+#X obj 148 156 nilwind/spray 3;
 #X msg 182 59 0 3;
 #X msg 213 59 1 1;
 #X msg 244 59 2 2;
 #X msg 305 58 0 0 \, 1 0 \, 2 0;
 #X text 301 40 reset all outlets to 0;
 #N canvas 575 485 433 300 outlet 0;
-#X obj 161 158 cyclone/spray 3 3;
+#X obj 161 158 nilwind/spray 3 3;
 #X floatatom 161 223 5 0 0 0 - - -;
 #X floatatom 210 223 5 0 0 0 - - -;
 #X floatatom 260 223 5 0 0 0 - - -;

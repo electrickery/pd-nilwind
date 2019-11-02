@@ -5,7 +5,7 @@
 ;
 #N canvas 614 313 352 306 META 0;
 #X text 0 18 LICENSE SIBSD;
-#X text 0 198 LIBRARY cyclone;
+#X text 0 198 LIBRARY nilwind;
 #X text 0 0 KEYWORDS midi deconstruct parse note;
 #X text 0 36 DESCRIPTION deconstruct midi messages;
 #X text 0 54 INLET_0 midi message;
@@ -33,8 +33,8 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 472 654 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 7 29 cyclone/Borax;
-#X obj 7 52 cyclone/midiformat;
+#X obj 7 29 nilwind/Borax;
+#X obj 7 52 nilwind/midiformat;
 #X obj 133 30 midiin;
 #X restore 205 671 pd Related_objects;
 #X obj 76 598 cnv 17 3 17 empty empty 6 5 9 0 16 -228856 -162280 0
@@ -96,7 +96,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 115 509 list;
 #X text 211 422 - midi message to parse;
 #X text 115 641 (none);
-#X obj 144 91 cyclone/midiparse;
+#X obj 144 91 nilwind/midiparse;
 #X text 226 339 0;
 #X text 239 275 1;
 #X text 256 212 2;

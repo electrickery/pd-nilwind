@@ -5,7 +5,7 @@
 ;
 #N canvas 404 362 406 316 META 0;
 #X text 1 20 LICENSE SIBSD;
-#X text 1 100 LIBRARY cyclone;
+#X text 1 100 LIBRARY nilwind;
 #X text 1 0 KEYWORDS message bond syncronize sync print;
 #X text 1 40 DESCRIPTION sync a group of messages;
 #X text 1 60 INLET_0 message bang;
@@ -56,7 +56,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 181 335 - "set value" will set an inlet to a value without
 producing output. Other message are produced immediately in sync with
 other inlet messages;
-#X obj 116 193 cyclone/bondo 3;
+#X obj 116 193 nilwind/bondo 3;
 #X connect 10 0 28 1;
 #X connect 11 0 28 0;
 #X connect 13 0 28 1;

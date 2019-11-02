@@ -5,7 +5,7 @@
 ;
 #N canvas 601 218 356 221 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 100 LIBRARY cyclone;
+#X text 0 100 LIBRARY nilwind;
 #X text 0 0 KEYWORDS mouse mousebutton pass filter;
 #X text 0 40 DESCRIPTION passes numbers only when mousebutton is up
 ;
@@ -28,7 +28,7 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 297 333 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 10 31 cyclone/MouseState;
+#X obj 10 31 nilwind/MouseState;
 #X restore 202 431 pd Related_objects;
 #X obj 80 270 cnv 17 3 37 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -49,7 +49,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 180 291 - list of numbers to pass;
 #X text 110 330 float;
 #X text 110 399 (none);
-#X obj 153 163 cyclone/mousefilter;
+#X obj 153 163 nilwind/mousefilter;
 #X text 180 330 - numbers passed from inlet if mousebutton is up. This
 means only the end value of a number or slider change is send;
 #X obj 153 48 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0

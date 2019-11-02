@@ -4,7 +4,7 @@
 #X obj 0 251 cnv 3 550 3 empty empty inlets 8 12 0 13 -228856 -1 0
 ;
 #N canvas 857 328 347 317 META 0;
-#X text 0 81 LIBRARY cyclone;
+#X text 0 81 LIBRARY nilwind;
 #X text 0 174 RELEASE_DATE 2002;
 #X text 0 141 WEBSITE http://suita.chopin.edu.pl/~czaja/miXed/externs/cyclone.html
 ;
@@ -38,7 +38,7 @@ updated this patch for pd-extended 2014-12-02.;
 ;
 #X text 101 172 focus / unfocus window and watch the toggle;
 #X text 111 298 float;
-#X obj 76 114 cyclone/active;
+#X obj 76 114 nilwind/active;
 #X text 106 334 none;
 #X text 173 298 - "0" - window is inactive \, "1" - window is active
 ;

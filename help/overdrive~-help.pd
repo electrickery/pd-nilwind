@@ -5,7 +5,7 @@
 ;
 #N canvas 627 335 354 247 META 0;
 #X text 1 32 LICENSE SIBSD;
-#X text 1 127 LIBRARY cyclone;
+#X text 1 127 LIBRARY nilwind;
 #X text 1 108 OUTLET_0 signal;
 #X text 1 70 INLET_0 float signal;
 #X text 1 0 KEYWORDS signal amplifier amp overdriven distortion analog
@@ -70,7 +70,7 @@ is less than 0 \, VERY LOUD distortion can result \, so be careful!
 #X obj 133 294 output~;
 #X obj 278 95 hsl 128 15 0 1 0 1 empty empty drive_amount 45 9 1 12
 -262131 -1 -1 6600 1;
-#X obj 133 205 cyclone/overdrive~;
+#X obj 133 205 nilwind/overdrive~;
 #N canvas 678 584 450 300 view 0;
 #X obj 50 119 tgl 15 1 empty empty empty 0 -6 0 8 -24198 -1 -1 0 1
 ;

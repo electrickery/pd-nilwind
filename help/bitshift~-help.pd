@@ -5,7 +5,7 @@
 ;
 #N canvas 328 331 433 291 META 0;
 #X text 1 20 LICENSE SIBSD;
-#X text 1 113 LIBRARY cyclone;
+#X text 1 113 LIBRARY nilwind;
 #X text 1 73 INLET_0 signal;
 #X text 1 93 OUTLET_0 signal;
 #X text 1 40 DESCRIPTION performs bitwise boolean operations on a floating
@@ -28,9 +28,9 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 114 517 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 7 74 cyclone/bitnot~;
-#X obj 7 53 cyclone/bitor~;
-#X obj 6 31 cyclone/bitand~;
+#X obj 7 74 nilwind/bitnot~;
+#X obj 7 53 nilwind/bitor~;
+#X obj 6 31 nilwind/bitand~;
 #X restore 216 703 pd Related_objects;
 #X obj 77 497 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -64,7 +64,7 @@ shift;
 #X obj 65 319 output~;
 #X obj 166 298 env~ 8192;
 #X floatatom 166 329 5 0 0 0 - - -;
-#X obj 65 202 cyclone/bitshift~ 8 1;
+#X obj 65 202 nilwind/bitshift~ 8 1;
 #X obj 0 624 cnv 3 550 3 empty empty more_info 8 12 0 13 -228856 -1
 0;
 #X obj 64 121 *~ 1000;

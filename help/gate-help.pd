@@ -5,7 +5,7 @@
 ;
 #N canvas 572 254 390 217 META 0;
 #X text 0 18 LICENSE SIBSD;
-#X text 0 108 LIBRARY cyclone;
+#X text 0 108 LIBRARY nilwind;
 #X text 0 0 KEYWORDS data specific output gate;
 #X text 0 36 DESCRIPTION send data out the specified output;
 #X text 0 54 INLET_0 bang float;
@@ -29,7 +29,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
 #X obj 13 31 switch;
-#X obj 14 52 cyclone/cycle;
+#X obj 14 52 nilwind/cycle;
 #X restore 201 480 pd Related_objects;
 #X obj 87 319 cnv 17 3 35 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -73,8 +73,8 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 11 97 open outlet;
 #X text 187 46 send data to which outlet?;
 #X text 187 58 0 = closed;
-#X obj 151 153 cyclone/gate 4;
-#X obj 382 153 cyclone/gate 3;
+#X obj 151 153 nilwind/gate 4;
+#X obj 382 153 nilwind/gate 3;
 #X obj 208 91 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 232 208 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144

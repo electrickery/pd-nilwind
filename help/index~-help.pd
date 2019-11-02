@@ -5,7 +5,7 @@
 ;
 #N canvas 589 162 378 222 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 100 LIBRARY cyclone;
+#X text 0 100 LIBRARY nilwind;
 #X text 0 60 INLET_0 signal;
 #X text 0 80 OUTLET_0 signal;
 #X text 0 0 KEYWORDS signal interpolation playback sample;
@@ -50,7 +50,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 197 47 backward;
 #X msg 98 126 set anothersample;
 #X obj 338 325 table anothersample;
-#X obj 85 98 cyclone/Line~;
+#X obj 85 98 nilwind/Line~;
 #X obj 339 216 f \$0;
 #X obj 105 156 f \$0;
 #X obj 138 156 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -63,7 +63,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X msg 190 64 62079 \, 0 1407;
 #X text 178 466 - default array to playback;
 #X text 178 358 - sample indices;
-#X obj 85 246 cyclone/index~ \$0-voice;
+#X obj 85 246 nilwind/index~ \$0-voice;
 #X msg 339 238 read -resize voice.wav \$1-voice;
 #X obj 338 303 table \$0-voice;
 #X msg 105 177 set \$1-voice;

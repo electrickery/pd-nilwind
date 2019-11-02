@@ -1,5 +1,5 @@
 #N canvas 331 48 650 459 12;
-#X obj 37 419 cyclone;
+#X obj 37 419 nilwind;
 #X msg 76 133 bang;
 #X msg 61 95 import;
 #X obj 41 240 forward texthelp;
@@ -17,9 +17,9 @@
 #X msg 138 168 funbuff;
 #X msg 220 168 prob;
 #X obj 137 16 loadbang;
-#X obj 137 133 cyclone;
+#X obj 137 133 nilwind;
 #X msg 183 95 cd ../../../rob;
-#X obj 307 272 cyclone;
+#X obj 307 272 nilwind;
 #X obj 390 240 loadbang;
 #X msg 390 269 cd ../krzYszcz/max-help;
 #X msg 393 203 import scope~;

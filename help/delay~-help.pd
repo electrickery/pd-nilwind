@@ -5,7 +5,7 @@
 ;
 #N canvas 589 279 370 225 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 100 LIBRARY cyclone;
+#X text 0 100 LIBRARY nilwind;
 #X text 0 0 KEYWORDS signal delay samples delayed;
 #X text 0 40 DESCRIPTION delay incoming signal for a number of samples
 ;
@@ -64,11 +64,11 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 134 64 hsl 128 15 0 441000 0 1 empty empty empty -2 -8 0 10
 -262144 -1 -1 3300 1;
 #X obj 284 65 noise~;
-#X obj 300 171 cyclone/delay~;
+#X obj 300 171 nilwind/delay~;
 #N canvas 1 79 450 300 burst 0;
 #X obj 97 118 noise~;
 #X obj 97 188 *~;
-#X obj 145 140 cyclone/Line~;
+#X obj 145 140 nilwind/Line~;
 #X msg 145 119 1 \, 0 100;
 #X obj 97 220 outlet~;
 #X obj 145 73 inlet;
@@ -93,7 +93,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 343 204 the maximum delay is 512 bytes;
 #X text 318 43 as filter;
 #X text 120 190 at 44k1 sample rate the;
-#X obj 70 171 cyclone/delay~ 441000 44100;
+#X obj 70 171 nilwind/delay~ 441000 44100;
 #X floatatom 10 334 5 0 0 0 - - -, f 5;
 #X obj 10 197 vsl 15 128 10 0 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 12700 1;

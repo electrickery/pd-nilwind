@@ -5,7 +5,7 @@
 ;
 #N canvas 576 278 386 269 META 0;
 #X text 0 33 LICENSE SIBSD;
-#X text 0 153 LIBRARY cyclone;
+#X text 0 153 LIBRARY nilwind;
 #X text 0 133 OUTLET_0 signal;
 #X text 0 0 KEYWORDS signal trapezoid wavetable lo hi lo/hi phase ramp
 wave;
@@ -70,7 +70,7 @@ to change ramp up/down phase position. The default lo/hi points are
 ;
 #X text 169 155 change the lo/hi points;
 #X text 233 139 input signal;
-#X obj 161 275 cyclone/trapezoid~ 0.1 0.9;
+#X obj 161 275 nilwind/trapezoid~ 0.1 0.9;
 #X obj 162 355 tabwrite~ \$0-trapezoid;
 #X obj 161 139 phasor~ 200;
 #X obj 368 389 output~;

@@ -5,7 +5,7 @@
 ;
 #N canvas 626 356 350 259 META 0;
 #X text 1 19 LICENSE SIBSD;
-#X text 1 146 LIBRARY cyclone;
+#X text 1 146 LIBRARY nilwind;
 #X text 1 70 INLET_0 bang seed float;
 #X text 1 89 INLET_1 float;
 #X text 1 108 OUTLET_0 float;
@@ -68,7 +68,7 @@ adapted the patch to pd-extended 2015-02-02;
 ;
 #X text 112 430 bang;
 #X text 197 430 - sent out all different values;
-#X obj 85 165 cyclone/urn 4;
+#X obj 85 165 nilwind/urn 4;
 #X connect 11 0 34 0;
 #X connect 12 0 34 0;
 #X connect 13 0 34 1;

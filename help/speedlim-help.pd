@@ -5,7 +5,7 @@
 ;
 #N canvas 602 245 361 228 META 0;
 #X text 0 19 LICENSE SIBSD;
-#X text 0 114 LIBRARY cyclone;
+#X text 0 114 LIBRARY nilwind;
 #X text 0 0 KEYWORDS delay speed limit ms milliseconds;
 #X text 0 38 DESCRIPTION speed limit for incoming messages;
 #X text 0 57 INLET_0 anything;
@@ -59,7 +59,7 @@ for;
 ;
 #X obj 34 197 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 135 139 cyclone/speedlim 1000;
+#X obj 135 139 nilwind/speedlim 1000;
 #X obj 58 67 metro 500;
 #X msg 224 72 450;
 #X msg 258 72 1000;

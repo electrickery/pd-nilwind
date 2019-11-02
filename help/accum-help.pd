@@ -3,7 +3,7 @@
 #X obj 1 275 cnv 3 550 3 empty empty inlets 8 12 0 13 -228856 -1 0;
 #N canvas 377 297 424 317 META 0;
 #X text 1 20 LICENSE SIBSD;
-#X text 1 140 LIBRARY cyclone;
+#X text 1 140 LIBRARY nilwind;
 #X text 1 0 KEYWORDS accumulate store add multiply;
 #X text 1 40 DESCRIPTION store \, add to \, and multiply a number ;
 #X text 1 60 INLET_0 float bang;
@@ -57,7 +57,7 @@
 #X text 174 347 - multiply with current value;
 #X obj 79 285 cnv 17 3 35 empty empty 0 5 9 0 16 -228856 -162280 0;
 #X text 136 52 accum is a multi-function float value changer. It can add and multiply by values on inlets 1 and 2 \, respectively.;
-#X obj 125 225 cyclone/accum 4;
+#X obj 125 225 nilwind/accum 4;
 #X connect 10 0 39 0;
 #X connect 13 0 39 1;
 #X connect 15 0 39 0;

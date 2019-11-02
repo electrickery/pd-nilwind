@@ -5,7 +5,7 @@
 ;
 #N canvas 613 452 348 203 META 0;
 #X text 0 18 LICENSE SIBSD;
-#X text 0 90 LIBRARY cyclone;
+#X text 0 90 LIBRARY nilwind;
 #X text 0 0 KEYWORDS signal ramp generator exponential;
 #X text 0 36 DESCRIPTION exponential ramp generator;
 #X text 0 54 INLET_0 list;
@@ -279,10 +279,10 @@ duration is set to other than 0 via second inlet.;
 #X restore 91 286 graph;
 #X obj 75 183 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 95 182 cyclone/curve~;
+#X obj 95 182 nilwind/curve~;
 #X msg 95 99 1 \, 0.5 12 0.5 0 12 -0.5;
 #X msg 86 73 1 \, 0.5 12 -0.5 0 12 0.5;
-#X obj 324 264 cyclone/curve~;
+#X obj 324 264 nilwind/curve~;
 #X msg 101 124 0 \, 0.5 12 0.5 1 12 -0.5;
 #X msg 324 199 0 \, 1 500 0.5 1 500 0 0 500 0.5;
 #X obj 337 325 osc~ 440;
@@ -296,7 +296,7 @@ duration is set to other than 0 via second inlet.;
 #X obj 94 246 tabwrite~ \$0-curveArray;
 #X obj 472 254 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 417 230 cyclone/Snapshot~ 100;
+#X obj 417 230 nilwind/Snapshot~ 100;
 #X text 79 280 1;
 #X text 79 412 0;
 #X connect 30 0 44 0;

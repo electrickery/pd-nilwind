@@ -3,7 +3,7 @@
 #X obj 0 351 cnv 3 550 3 empty empty inlets 8 12 0 13 -228856 -1 0;
 #N canvas 467 404 412 308 META 0;
 #X text 1 18 LICENSE SIBSD;
-#X text 1 126 LIBRARY cyclone;
+#X text 1 126 LIBRARY nilwind;
 #X text 1 0 KEYWORDS store float edit;
 #X text 1 36 DESCRIPTION store and edit numbers;
 #X text 1 54 INLET_0 float;
@@ -73,7 +73,7 @@
 #X text 99 559 1) float - number of values to store (default 512);
 #X text 99 572 2) str x - values are in hex;
 #X obj 499 3 capture;
-#X obj 82 284 cyclone/capture 64;
+#X obj 82 284 nilwind/capture 64;
 #X connect 10 0 54 0;
 #X connect 11 0 54 0;
 #X connect 12 0 54 0;

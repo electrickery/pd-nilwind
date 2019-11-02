@@ -128,7 +128,7 @@ void Bucket_setup(void)
 			     (t_method)Bucket_free,
 			     sizeof(t_Bucket), 0, A_DEFFLOAT, A_DEFFLOAT, 0);
     class_addcreator((t_newmethod)Bucket_new, gensym("bucket"), A_DEFFLOAT, 0);
-    class_addcreator((t_newmethod)Bucket_new, gensym("cyclone/bucket"), A_DEFFLOAT, 0);
+    class_addcreator((t_newmethod)Bucket_new, gensym("nilwind/bucket"), A_DEFFLOAT, 0);
     class_addbang(Bucket_class, Bucket_bang);
     class_addfloat(Bucket_class, Bucket_float);
     class_addmethod(Bucket_class, (t_method)Bucket_freeze, gensym("freeze"), 0);
@@ -142,7 +142,7 @@ void Bucket_setup(void)
 		    gensym("set"), A_FLOAT, 0);
     class_addmethod(Bucket_class, (t_method)Bucket_ltor, gensym("l2r"), 0);
     class_addmethod(Bucket_class, (t_method)Bucket_rtol, gensym("r2l"), 0);
-//    logpost(NULL, 4, "this is cyclone/Bucket %s, %dth %s build",
+//    logpost(NULL, 4, "this is nilwind/Bucket %s, %dth %s build",
 //	 CYCLONE_VERSION, CYCLONE_BUILD, CYCLONE_RELEASE);    
 }
 

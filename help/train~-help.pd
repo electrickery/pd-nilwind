@@ -5,7 +5,7 @@
 ;
 #N canvas 619 307 352 262 META 0;
 #X text 0 19 LICENSE SIBSD;
-#X text 0 152 LIBRARY cyclone;
+#X text 0 152 LIBRARY nilwind;
 #X text 0 114 OUTLET_0 signal;
 #X text 0 0 KEYWORDS signal metronome pulse train generator;
 #X text 0 38 DESCRIPTION pulse-train generator and metronome;
@@ -84,16 +84,16 @@ in the example below \, or at very small intervals \, it is audible.
 #X floatatom 218 107 0 0 0 0 - - -;
 #X text 150 43 modulate interval;
 #X obj 82 345 output~;
-#X obj 151 185 cyclone/train~ 200 0.75;
-#X obj 82 255 cyclone/sah~;
-#X obj 82 299 cyclone/cycle~;
-#X obj 151 82 cyclone/Line~ 200;
+#X obj 151 185 nilwind/train~ 200 0.75;
+#X obj 82 255 nilwind/sah~;
+#X obj 82 299 nilwind/cycle~;
+#X obj 151 82 nilwind/Line~ 200;
 #N canvas 621 382 436 314 simple 0;
 #X floatatom 99 290 5 0 0 0 - - -;
 #X obj 40 177 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X msg 109 69 500;
-#X obj 98 199 cyclone/train~;
+#X obj 98 199 nilwind/train~;
 #X msg 98 47 1000;
 #X obj 141 90 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
@@ -105,7 +105,7 @@ in the example below \, or at very small intervals \, it is audible.
 #X text 144 54 pulse rate (ms);
 #X text 280 88 pulse width (1-99%);
 #X text 234 115 pulse phase (1-99%);
-#X obj 99 267 cyclone/Snapshot~ 100;
+#X obj 99 267 nilwind/Snapshot~ 100;
 #X obj 3 5 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 5 6 Simple message-only example;
 #X connect 2 0 3 0;

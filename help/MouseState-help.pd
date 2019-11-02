@@ -5,7 +5,7 @@
 ;
 #N canvas 616 310 351 289 META 0;
 #X text 0 18 LICENSE SIBSD;
-#X text 0 175 LIBRARY cyclone;
+#X text 0 175 LIBRARY nilwind;
 #X text 0 0 KEYWORDS signal max maximum;
 #X text 0 36 DESCRIPTION report mouse x/y \, delta x/delta y \, and
 buttonpress;
@@ -33,7 +33,7 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 303 494 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 8 33 cyclone/mousefilter;
+#X obj 8 33 nilwind/mousefilter;
 #X restore 201 686 pd Related_objects;
 #X obj 82 407 cnv 17 3 35 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -82,7 +82,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 199 482 - reset: set 0 \, 0 (upper left corner);
 #X text 12 23 report mouse x/y \, delta x/delta y \, and buttonpress
 ;
-#X obj 73 220 cyclone/MouseState;
+#X obj 73 220 nilwind/MouseState;
 #X text 199 454 - zero: set current position to 0 \, 0;
 #X text 212 468 of pd coordinate system;
 #X text 199 542 - absolute x position;

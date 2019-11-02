@@ -5,7 +5,7 @@
 ;
 #N canvas 599 384 372 212 META 0;
 #X text 0 19 LICENSE SIBSD;
-#X text 0 95 LIBRARY cyclone;
+#X text 0 95 LIBRARY nilwind;
 #X text 0 76 OUTLET_0 signal;
 #X text 0 0 KEYWORDS signal ramp smooth;
 #X text 0 38 DESCRIPTION smooth out an incoming signal via a ramp;
@@ -64,12 +64,12 @@ with the ramp \, rampup \, rampdown messages.;
 #X text 231 446 - set rampdown value;
 #X obj 62 241 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 95 244 cyclone/rampsmooth~ 44100 44100;
+#X obj 95 244 nilwind/rampsmooth~ 44100 44100;
 #X obj 96 140 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 371 141 11025;
 #X msg 283 143 11025;
-#X obj 95 314 cyclone/Snapshot~ 100;
+#X obj 95 314 nilwind/Snapshot~ 100;
 #X text 231 410 - set both ramp values;
 #X obj 297 337 output~;
 #X obj 331 295 osc~ 220;
@@ -99,7 +99,7 @@ with the ramp \, rampup \, rampdown messages.;
 #X text 216 278 0;
 #X obj 0 0 cnv 15 552 40 empty empty empty 3 12 0 18 -204280 -1 0;
 #X text 11 21 alternate ramp control;
-#X obj 27 188 cyclone/rampsmooth~ 50 50;
+#X obj 27 188 nilwind/rampsmooth~ 50 50;
 #X obj 229 152 hsl 195 140 0 127 0 0 \$0-s_none \$0-r_none empty -2
 -8 0 10 -262144 -262144 -262144 0 1;
 #N canvas 0 50 450 250 (subpatch) 0;

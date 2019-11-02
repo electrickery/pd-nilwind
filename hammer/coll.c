@@ -1664,6 +1664,6 @@ void coll_setup(void)
     int major, minor, bugfix;
     sys_getversion(&major, &minor, &bugfix);
     if (major > 0 || minor > 42)    
-    logpost(NULL, 4, "this is cyclone/coll %s, %s %d build",
+    logpost(NULL, 4, "this is nilwind/coll %s, %s %d build",
 	CYCLONE_VERSION, CYCLONE_RELEASE, CYCLONE_BUILD);
 }

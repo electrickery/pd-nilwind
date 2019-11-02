@@ -5,7 +5,7 @@
 ;
 #N canvas 620 287 348 320 META 0;
 #X text 1 18 LICENSE SIBSD;
-#X text 1 126 LIBRARY cyclone;
+#X text 1 126 LIBRARY nilwind;
 #X text 1 108 OUTLET_0 signal;
 #X text 1 54 INLET_0 signal message;
 #X text 1 0 KEYWORDS signal wavetable wave table interpolation;
@@ -108,7 +108,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 198 48 2;
 #X text 72 47 -2;
 #X obj 427 325 table 0-\$0-waveTable;
-#X obj 74 244 cyclone/wave~ \$0-waveTable 0 1407 1;
+#X obj 74 244 nilwind/wave~ \$0-waveTable 0 1407 1;
 #X text 134 99 (1=normal speed \, negative;
 #X text 134 114 is backwards);
 #N canvas 526 381 450 300 load 0;

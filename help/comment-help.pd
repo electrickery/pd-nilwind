@@ -68,13 +68,13 @@ into a new Pd text object.;
 #X text 98 656 6;
 #X text 98 671 7;
 #X text 98 684 8;
-#X obj 14 233 cyclone/comment 0 12 Courier ? 0 0 0 0 [comment 0 12
+#X obj 14 233 nilwind/comment 0 12 Courier ? 0 0 0 0 [comment 0 12
 Courier];
-#X obj 194 328 cyclone/comment 329 14 Helvetica ? 0 0 128 128 [comment
+#X obj 194 328 nilwind/comment 329 14 Helvetica ? 0 0 128 128 [comment
 0 14 Helvetica ? 0 0 128 128];
-#X obj 20 291 cyclone/comment 0 20 Times ? 0 255 128 0 [comment 0 20
+#X obj 20 291 nilwind/comment 0 20 Times ? 0 255 128 0 [comment 0 20
 Times ? 0 255 128 0];
-#X obj 25 266 cyclone/comment 0 20 Times ? 0 0 0 0 [comment 0 20 Times]
+#X obj 25 266 nilwind/comment 0 20 Times ? 0 0 0 0 [comment 0 20 Times]
 ;
-#X obj 333 216 cyclone/comment 88 14 Helvetica ? 0 0 0 0 [comment 100
+#X obj 333 216 nilwind/comment 88 14 Helvetica ? 0 0 0 0 [comment 100
 14 Helvetica];

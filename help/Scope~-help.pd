@@ -5,7 +5,7 @@
 ;
 #N canvas 629 308 345 214 META 0;
 #X text 0 19 LICENSE SIBSD;
-#X text 0 76 LIBRARY cyclone;
+#X text 0 76 LIBRARY nilwind;
 #X text 0 0 KEYWORDS signal graphic display graph;
 #X text 0 38 DESCRIPTION graphic signal display;
 #X text 0 57 INLET_0 signal buffsize range frgb brgb;
@@ -41,7 +41,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 265 545 - set color of graph in RGB values;
 #X text 99 545 brgb <int> <int> <int>;
 #X text 265 525 - set color of line in RGB values;
-#X obj 172 239 cyclone/Scope~ 245 119 16 3 245 -1 1 0 0 1 0.100917
+#X obj 172 239 nilwind/Scope~ 245 119 16 3 245 -1 1 0 0 1 0.100917
 0 255 0 7 31 7 0;
 #X obj 175 50 hsl 100 18 20 500 1 1 empty empty frequency 5 8 1 10
 -262131 -1 -1 1900 0;
@@ -81,7 +81,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 278 692 hover the Scope to start refresh.;
 #X obj 518 371 dspSwitch~;
 #N canvas 351 334 430 344 x-y 0;
-#X obj 66 98 cyclone/Scope~ 170 174 8 3 130 -1.1 1.1 0 0 0 0 0 255
+#X obj 66 98 nilwind/Scope~ 170 174 8 3 130 -1.1 1.1 0 0 0 0 0 255
 0 7 31 7 0;
 #X obj 1 3 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 5 4 X-Y mode - useful for showing phase differences;

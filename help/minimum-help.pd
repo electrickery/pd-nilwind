@@ -5,7 +5,7 @@
 ;
 #N canvas 619 248 351 245 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 120 LIBRARY cyclone;
+#X text 0 120 LIBRARY nilwind;
 #X text 0 80 INLET_1 float;
 #X text 0 60 INLET_0 list bang float;
 #X text 0 100 OUTLET_0 float;
@@ -58,14 +58,14 @@ adapted the patch to pd-extended 2015-02-02;
 #X msg 41 82 bang;
 #X floatatom 62 106 5 0 0 0 - - -;
 #X floatatom 161 109 5 0 0 0 - - -;
-#X obj 62 170 cyclone/minimum 5;
+#X obj 62 170 nilwind/minimum 5;
 #X text 35 52 comparing floats;
 #X obj 62 227 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 305 228 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 320 105 5 7 9 8 6 4;
-#X obj 305 171 cyclone/minimum;
+#X obj 305 171 nilwind/minimum;
 #X text 332 52 comparing floats in a list;
 #X text 181 350 - set current minimum value;
 #X text 181 319 - output if lower than current value \, otherwise output

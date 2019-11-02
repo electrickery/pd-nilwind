@@ -31,8 +31,8 @@
 #X text 100 344 1) float;
 #X text 165 220 - output 0 or 1 by default.;
 #X text 165 298 - random 0 or 1 by default.;
-#X obj 341 135 cyclone/decide;
-#X obj 84 136 cyclone/decide 12;
+#X obj 341 135 nilwind/decide;
+#X obj 84 136 nilwind/decide 12;
 #X text 12 23 output 0 or 1 randomly;
 #N canvas 304 558 431 300 seed 0;
 #X obj 23 50 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -58,7 +58,7 @@
 #X obj 1 1 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X msg 138 98 1.23457e+07;
 #X text 6 2 Testing with simple seeds;
-#X obj 23 123 cyclone/decide;
+#X obj 23 123 nilwind/decide;
 #X connect 0 0 14 0;
 #X connect 1 0 5 0;
 #X connect 3 0 5 1;
@@ -76,7 +76,7 @@ or 0 uses rand().;
 0;
 #N canvas 600 198 366 302 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 120 LIBRARY cyclone;
+#X text 0 120 LIBRARY nilwind;
 #X text 0 0 KEYWORDS output 0 1 binary random;
 #X text 0 100 OUTLET_0 float;
 #X text 0 60 INLET_0 bang;

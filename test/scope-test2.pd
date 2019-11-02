@@ -11,8 +11,8 @@
 #X msg 177 21 30;
 #X msg 270 21 250;
 #X msg 195 60 4;
-#X obj 38 96 cyclone/triangle~;
-#X obj 177 135 cyclone/Scope~ 252 152 30 3 250 -1 1 0 0 0 0 102 255
+#X obj 38 96 nilwind/triangle~;
+#X obj 177 135 nilwind/Scope~ 252 152 30 3 250 -1 1 0 0 0 0 102 255
 51 135 135 135 0;
 #X connect 1 0 0 0;
 #X connect 1 0 0 1;

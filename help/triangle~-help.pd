@@ -5,7 +5,7 @@
 ;
 #N canvas 592 231 384 255 META 0;
 #X text 1 33 LICENSE SIBSD;
-#X text 1 133 LIBRARY cyclone;
+#X text 1 133 LIBRARY nilwind;
 #X text 1 113 OUTLET_0 signal;
 #X text 1 73 INLET_0 signal message;
 #X text 1 0 KEYWORDS signal triangle wavetable lo hi lo/hi phase ramp
@@ -69,7 +69,7 @@ are -1 and 1 \, but may be changed using the lo/hi messages.;
 #X text 179 551 - lo/hi messages change the lo/hi points (default -1/1)
 ;
 #X text 108 551 message;
-#X obj 162 273 cyclone/triangle~;
+#X obj 162 273 nilwind/triangle~;
 #X obj 104 102 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 12700 1;
 #X obj 127 102 vsl 15 128 -1 1 0 0 empty empty empty 0 -9 0 10 -262144

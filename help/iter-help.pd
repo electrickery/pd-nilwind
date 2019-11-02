@@ -3,7 +3,7 @@
 #X obj 0 202 cnv 3 550 3 empty empty inlets 8 12 0 13 -228856 -1 0;
 #N canvas 595 166 366 215 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 100 LIBRARY cyclone;
+#X text 0 100 LIBRARY nilwind;
 #X text 0 0 KEYWORDS split list series;
 #X text 0 40 DESCRIPTION split a list into a series of data;
 #X text 0 60 INLET_0 list float;
@@ -42,9 +42,9 @@
 #X text 180 271 - series of data from input list;
 #X text 405 48 single floats just;
 #X text 405 60 pass through;
-#X obj 84 131 cyclone/iter;
-#X obj 255 131 cyclone/iter;
-#X obj 418 131 cyclone/iter;
+#X obj 84 131 nilwind/iter;
+#X obj 255 131 nilwind/iter;
+#X obj 418 131 nilwind/iter;
 #X connect 15 0 28 0;
 #X connect 17 0 30 0;
 #X connect 20 0 29 0;

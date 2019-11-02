@@ -103,14 +103,14 @@ number to output;
 ;
 #X obj 41 81 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 131 178 cyclone/Bucket 4;
+#X obj 131 178 nilwind/Bucket 4;
 #X text 89 525 2) float;
 #X text 150 525 - if absent or 0: classic Max 4.6 mode \, if non-zero:
 outputs all incoming floats immediately (when not frozen).;
 #N canvas 654 362 450 396 max4.6 0;
 #X obj 2 2 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 8 3 Compare Max 4.6 mode with Max 5 mode;
-#X obj 63 171 cyclone/Bucket 5;
+#X obj 63 171 nilwind/Bucket 5;
 #N canvas 1110 184 432 300 countTo5 0;
 #X msg 93 114 5;
 #X obj 93 68 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -163,7 +163,7 @@ outputs all incoming floats immediately (when not frozen).;
 #X restore 281 64 pd countTo5;
 #X obj 281 34 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 281 173 cyclone/Bucket 5 1;
+#X obj 281 173 nilwind/Bucket 5 1;
 #X floatatom 63 228 5 0 0 0 - - -, f 5;
 #X floatatom 86 244 5 0 0 0 - - -, f 5;
 #X floatatom 109 260 5 0 0 0 - - -, f 5;

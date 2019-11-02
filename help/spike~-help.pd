@@ -5,7 +5,7 @@
 -228856 -1 0;
 #N canvas 579 244 378 247 META 0;
 #X text 1 32 LICENSE SIBSD;
-#X text 1 127 LIBRARY cyclone;
+#X text 1 127 LIBRARY nilwind;
 #X text 1 89 INLET_1 float;
 #X text 1 0 KEYWORDS signal intervals transitions refractory zero non-zero
 ;
@@ -55,8 +55,8 @@ adapted the patch to pd-extended 2015-02-02;
 -1;
 #X floatatom 170 126 0 0 0 0 - - -;
 #X floatatom 89 270 0 0 0 0 - - -;
-#X obj 89 182 cyclone/spike~;
-#X obj 87 85 cyclone/cycle~ 20;
+#X obj 89 182 nilwind/spike~;
+#X obj 87 85 nilwind/cycle~ 20;
 #X obj 88 111 >~ 0;
 #X msg 87 52 20;
 #X msg 121 53 50;

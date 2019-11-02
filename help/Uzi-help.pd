@@ -5,7 +5,7 @@
 ;
 #N canvas 588 373 383 264 META 0;
 #X text 1 18 LICENSE SIBSD;
-#X text 1 157 LIBRARY cyclone;
+#X text 1 157 LIBRARY nilwind;
 #X text 1 0 KEYWORDS bang set send fast;
 #X text 1 36 DESCRIPTION send a specified number of bangs as fast as
 possible;
@@ -71,7 +71,7 @@ to sending bangs);
 ;
 #X text 182 499 - bangs when the last bang has fired;
 #X text 182 526 - number of bangs sent;
-#X obj 135 234 cyclone/Uzi 2;
+#X obj 135 234 nilwind/Uzi 2;
 #X connect 21 0 37 0;
 #X connect 22 0 37 1;
 #X connect 23 0 37 0;

@@ -5,7 +5,7 @@
 ;
 #N canvas 611 363 351 231 META 0;
 #X text 1 20 LICENSE SIBSD;
-#X text 1 100 LIBRARY cyclone;
+#X text 1 100 LIBRARY nilwind;
 #X text 1 0 KEYWORDS signal switching matrix mixing;
 #X text 1 40 DESCRIPTION a switching or mixing matrix for signals;
 #X text 1 60 INLET_N signal message;
@@ -106,7 +106,7 @@ in milliseconds;
 #X obj 2 2 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 5 3 More arguments for fade in and fade out;
 #X restore 451 442 pd more...;
-#X obj 317 245 cyclone/matrix~ 6 2 1;
+#X obj 317 245 nilwind/matrix~ 6 2 1;
 #X obj 319 337 output~;
 #X text 99 52 outputs the current gains of all connections out the
 rightmost outlet \, in lists like this: inlet# outlet# gain;

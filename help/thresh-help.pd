@@ -5,7 +5,7 @@
 ;
 #N canvas 626 169 351 238 META 0;
 #X text 0 19 LICENSE SIBSD;
-#X text 0 127 LIBRARY cyclone;
+#X text 0 127 LIBRARY nilwind;
 #X text 0 89 INLET_1 float;
 #X text 0 0 KEYWORDS combine numbers list threshold thresh;
 #X text 0 38 DESCRIPTION combine numbers that are received close together
@@ -48,7 +48,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 111 299 list;
 #X text 12 23 combine numbers that are received close together into
 a list;
-#X obj 160 132 cyclone/thresh 100;
+#X obj 160 132 nilwind/thresh 100;
 #X text 179 260 - time interval within numbers are added to the list
 ;
 #X text 180 342 - initial time interval (default 10 ms);

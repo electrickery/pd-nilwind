@@ -5,7 +5,7 @@
 ;
 #N canvas 716 337 388 386 META 0;
 #X text 1 18 LICENSE SIBSD;
-#X text 1 216 LIBRARY cyclone;
+#X text 1 216 LIBRARY nilwind;
 #X text 1 144 OUTLET_0 float;
 #X text 1 72 INLET_1 bang float;
 #X text 1 90 INLET_2 bang float;
@@ -162,10 +162,10 @@ output;
 and "dec" increment or decrement counter \, "carrybang" and "carryint"
 set the output type of the middle two outlets \, "set n" \, "goto n"
 \, "jam n" control the counter value. "next" is the same as bang;
-#X obj 97 292 cyclone/counter 3 12 0;
-#X obj 84 1106 cyclone/counter 100;
-#X obj 84 1128 cyclone/counter 50 100;
-#X obj 83 1151 cyclone/counter 0 50 100;
+#X obj 97 292 nilwind/counter 3 12 0;
+#X obj 84 1106 nilwind/counter 100;
+#X obj 84 1128 nilwind/counter 50 100;
+#X obj 83 1151 nilwind/counter 0 50 100;
 #X text 49 22 count over a range of integers;
 #X obj 244 213 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -187,7 +187,7 @@ set the output type of the middle two outlets \, "set n" \, "goto n"
 #X floatatom 130 138 5 0 0 0 - - -;
 #X text 79 121 set min/max;
 #X text 99 45 additional ways to accomplish the same:;
-#X obj 242 184 cyclone/counter;
+#X obj 242 184 nilwind/counter;
 #X obj 2 2 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 4 2 Additional counter messages;
 #X connect 0 0 15 0;

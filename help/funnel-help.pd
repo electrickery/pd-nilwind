@@ -5,7 +5,7 @@
 ;
 #N canvas 610 328 382 213 META 0;
 #X text 1 20 LICENSE SIBSD;
-#X text 1 100 LIBRARY cyclone;
+#X text 1 100 LIBRARY nilwind;
 #X text 1 0 KEYWORDS tag data inlet input;
 #X text 1 40 DESCRIPTION tag data based on the inlet it arrived in
 ;
@@ -61,8 +61,8 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 87 219 unpack f f;
 #X text 123 259 inlet number;
 #X text 181 241 value of inlet;
-#X obj 87 172 cyclone/funnel 4;
-#X obj 352 173 cyclone/funnel 2;
+#X obj 87 172 nilwind/funnel 4;
+#X obj 352 173 nilwind/funnel 2;
 #X text 210 79 repeat last received;
 #X text 211 92 value of the inlet;
 #X msg 352 91 list foo;

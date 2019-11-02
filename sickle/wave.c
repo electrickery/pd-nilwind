@@ -162,6 +162,6 @@ void wave_tilde_setup(void)
 
     int major, minor, bugfix;
     sys_getversion(&major, &minor, &bugfix);    if (major > 0 || minor > 42) 
-    logpost(NULL, 4, "this is cyclone/wave~ %s, %dth %s build",
+    logpost(NULL, 4, "this is nilwind/wave~ %s, %dth %s build",
 	 CYCLONE_VERSION, CYCLONE_BUILD, CYCLONE_RELEASE);
 }

@@ -5,7 +5,7 @@
 ;
 #N canvas 670 414 340 251 META 0;
 #X text 1 20 LICENSE SIBSD;
-#X text 1 113 LIBRARY cyclone;
+#X text 1 113 LIBRARY nilwind;
 #X text 1 0 KEYWORDS bitwise bit boolean signal;
 #X text 1 40 DESCRIPTION performs bitwise boolean operations on a floating
 point signal as bits or as a float;
@@ -28,10 +28,10 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 214 725 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 6 28 cyclone/bitnot~;
-#X obj 6 55 cyclone/bitor~;
-#X obj 6 78 cyclone/bitxor~;
-#X obj 108 29 cyclone/bitshift~;
+#X obj 6 28 nilwind/bitnot~;
+#X obj 6 55 nilwind/bitor~;
+#X obj 6 78 nilwind/bitxor~;
+#X obj 108 29 nilwind/bitshift~;
 #X restore 203 809 pd Related_objects;
 #X obj 80 655 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -156,24 +156,24 @@ adapted the patch to pd-extended 2015-02-02;
 #X connect 3 0 2 0;
 #X connect 9 0 3 0;
 #X restore 124 449 pd view;
-#X obj 73 265 cyclone/cycle~ 220;
+#X obj 73 265 nilwind/cycle~ 220;
 #X text 122 429 click for graph;
 #X obj 52 69 r \$0-bitchange;
-#X obj 74 219 cyclone/tosymbol;
+#X obj 74 219 nilwind/tosymbol;
 #X symbolatom 74 241 70 0 0 0 - - -;
 #X text 163 715 - modes:;
 #X text 117 529 list;
 #X text 116 560 mode;
 #X text 171 560 - values 0 to 3 The interpretation of the values at
 the two inlets. See argument description for details;
-#X obj 52 338 cyclone/bitand~ -1 0;
+#X obj 52 338 nilwind/bitand~ -1 0;
 #X text 171 529 - if the first element is "bits" \, the following 32
 elements are interpreted as 0's and 1's;
 #N canvas 583 510 433 348 mask 0;
 #X obj 22 217 clip~ -1 1;
-#X obj 24 54 cyclone/cycle~ 220;
+#X obj 24 54 nilwind/cycle~ 220;
 #X obj 22 246 output~;
-#X obj 23 133 cyclone/bitand~ -1 1;
+#X obj 23 133 nilwind/bitand~ -1 1;
 #X msg 156 55 -1;
 #X msg 167 77 65535;
 #X msg 180 98 255;

@@ -5,7 +5,7 @@
 ;
 #N canvas 622 298 361 258 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 140 LIBRARY cyclone;
+#X text 0 140 LIBRARY nilwind;
 #X text 0 80 INLET_N track;
 #X text 0 60 INLET_0 message;
 #X text 0 100 OUTLET_0 list;
@@ -33,7 +33,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
 #X obj 86 33 qlist;
-#X obj 6 32 cyclone/seq;
+#X obj 6 32 nilwind/seq;
 #X restore 208 789 pd Related_objects;
 #X obj 77 392 cnv 17 3 140 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -89,7 +89,7 @@ and duration;
 tracks. You can send the same messages to individual tracks as well.
 Each track records what comes into its inlet \, and plays it back through
 the outlet directly below the inlet.;
-#X obj 109 246 cyclone/mtr 3;
+#X obj 109 246 nilwind/mtr 3;
 #X text 79 42 Control messages sent to an individual;
 #X text 79 54 track affect that track only.;
 #X connect 11 0 50 0;

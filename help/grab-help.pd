@@ -5,7 +5,7 @@
 ;
 #N canvas 617 371 355 223 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 100 LIBRARY cyclone;
+#X text 0 100 LIBRARY nilwind;
 #X text 0 0 KEYWORDS intercept output grab;
 #X text 0 40 DESCRIPTION intercept the output of another object;
 #X text 0 60 INLET_0 message;
@@ -27,8 +27,8 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 855 585 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 14 54 cyclone/universal;
-#X obj 14 32 cyclone/offer;
+#X obj 14 54 nilwind/universal;
+#X obj 14 32 nilwind/offer;
 #X restore 214 630 pd Related_objects;
 #X obj 84 420 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -76,7 +76,7 @@ to grabbed object's outlets);
 #X msg 89 100 let's go;
 #X obj 315 96 r bar;
 #X obj 315 119 print bar;
-#X obj 74 211 cyclone/grab 0 foo;
+#X obj 74 211 nilwind/grab 0 foo;
 #X msg 111 144 set foo;
 #X obj 3 2 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 8 4 grab as settable send;
@@ -89,9 +89,9 @@ to grabbed object's outlets);
 #X restore 432 387 pd as settable send;
 #X text 32 64 intercept messages before they are output;
 #X text 33 77 by the receiving object;
-#X obj 50 171 cyclone/grab;
-#X obj 317 180 cyclone/grab 2 test;
-#X obj 345 334 cyclone/coll;
+#X obj 50 171 nilwind/grab;
+#X obj 317 180 nilwind/grab 2 test;
+#X obj 345 334 nilwind/coll;
 #C restore;
 #X text 97 571 by connecting grab to the inlet of an object \, it can
 intercept data to the objects outlets and redirect it to its own leftmost

@@ -5,7 +5,7 @@
 ;
 #N canvas 1120 195 440 260 META 0;
 #X text 1 20 LICENSE SIBSD;
-#X text 1 100 LIBRARY cyclone;
+#X text 1 100 LIBRARY nilwind;
 #X text 1 0 KEYWORDS signal constrain clip pass filter range;
 #X text 1 40 DESCRIPTION constrains a signal within a certain range
 ;
@@ -58,7 +58,7 @@ adapted the patch to pd-extended 2015-02-02;
 signal or float to be used for its parameters (2nd and 3rd inlet);
 #X text 205 91 click and drag to;
 #X text 205 103 change signal;
-#X obj 102 192 cyclone/Clip~ -1 1;
+#X obj 102 192 nilwind/Clip~ -1 1;
 #X text 103 354 float;
 #X text 179 310 - signal to pass through range filter;
 #X text 104 339 signal;

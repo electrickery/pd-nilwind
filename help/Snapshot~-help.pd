@@ -5,7 +5,7 @@
 ;
 #N canvas 615 372 354 242 META 0;
 #X text 0 19 LICENSE SIBSD;
-#X text 0 114 LIBRARY cyclone;
+#X text 0 114 LIBRARY nilwind;
 #X text 0 0 KEYWORDS signal sample report values clocking snapshot
 ;
 #X text 0 38 DESCRIPTION report sample values from a signal;
@@ -81,13 +81,13 @@ recent);
 #X obj 90 120 tgl 14 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 174 242 interval (for self-clocking):;
-#X obj 55 343 cyclone/Snapshot~ 100;
+#X obj 55 343 nilwind/Snapshot~ 100;
 #X text 240 258 change to a value above 0 for self-clocking;
 #X text 240 271 reports of signal values;
 #X text 141 120 turn clock on/off (by default \,;
 #X text 141 133 the clock will be on if a;
 #X text 142 147 non-zero interval is supplied);
-#X obj 57 73 cyclone/cycle~ 440;
+#X obj 57 73 nilwind/cycle~ 440;
 #X obj 518 405 dspSwitch~;
 #X connect 27 0 28 0;
 #X connect 28 0 45 0;

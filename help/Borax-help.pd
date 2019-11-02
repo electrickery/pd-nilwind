@@ -5,7 +5,7 @@
 ;
 #N canvas 393 242 432 461 META 0;
 #X text 1 18 LICENSE SIBSD;
-#X text 1 270 LIBRARY cyclone;
+#X text 1 270 LIBRARY nilwind;
 #X text 1 0 KEYWORDS midi note music pitch velocity;
 #X text 1 36 DESCRIPTION reports current info on note on/off;
 #X text 1 108 OUTLET_0 float;
@@ -41,8 +41,8 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 65 30 midiin;
 #X obj 9 53 noteout;
 #X obj 65 54 midiout;
-#X obj 121 30 cyclone/midiparse;
-#X obj 121 54 cyclone/midiformat;
+#X obj 121 30 nilwind/midiparse;
+#X obj 121 54 nilwind/midiformat;
 #X restore 208 744 pd Related_objects;
 #X obj 80 444 cnv 17 3 17 empty empty 2 5 9 0 16 -228856 -162280 0
 ;
@@ -111,7 +111,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 425 4 Borax;
 #X obj 80 397 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
-#X obj 88 113 cyclone/Borax;
+#X obj 88 113 nilwind/Borax;
 #X text 203 155 8;
 #X text 204 181 7;
 #X text 204 206 6;

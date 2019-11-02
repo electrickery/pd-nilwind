@@ -5,7 +5,7 @@
 ;
 #N canvas 583 213 379 219 META 0;
 #X text 1 19 LICENSE SIBSD;
-#X text 1 95 LIBRARY cyclone;
+#X text 1 95 LIBRARY nilwind;
 #X text 1 0 KEYWORDS ascii values convert;
 #X text 1 38 DESCRIPTION convert input to ascii values;
 #X text 1 57 INLET_0 list;
@@ -29,7 +29,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 6 1 Related Objects;
 #X obj 104 26 key;
 #X obj 105 48 keyup;
-#X obj 5 27 cyclone/sprintf;
+#X obj 5 27 nilwind/sprintf;
 #X restore 200 367 pd Related_objects;
 #X obj 80 253 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -49,7 +49,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 117 332 (none);
 #X text 180 253 - list of any numbers \, text \, etc to convert to
 ascii;
-#X obj 170 167 cyclone/spell;
+#X obj 170 167 nilwind/spell;
 #X connect 15 0 21 0;
 #X connect 16 0 21 0;
 #X connect 17 0 21 0;

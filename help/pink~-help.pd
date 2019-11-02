@@ -5,7 +5,7 @@
 -228856 -1 0;
 #N canvas 617 269 359 201 META 0;
 #X text 0 19 LICENSE SIBSD;
-#X text 0 95 LIBRARY cyclone;
+#X text 0 95 LIBRARY nilwind;
 #X text 0 76 OUTLET_0 signal;
 #X text 0 0 KEYWORDS signal noise pink generator;
 #X text 0 38 DESCRIPTION pink noise generator;
@@ -52,6 +52,6 @@ hissy than white noise.;
 #X text 30 51 very simple to use \, pink~ generates pink noise (see
 below) and sends it through its outlet:;
 #X obj 120 168 output~;
-#X obj 120 100 cyclone/pink~;
+#X obj 120 100 nilwind/pink~;
 #X connect 20 0 19 0;
 #X connect 20 0 19 1;

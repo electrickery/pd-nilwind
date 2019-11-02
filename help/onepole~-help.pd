@@ -5,7 +5,7 @@
 ;
 #N canvas 617 272 357 233 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 120 LIBRARY cyclone;
+#X text 0 120 LIBRARY nilwind;
 #X text 0 100 OUTLET_0 signal;
 #X text 0 0 KEYWORDS signal lowpass filter low pass pole;
 #X text 0 40 DESCRIPTION single-pole lowpass filter;
@@ -69,7 +69,7 @@ the coefficients \, [ a0 = k \, b1 = k - 1 ] \, as demonstrated above.
 #X obj 229 253 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 154 58 phasor~ 250;
-#X obj 153 136 cyclone/onepole~ 200;
+#X obj 153 136 nilwind/onepole~ 200;
 #X text 180 464 - initial cutoff frequency;
 #N canvas 640 655 450 300 view 0;
 #N canvas 0 0 450 300 (subpatch) 0;

@@ -5,7 +5,7 @@
 ;
 #N canvas 611 292 363 263 META 0;
 #X text 0 19 LICENSE SIBSD;
-#X text 0 133 LIBRARY cyclone;
+#X text 0 133 LIBRARY nilwind;
 #X text 0 76 INLET_1 float;
 #X text 0 0 KEYWORDS read write sample table graph array;
 #X text 0 38 DESCRIPTION read and write sample values;
@@ -96,7 +96,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 392 194 in the first inlet;
 #X text 108 508 float;
 #X text 179 508 - number of channels (Max/MSP only feature);
-#X obj 260 313 cyclone/peek~ \$0-table;
+#X obj 260 313 nilwind/peek~ \$0-table;
 #N canvas 867 285 485 231 multichannel 0;
 #X text 53 59 could not get it to work properly as of yet...;
 #X text 52 70 sorry;

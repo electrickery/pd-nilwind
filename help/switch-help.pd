@@ -5,7 +5,7 @@
 ;
 #N canvas 627 301 351 222 META 0;
 #X text 0 19 LICENSE SIBSD;
-#X text 0 114 LIBRARY cyclone;
+#X text 0 114 LIBRARY nilwind;
 #X text 0 0 KEYWORDS inlet specific switch filter;
 #X text 0 38 DESCRIPTION output a message from a specific inlet;
 #X text 0 57 INLET_0 bang float;
@@ -28,8 +28,8 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 316 416 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 5 54 cyclone/gate;
-#X obj 5 29 cyclone/cycle;
+#X obj 5 54 nilwind/gate;
+#X obj 5 29 nilwind/cycle;
 #X restore 203 491 pd Related_objects;
 #X obj 84 332 cnv 17 3 34 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -63,7 +63,7 @@ adapted the patch to pd-extended 2015-02-02;
 -1;
 #X text 149 53 set which inlet is open;
 #X text 100 464 2) float;
-#X obj 179 253 cyclone/switch 4;
+#X obj 179 253 nilwind/switch 4;
 #X text 291 105 bang all inlets \;;
 #X text 291 119 open inlet passes message;
 #X obj 129 59 vradio 15 1 0 5 empty empty empty 0 -8 0 10 -262144 -1

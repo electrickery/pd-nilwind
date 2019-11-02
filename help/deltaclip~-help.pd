@@ -5,7 +5,7 @@
 ;
 #N canvas 603 278 382 257 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 148 LIBRARY cyclone;
+#X text 0 148 LIBRARY nilwind;
 #X text 0 73 INLET_0 signal;
 #X text 0 128 OUTLET_0 signal;
 #X text 0 168 VERSION 0.2-beta1;
@@ -67,9 +67,9 @@ signal;
 #X obj 105 304 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X floatatom 247 303 8 0 0 0 - - -;
-#X obj 102 176 cyclone/deltaclip~ -1e-05 1e-05;
-#X obj 246 254 cyclone/delta~;
-#X obj 102 254 cyclone/Snapshot~ 100;
+#X obj 102 176 nilwind/deltaclip~ -1e-05 1e-05;
+#X obj 246 254 nilwind/delta~;
+#X obj 102 254 nilwind/Snapshot~ 100;
 #X obj 85 367 cnv 17 3 17 empty empty 1 5 9 0 16 -228856 -162280 0
 ;
 #X text 116 367 signal;

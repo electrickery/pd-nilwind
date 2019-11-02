@@ -5,7 +5,7 @@
 ;
 #N canvas 617 367 360 195 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 80 LIBRARY cyclone;
+#X text 0 80 LIBRARY nilwind;
 #X text 0 0 KEYWORDS send message object objects class remote patch
 ;
 #X text 0 40 DESCRIPTION send message to all objects of the same class
@@ -28,7 +28,7 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 314 454 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 9 32 cyclone/forward;
+#X obj 9 32 nilwind/forward;
 #X obj 119 33 send;
 #X obj 119 54 receive;
 #X restore 202 682 pd Related_objects;
@@ -200,9 +200,9 @@ too;
 ;
 #X text 43 52 send message to all objects of same class in patch:;
 #X msg 106 397 bng color 16;
-#X obj 63 204 cyclone/universal;
-#X obj 310 199 cyclone/universal;
-#X obj 94 439 cyclone/universal 1;
+#X obj 63 204 nilwind/universal;
+#X obj 310 199 nilwind/universal;
+#X obj 94 439 nilwind/universal 1;
 #X connect 16 0 54 0;
 #X connect 17 0 56 0;
 #X connect 22 0 54 0;

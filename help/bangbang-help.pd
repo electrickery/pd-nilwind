@@ -5,7 +5,7 @@
 ;
 #N canvas 463 351 408 299 META 0;
 #X text 1 20 LICENSE SIBSD;
-#X text 1 100 LIBRARY cyclone;
+#X text 1 100 LIBRARY nilwind;
 #X text 1 0 KEYWORDS bang bangbang control;
 #X text 1 40 DESCRIPTION send a number of bangs in order;
 #X text 1 60 INLET_0 float bang message symbol;
@@ -60,7 +60,7 @@ bangs;
 #X obj 118 251 print jumped;
 #X obj 100 272 print over;
 #X obj 83 293 print the lazy dog.;
-#X obj 83 118 cyclone/bangbang 7;
+#X obj 83 118 nilwind/bangbang 7;
 #X connect 14 0 28 0;
 #X connect 28 0 27 0;
 #X connect 28 1 26 0;

@@ -5,7 +5,7 @@
 ;
 #N canvas 619 299 361 264 META 0;
 #X text 0 33 LICENSE SIBSD;
-#X text 0 153 LIBRARY cyclone;
+#X text 0 153 LIBRARY nilwind;
 #X text 0 133 OUTLET_0 signal;
 #X text 0 0 KEYWORDS signal vector envelope follower rampsmooth deltaclip
 slide filter;
@@ -32,9 +32,9 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 316 459 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 7 29 cyclone/rampsmooth~;
-#X obj 7 52 cyclone/slide~;
-#X obj 8 75 cyclone/deltaclip~;
+#X obj 7 29 nilwind/rampsmooth~;
+#X obj 7 52 nilwind/slide~;
+#X obj 8 75 nilwind/deltaclip~;
 #X restore 205 828 pd Related_objects;
 #X obj 81 491 cnv 17 3 118 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -137,7 +137,7 @@ think of the changes happening between frames rather than between samples
 #X connect 4 1 2 1;
 #X connect 5 0 3 0;
 #X restore 264 154 pd deltaclip;
-#X obj 42 255 cyclone/vectral~ 256;
+#X obj 42 255 nilwind/vectral~ 256;
 #X obj 382 88 /~ 50;
 #X msg 264 111 1;
 #X msg 333 111 -1;

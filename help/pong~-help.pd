@@ -5,7 +5,7 @@
 ;
 #N canvas 616 310 360 252 META 0;
 #X text 0 19 LICENSE SIBSD;
-#X text 0 133 LIBRARY cyclone;
+#X text 0 133 LIBRARY nilwind;
 #X text 0 114 OUTLET_0 signal;
 #X text 0 0 KEYWORDS signal fold wrap range;
 #X text 0 38 DESCRIPTION fold or wrap a signal within a given range
@@ -179,7 +179,7 @@ empty -2 -8 0 10 -262144 -262144 -262144 11400 1;
 ;
 #X text 5 -10 View graph;
 #X restore 181 399 pd view_pong1;
-#X obj 92 227 cyclone/pong~ 0 -0.25 0.25;
+#X obj 92 227 nilwind/pong~ 0 -0.25 0.25;
 #X obj 169 373 tabwrite~ \$0-pong1;
 #X connect 32 0 52 2;
 #X connect 33 0 47 0;

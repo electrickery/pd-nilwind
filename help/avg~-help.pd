@@ -5,7 +5,7 @@
 ;
 #N canvas 431 386 390 256 META 0;
 #X text 1 20 LICENSE SIBSD;
-#X text 1 100 LIBRARY cyclone;
+#X text 1 100 LIBRARY nilwind;
 #X text 1 80 OUTLET_0 float;
 #X text 1 40 DESCRIPTION computes the average value of signal;
 #X text 1 60 INLET_0 signal bang;
@@ -27,7 +27,7 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 163 537 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 8 32 cyclone/average~;
+#X obj 8 32 nilwind/average~;
 #X restore 208 508 pd Related_objects;
 #X obj 77 413 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -62,7 +62,7 @@ received.;
 #X obj 97 88 cycle~ 2;
 #X obj 80 59 cycle~ 100;
 #X obj 81 114 *~;
-#X obj 81 192 cyclone/avg~;
+#X obj 81 192 nilwind/avg~;
 #X obj 517 288 dspSwitch~;
 #X obj 84 297 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;

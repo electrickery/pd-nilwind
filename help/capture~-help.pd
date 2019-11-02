@@ -5,7 +5,7 @@
 ;
 #N canvas 1102 100 422 247 META 0;
 #X text 1 18 LICENSE SIBSD;
-#X text 1 103 LIBRARY cyclone;
+#X text 1 103 LIBRARY nilwind;
 #X text 1 85 OUTLET_0 list;
 #X text 1 0 KEYWORDS capture signal collect text;
 #X text 1 36 DESCRIPTION Collect samples from a signal and examine
@@ -74,7 +74,7 @@ no indices present \, capture~ records the entire vector.;
 #X obj 491 4 capture~;
 #X text 13 23 Collect samples from a signal and examine in a text window
 ;
-#X obj 64 137 cyclone/capture~ f 1000 2 0;
+#X obj 64 137 nilwind/capture~ f 1000 2 0;
 #X obj 517 140 dspSwitch~;
 #X connect 15 0 31 0;
 #X connect 16 0 31 0;

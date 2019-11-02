@@ -5,7 +5,7 @@
 ;
 #N canvas 596 304 385 244 META 0;
 #X text 0 19 LICENSE SIBSD;
-#X text 0 114 LIBRARY cyclone;
+#X text 0 114 LIBRARY nilwind;
 #X text 0 95 OUTLET_0 signal;
 #X text 0 76 INLET_1 flaot signal;
 #X text 0 0 KEYWORDS signal power exponent base;
@@ -73,13 +73,13 @@ specified by the input signal) is used to generate a pitch glissando.
 #X text 124 205 optional argument determines;
 #X text 124 218 the base of the power function.;
 #X text 125 230 Default is 0;
-#X obj 33 219 cyclone/pow~ 2;
-#X obj 314 216 cyclone/pow~;
-#X obj 314 133 cyclone/Line~ -7;
-#X obj 32 124 cyclone/Line~ -1;
+#X obj 33 219 nilwind/pow~ 2;
+#X obj 314 216 nilwind/pow~;
+#X obj 314 133 nilwind/Line~ -7;
+#X obj 32 124 nilwind/Line~ -1;
 #X text 296 74 amplitude envelope. 2 to the -7 doesn't;
 #X text 296 86 completely shut off the signal...;
-#X obj 32 350 cyclone/cycle~;
+#X obj 32 350 nilwind/cycle~;
 #N canvas 955 535 450 300 view_wave 0;
 #X obj 0 -11 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0
 ;
@@ -95,7 +95,7 @@ empty -2 -8 0 10 -262144 -262144 -262144 0 1;
 dropouts;
 #X text 4 -11 View graph;
 #X restore 115 439 pd view_wave;
-#X obj 313 348 cyclone/Snapshot~ 100;
+#X obj 313 348 nilwind/Snapshot~ 100;
 #X floatatom 313 376 5 0 0 0 - - -;
 #X obj 350 377 hsl 128 15 0 0.5 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 40 1;

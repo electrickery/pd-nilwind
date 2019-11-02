@@ -5,7 +5,7 @@
 ;
 #N canvas 569 272 390 294 META 0;
 #X text 1 20 LICENSE SIBSD;
-#X text 1 140 LIBRARY cyclone;
+#X text 1 140 LIBRARY nilwind;
 #X text 1 80 INLET_1 float;
 #X text 1 100 INLET_2 float;
 #X text 1 120 OUTLET_0 float;
@@ -73,7 +73,7 @@ adapted the patch to pd-extended 2015-02-02;
 ;
 #X text 114 584 float;
 #X text 181 584 - set stepsize;
-#X obj 114 340 cyclone/drunk 10;
+#X obj 114 340 nilwind/drunk 10;
 #X text 181 697 - set maximum stepsize \, default is 2;
 #X text 156 396 0;
 #X text 304 396 10;

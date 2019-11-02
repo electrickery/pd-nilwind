@@ -16,7 +16,7 @@
 #X msg 92 210 3 0 0 1000;
 #X msg 92 235 3 0 1 1000;
 #X msg 93 263 3 0 2 1000;
-#X obj 223 378 cyclone/matrix~ 6 2 1;
+#X obj 223 378 nilwind/matrix~ 6 2 1;
 #X text 8 104 non-binary mode (mixer mode);
 #X text 8 35 binary mode (switch mode);
 #X msg 24 60 i o c;

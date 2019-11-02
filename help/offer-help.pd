@@ -5,7 +5,7 @@
 ;
 #N canvas 626 288 352 218 META 0;
 #X text 0 18 LICENSE SIBSD;
-#X text 0 108 LIBRARY cyclone;
+#X text 0 108 LIBRARY nilwind;
 #X text 0 0 KEYWORDS x y pairs cartesian;
 #X text 0 36 DESCRIPTION store x \, y pairs of values (x is int only)
 ;
@@ -62,8 +62,8 @@ pair;
 ;
 #X text 109 360 float;
 #X text 180 360 - input y value;
-#X obj 74 190 cyclone/offer;
-#X obj 406 190 cyclone/offer;
+#X obj 74 190 nilwind/offer;
+#X obj 406 190 nilwind/offer;
 #X obj 96 110 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144 -1
 -1 2;
 #X text 100 91 0;

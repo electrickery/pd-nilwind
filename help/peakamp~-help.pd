@@ -5,7 +5,7 @@
 ;
 #N canvas 615 359 363 235 META 0;
 #X text 1 19 LICENSE SIBSD;
-#X text 1 114 LIBRARY cyclone;
+#X text 1 114 LIBRARY nilwind;
 #X text 1 0 KEYWORDS signal amplitude peak max maximum measure;
 #X text 1 38 DESCRIPTION measure the peak amplitude of a signal;
 #X text 1 57 INLET_0 signal bang;
@@ -59,9 +59,9 @@ outputs a value.;
 #X text 178 447 - optional \, report peak amp every x miliseconds;
 #X text 178 371 - report every x miliseconds;
 #X obj 177 271 output~;
-#X obj 176 166 cyclone/peakamp~ 25;
+#X obj 176 166 nilwind/peakamp~ 25;
 #X text 88 49 Example: the amplitude sets the frequency;
-#X obj 177 95 cyclone/click~;
+#X obj 177 95 nilwind/click~;
 #X obj 177 71 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 176 119 *~ 0;

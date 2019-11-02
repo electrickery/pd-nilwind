@@ -83,7 +83,7 @@
 #X msg 44 53 3000;
 #X msg 48 435 read ./colltest15k.coll;
 #X msg 48 465 write ./colltest15k.coll;
-#X obj 290 600 cyclone/coll aap 1;
+#X obj 290 600 nilwind/coll aap 1;
 #C restore;
 #X text 414 596 <-- second argument > 0 enables threaed mode;
 #X text 401 542 Fill the collection with values by clicking the number

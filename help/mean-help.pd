@@ -5,7 +5,7 @@
 ;
 #N canvas 594 316 370 225 META 0;
 #X text 0 18 LICENSE SIBSD;
-#X text 0 108 LIBRARY cyclone;
+#X text 0 108 LIBRARY nilwind;
 #X text 0 0 KEYWORDS average list mean;
 #X text 0 36 DESCRIPTION find the running average of a stream of numbers
 ;
@@ -60,7 +60,7 @@ adapted the patch to pd-extended 2015-02-02;
 ;
 #X text 108 431 float;
 #X text 181 431 - total number of values processed;
-#X obj 96 234 cyclone/mean;
+#X obj 96 234 nilwind/mean;
 #X connect 12 0 33 0;
 #X connect 13 0 33 0;
 #X connect 14 0 33 0;

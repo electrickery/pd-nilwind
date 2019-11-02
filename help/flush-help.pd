@@ -5,7 +5,7 @@
 ;
 #N canvas 1182 598 357 259 META 0;
 #X text 0 18 LICENSE SIBSD;
-#X text 0 126 LIBRARY cyclone;
+#X text 0 126 LIBRARY nilwind;
 #X text 0 0 KEYWORDS note off notes held velocity;
 #X text 0 54 INLET_0 bang clear list float;
 #X text 0 72 INLET_1 float;
@@ -29,11 +29,11 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 436 565 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 6 28 cyclone/midiflush;
-#X obj 6 50 cyclone/sustain;
-#X obj 7 71 cyclone/Borax;
-#X obj 134 27 cyclone/offer;
-#X obj 133 49 cyclone/sustain;
+#X obj 6 28 nilwind/midiflush;
+#X obj 6 50 nilwind/sustain;
+#X obj 7 71 nilwind/Borax;
+#X obj 134 27 nilwind/offer;
+#X obj 133 49 nilwind/sustain;
 #X obj 241 25 makenote;
 #X obj 241 48 stripnote;
 #X restore 210 559 pd Related_objects;
@@ -69,7 +69,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 184 455 - pitch;
 #X text 184 478 - velocity;
 #X text 110 478 float;
-#X obj 94 210 cyclone/flush;
+#X obj 94 210 nilwind/flush;
 #X obj 169 296 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 111;
 #X text 184 324 - send note off for all pitches for which only a noteon

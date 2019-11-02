@@ -5,7 +5,7 @@
 ;
 #N canvas 585 247 370 239 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 100 LIBRARY cyclone;
+#X text 0 100 LIBRARY nilwind;
 #X text 0 0 KEYWORDS series match list;
 #X text 0 40 DESCRIPTION look for a series of numbers;
 #X text 0 60 INLET_0 list;
@@ -52,7 +52,7 @@ for any number;
 #X text 5 126 forget all;
 #X text 206 51 input list to check against the match series;
 #X text 117 398 list;
-#X obj 141 194 cyclone/match 100 nn 2;
+#X obj 141 194 nilwind/match 100 nn 2;
 #X obj 141 278 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 175 278 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144

@@ -5,7 +5,7 @@
 ;
 #N canvas 638 422 399 237 META 0;
 #X text 1 20 LICENSE SIBSD;
-#X text 1 100 LIBRARY cyclone;
+#X text 1 100 LIBRARY nilwind;
 #X text 1 60 INLET_0 signal message float;
 #X text 1 80 OUTLET_0 float;
 #X text 1 40 DESCRIPTION reports various forms of average value of
@@ -30,7 +30,7 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 155 571 428 92 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 6 29 cyclone/avg~;
+#X obj 6 29 nilwind/avg~;
 #X restore 199 605 pd Related_objects;
 #X obj 77 421 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -67,7 +67,7 @@ is 100 2) message - sets mode \, as shown above. default is bipolar.
 #X msg 343 137 500;
 #X msg 375 137 1000;
 #X msg 311 137 10;
-#X obj 149 209 cyclone/average~ 1000;
+#X obj 149 209 nilwind/average~ 1000;
 #X obj 520 260 dspSwitch~;
 #X text 169 328 - bipolar: -sets bipolar average mode.;
 #X text 169 344 - absolute: -sets absolute average mode.;
@@ -75,7 +75,7 @@ is 100 2) message - sets mode \, as shown above. default is bipolar.
 #X text 169 307 - the signal to average;
 #X text 169 377 - the number of samples the average is applied to;
 #N canvas 986 215 450 300 max-msp 0;
-#X obj 104 161 cyclone/average~ 1000;
+#X obj 104 161 nilwind/average~ 1000;
 #X obj 104 186 sig~;
 #X text 18 53 The Max/MSP average~ object has a signal outlet \, but
 ad the dufference existed for twelve years \, I decided not to fix

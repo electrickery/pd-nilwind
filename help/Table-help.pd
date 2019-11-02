@@ -5,7 +5,7 @@
 ;
 #N canvas 601 221 372 242 META 0;
 #X text 0 18 LICENSE SIBSD;
-#X text 0 126 LIBRARY cyclone;
+#X text 0 126 LIBRARY nilwind;
 #X text 0 0 KEYWORDS table graph store array;
 #X text 0 36 DESCRIPTION store and graphically edit an array of numbers
 ;
@@ -32,11 +32,11 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 664 608 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 10 31 cyclone/coll;
+#X obj 10 31 nilwind/coll;
 #C restore;
-#X obj 10 57 cyclone/funbuff;
+#X obj 10 57 nilwind/funbuff;
 #C restore;
-#X obj 10 81 cyclone/Histo;
+#X obj 10 81 nilwind/Histo;
 #X restore 196 769 pd Related_objects;
 #X obj 78 398 cnv 17 3 78 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -94,7 +94,7 @@ it the open message.;
 #X obj 78 487 cnv 17 3 17 empty empty 1 5 9 0 16 -228856 -162280 0
 ;
 #X text 85 598 1) table name;
-#X obj 95 264 cyclone/Table;
+#X obj 95 264 nilwind/Table;
 #C restore;
 #X text 102 486 float;
 #X text 198 488 - value to be written;

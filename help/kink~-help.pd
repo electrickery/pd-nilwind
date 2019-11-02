@@ -5,7 +5,7 @@
 ;
 #N canvas 592 275 371 239 META 0;
 #X text 1 20 LICENSE SIBSD;
-#X text 1 120 LIBRARY cyclone;
+#X text 1 120 LIBRARY nilwind;
 #X text 1 60 INLET_0 signal;
 #X text 1 100 OUTLET_0 signal;
 #X text 1 0 KEYWORDS signal kink distort phasor;
@@ -80,7 +80,7 @@ CZ-101? Sure you can.;
 #X text 19 289 distorted;
 #X text 19 301 phase output;
 #X obj 159 326 loadbang;
-#X obj 127 252 cyclone/kink~ 1.3;
+#X obj 127 252 nilwind/kink~ 1.3;
 #X text 179 541 - slope input;
 #X obj 22 391 tabwrite~ \$0-kink;
 #X obj 265 390 tabwrite~ \$0-kink-cycle;

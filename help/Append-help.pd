@@ -16,7 +16,7 @@
 #N canvas 242 347 428 75 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 10 31 cyclone/prepend;
+#X obj 10 31 nilwind/prepend;
 #X restore 206 432 pd Related_objects;
 #N canvas 706 282 379 261 META 0;
 #X text 1 0 KEYWORDS signal max_compatible;
@@ -56,7 +56,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 107 288 anything;
 #X text 162 288 - sends the lanything with the stored value appended
 ;
-#X obj 74 142 cyclone/Append FOO;
+#X obj 74 142 nilwind/Append FOO;
 #X connect 12 0 31 0;
 #X connect 13 0 31 0;
 #X connect 14 0 31 0;

@@ -44,7 +44,7 @@ signal;
 #X obj 79 339 tabwrite~ \$0-signal;
 #X obj 516 4 log~;
 #X text 8 23 outputs the log (to a specified base) of a signal;
-#X obj 78 209 cyclone/log~;
+#X obj 78 209 nilwind/log~;
 #X text 230 223 0;
 #X text 218 353 -23;
 #X obj 454 255 *~ 0.05;

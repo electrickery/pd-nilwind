@@ -5,7 +5,7 @@
 ;
 #N canvas 587 176 387 341 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 160 LIBRARY cyclone;
+#X text 0 160 LIBRARY nilwind;
 #X text 0 0 KEYWORDS smaller min minimum compare;
 #X text 0 40 DESCRIPTION output only numbers smaller than the previous
 ;
@@ -68,7 +68,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 501 11 Trough;
 #X text 113 488 float;
 #X text 113 513 float;
-#X obj 107 213 cyclone/Trough 4;
+#X obj 107 213 nilwind/Trough 4;
 #X text 95 616 minimum value is set;
 #X text 181 357 - value;
 #X text 181 379 - sends current minimum value out the left outlet;

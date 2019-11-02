@@ -5,7 +5,7 @@
 ;
 #N canvas 367 383 441 271 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 113 LIBRARY cyclone;
+#X text 0 113 LIBRARY nilwind;
 #X text 0 73 INLET_0 signal;
 #X text 0 93 OUTLET_0 signal;
 #X text 0 0 KEYWORDS boolean bitnot bitwise signal;
@@ -28,10 +28,10 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 158 549 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 7 27 cyclone/bitnot~;
-#X obj 7 54 cyclone/bitor~;
-#X obj 7 77 cyclone/bitxor~;
-#X obj 109 28 cyclone/bitshift~;
+#X obj 7 27 nilwind/bitnot~;
+#X obj 7 54 nilwind/bitor~;
+#X obj 7 77 nilwind/bitxor~;
+#X obj 109 28 nilwind/bitshift~;
 #X restore 210 525 pd Related_objects;
 #X obj 84 412 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -61,8 +61,8 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 66 296 output~;
 #X text 64 93 bitwise boolean operation;
 #X text 64 105 on a signal as bits;
-#X obj 341 187 cyclone/bitnot~ 1;
-#X obj 67 184 cyclone/bitnot~;
+#X obj 341 187 nilwind/bitnot~ 1;
+#X obj 67 184 nilwind/bitnot~;
 #X text 20 53 Works on floating point signal as bits or as an integer
 by inverting all bits.;
 #X text 175 457 - modes (defaults to 0):;

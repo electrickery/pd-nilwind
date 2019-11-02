@@ -5,7 +5,7 @@
 ;
 #N canvas 597 264 368 237 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 120 LIBRARY cyclone;
+#X text 0 120 LIBRARY nilwind;
 #X text 0 0 KEYWORDS scale exponential line;
 #X text 0 40 DESCRIPTION scale numbers exponentially for use with line~
 ;
@@ -32,7 +32,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
 #X obj 128 33 line~;
-#X obj 7 33 cyclone/Line~;
+#X obj 7 33 nilwind/Line~;
 #X obj 127 56 expr;
 #X restore 203 754 pd Related_objects;
 #X obj 79 410 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
@@ -74,8 +74,8 @@ from 2*dB to linear amplitude with 127 becoming 1;
 #X msg 118 88 63;
 #X msg 313 88 1000;
 #X msg 353 88 5000;
-#X obj 118 165 cyclone/linedrive 127 1 1.06 5000;
-#X obj 117 345 cyclone/Snapshot~ 100;
+#X obj 118 165 nilwind/linedrive 127 1 1.06 5000;
+#X obj 117 345 nilwind/Snapshot~ 100;
 #X floatatom 117 369 8 0 0 0 - - -;
 #X obj 173 370 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;

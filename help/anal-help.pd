@@ -4,7 +4,7 @@
 #X obj 1 293 cnv 3 550 3 empty empty inlets 8 12 0 13 -228856 -1 0
 ;
 #N canvas 680 328 424 288 META 0;
-#X text 1 101 LIBRARY cyclone;
+#X text 1 101 LIBRARY nilwind;
 #X text 0 122 VERSION 0.2-beta1;
 #X text 1 142 AUTHOR Krzysztof Czaja;
 #X text 1 162 RELEASE_DATE 2002;
@@ -30,7 +30,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 6 1 Related Objects;
 #X obj 9 29 +;
 #X obj 38 29 *;
-#X obj 8 50 cyclone/Histo;
+#X obj 8 50 nilwind/Histo;
 #X restore 196 508 pd Related_objects;
 #X obj 1 0 cnv 15 552 40 empty empty anal 3 12 0 18 -204280 -1 0;
 #X text 99 301 float;
@@ -58,7 +58,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 187 418 3 - the times the last two number are received in combination
 ;
 #X text 187 390 1 - the number received before the latest;
-#X obj 99 166 cyclone/anal 32;
+#X obj 99 166 nilwind/anal 32;
 #X text 174 469 - initialises the size of the number pair array. 128
 is the default 1024 is max;
 #X text 12 21 generates a histogram of number pairs received;

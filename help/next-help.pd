@@ -5,7 +5,7 @@
 ;
 #N canvas 615 265 357 242 META 0;
 #X text 1 20 LICENSE SIBSD;
-#X text 1 120 LIBRARY cyclone;
+#X text 1 120 LIBRARY nilwind;
 #X text 1 0 KEYWORDS separate messages logic;
 #X text 1 40 DESCRIPTION separate messages into logical parts;
 #X text 1 60 INLET_0 list float bang;
@@ -81,7 +81,7 @@ stream;
 #X text 292 416 event counters;
 #X text 80 363 reset;
 #X msg 94 203 bang;
-#X obj 166 272 cyclone/next;
+#X obj 166 272 nilwind/next;
 #X text 253 345 same event;
 #X text 146 346 not same event;
 #X connect 16 0 38 0;

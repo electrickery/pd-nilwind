@@ -5,7 +5,7 @@
 ;
 #N canvas 575 228 385 258 META 0;
 #X text 0 19 LICENSE SIBSD;
-#X text 0 114 LIBRARY cyclone;
+#X text 0 114 LIBRARY nilwind;
 #X text 0 0 KEYWORDS histogram count generate;
 #X text 0 38 DESCRIPTION generates a histogram of the received numbers
 ;
@@ -29,7 +29,7 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 298 380 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 6 29 cyclone/anal;
+#X obj 6 29 nilwind/anal;
 #X restore 199 450 pd Related_objects;
 #X obj 85 272 cnv 17 3 65 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -59,7 +59,7 @@ adapted the patch to pd-extended 2015-02-02;
 inlet;
 #X text 172 304 - clear: erase received numbers;
 #X text 113 423 (none);
-#X obj 161 165 cyclone/Histo;
+#X obj 161 165 nilwind/Histo;
 #X obj 87 50 vradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
 -1 0;
 #X floatatom 87 177 5 0 0 0 - - -;

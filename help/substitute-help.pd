@@ -5,7 +5,7 @@
 ;
 #N canvas 613 201 357 237 META 0;
 #X text 0 19 LICENSE SIBSD;
-#X text 0 127 LIBRARY cyclone;
+#X text 0 127 LIBRARY nilwind;
 #X text 0 0 KEYWORDS substitute symbol replace;
 #X text 0 38 DESCRIPTION substitute a symbol for another symbol in
 a message;
@@ -52,7 +52,7 @@ to if see str1 change to str2;
 #X text 90 370 2) string;
 #X text 184 352 - string to search for;
 #X text 184 370 - string to replace with;
-#X obj 84 141 cyclone/substitute foo boo;
+#X obj 84 141 nilwind/substitute foo boo;
 #X msg 54 47 far boo;
 #X msg 84 69 bar foo;
 #X obj 84 201 print sub;

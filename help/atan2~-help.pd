@@ -4,7 +4,7 @@
 #X obj 0 369 cnv 3 550 3 empty empty inlets 8 12 0 13 -228856 -1 0
 ;
 #N canvas 571 347 385 259 META 0;
-#X text 0 117 LIBRARY cyclone;
+#X text 0 117 LIBRARY nilwind;
 #X text 0 135 VERSION 0.2-beta1;
 #X text 0 153 AUTHOR Krzysztof Czaja;
 #X text 1 171 RELEASE_DATE 2002;
@@ -29,23 +29,23 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 352 486 427 125 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 7 73 cyclone/acosh~;
-#X obj 8 26 cyclone/acos;
-#X obj 107 73 cyclone/asinh~;
-#X obj 108 49 cyclone/asin~;
-#X obj 204 48 cyclone/atan~;
-#X obj 204 73 cyclone/atanh~;
-#X obj 7 120 cyclone/cosh~;
-#X obj 7 97 cyclone/cosh;
-#X obj 7 145 cyclone/cosx~;
-#X obj 7 50 cyclone/acos~;
-#X obj 108 27 cyclone/asin;
-#X obj 108 97 cyclone/sinh;
-#X obj 107 120 cyclone/sinh~;
-#X obj 107 144 cyclone/sinx~;
-#X obj 204 96 cyclone/tanh;
-#X obj 205 119 cyclone/tanh~;
-#X obj 204 143 cyclone/tanx~;
+#X obj 7 73 nilwind/acosh~;
+#X obj 8 26 nilwind/acos;
+#X obj 107 73 nilwind/asinh~;
+#X obj 108 49 nilwind/asin~;
+#X obj 204 48 nilwind/atan~;
+#X obj 204 73 nilwind/atanh~;
+#X obj 7 120 nilwind/cosh~;
+#X obj 7 97 nilwind/cosh;
+#X obj 7 145 nilwind/cosx~;
+#X obj 7 50 nilwind/acos~;
+#X obj 108 27 nilwind/asin;
+#X obj 108 97 nilwind/sinh;
+#X obj 107 120 nilwind/sinh~;
+#X obj 107 144 nilwind/sinx~;
+#X obj 204 96 nilwind/tanh;
+#X obj 205 119 nilwind/tanh~;
+#X obj 204 143 nilwind/tanx~;
 #X obj 309 23 cos~;
 #X restore 206 509 pd Related_objects;
 #X obj 84 426 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
@@ -61,7 +61,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 102 202 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 96 64 cycle~ 200;
-#X obj 95 126 cyclone/atan2~;
+#X obj 95 126 nilwind/atan2~;
 #X text 10 45 turn a sine wave into a square wave;
 #X text 11 23 Standard C function for arctan(y/x);
 #X text 176 383 - signal to take arctan(x/y) of. almost every symetrical

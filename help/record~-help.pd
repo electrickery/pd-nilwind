@@ -5,7 +5,7 @@
 ;
 #N canvas 621 318 349 250 META 0;
 #X text 0 19 LICENSE SIBSD;
-#X text 0 133 LIBRARY cyclone;
+#X text 0 133 LIBRARY nilwind;
 #X text 0 114 OUTLET_0 signal;
 #X text 0 0 KEYWORDS signal read write sample record;
 #X text 0 38 DESCRIPTION read and write sample values;
@@ -101,14 +101,14 @@ empty -2 -8 0 10 -262144 -262144 -262144 0 1;
 #X restore 50 247 graph;
 #X text 134 241 1;
 #X text 129 291 -1;
-#X obj 38 166 cyclone/record~ smp 2;
+#X obj 38 166 nilwind/record~ smp 2;
 #X text 6 5 multi channel;
 #X connect 0 0 14 0;
 #X connect 0 1 14 1;
 #X connect 1 0 14 0;
 #X restore 459 447 pd More...;
-#X obj 264 487 cyclone/Snapshot~;
-#X obj 264 381 cyclone/record~ \$0-recordTable;
+#X obj 264 487 nilwind/Snapshot~;
+#X obj 264 381 nilwind/record~ \$0-recordTable;
 #X obj 340 216 f \$0;
 #X msg 339 239 set \$1-recordTable;
 #X obj 373 217 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144

@@ -5,7 +5,7 @@
 ;
 #N canvas 613 291 368 238 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 120 LIBRARY cyclone;
+#X text 0 120 LIBRARY nilwind;
 #X text 0 80 INLET_1 float;
 #X text 0 0 KEYWORDS max maximum greatesst list;
 #X text 0 40 DESCRIPTION output the greatest in a list of numbers;
@@ -63,8 +63,8 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 297 50 comparing floats in a list;
 #X msg 315 112 5 7 9 8 6 4;
 #X text 414 83 in list compare mode \,;
-#X obj 299 186 cyclone/maximum;
-#X obj 82 186 cyclone/maximum 12;
+#X obj 299 186 nilwind/maximum;
+#X obj 82 186 nilwind/maximum 12;
 #X text 149 82 change the current;
 #X text 149 95 maximum value;
 #X text 181 337 - output if higher than current value \, otherwise

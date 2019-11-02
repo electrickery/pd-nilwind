@@ -5,7 +5,7 @@
 -228856 -1 0;
 #N canvas 606 302 357 233 META 0;
 #X text 1 20 LICENSE SIBSD;
-#X text 1 113 LIBRARY cyclone;
+#X text 1 113 LIBRARY nilwind;
 #X text 1 73 INLET_0 signal;
 #X text 1 93 OUTLET_0 signal;
 #X text 1 0 KEYWORDS signal phase deviation frames FFT;
@@ -61,9 +61,9 @@ deviation;
 input signal vector from those of the current vector;
 #X text 22 22 computes the phase deviation between successive FFT frames
 ;
-#X obj 238 144 cyclone/framedelta~;
-#X obj 101 201 cyclone/Snapshot~ 100;
-#X obj 238 201 cyclone/Snapshot~ 100;
+#X obj 238 144 nilwind/framedelta~;
+#X obj 101 201 nilwind/Snapshot~ 100;
+#X obj 238 201 nilwind/Snapshot~ 100;
 #X obj 519 223 dspSwitch~;
 #X connect 15 0 17 0;
 #X connect 17 0 24 0;

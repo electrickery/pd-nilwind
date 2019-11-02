@@ -1,21 +1,32 @@
 TODO for cyclone
   * add folder class, so people forget about using tot for that purpose
   * plug import into file/open
-
-DONE for cyclone
-
-  * removed thread functionality from coll-help
-  * merged pull request #10 to allow external pd-lib-builder
+  * reduce the number of warnings by:
+    * initializing variables
+    * adding parentheses
+    * removed unused variable
+  
+02-beta4
+  * enlarged message buffer for Tk-message in Scope_drawfgxy to accomodate 
+    larger int sizes.
 
 02.-beta3
+  * removed thread functionality from coll-help (only the relevant Windows 
+    binary released)
+  * merged pull request #10 to allow external pd-lib-builder
   * fixed building cyclist in Makefile on Windows
-  * removed the thread functionality from coll as it causes distribution problems for Windows. Coll is not a very good object, so is not considered worth the trouble.
+  * removed the thread functionality from coll as it causes distribution 
+    problems for Windows. 
+    Coll is not a very good object, so is not considered worth the trouble if
+    adding collection loading without audio hicccup.
 
 0.2-beta2
-  * added copying some thread related DLLs to the Makefile. This is a real kludge, as there is no way to locate these files.
+  * added copying some thread related DLLs to the Makefile. This is a real
+    kludge, as there is no way to locate these files.
   * fixed som ereported bugs
   * replaced teeth~ abstraction by a real object
-  * added support for cyclist, and improved its API somewhat. It is intended to convert compressed Max 4.x patches to uncompressed versions.
+  * added support for cyclist, and improved its API somewhat. It is intended to 
+    convert compressed Max 4.x patches to uncompressed versions.
   * fixed [bufsize) thop in Scope~
 
 0.2-beta1
@@ -29,7 +40,9 @@ DONE for cyclone
   * added "pause", "resume" and "stop" messages and behaviour,
   * fixed poltocar~ phase polarity
   * fixed rand~ argument,
-  * changed in arsic/vefl.c the call of garray_getfloatarray to garray_getfloatwords and the calling code in buffir~, index~, lookup~, peek~, play~, poke~, record~ and wave~ perform methods,
+  * changed in arsic/vefl.c the call of garray_getfloatarray to 
+    garray_getfloatwords and the calling code in buffir~, index~, lookup~, 
+    peek~, play~, poke~, record~ and wave~ perform methods,
   * fixed the file handling in funbuff,
   * fixed the seed argument in decide, and made normal behaviour more random.
 

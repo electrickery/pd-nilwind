@@ -5,7 +5,7 @@
 ;
 #N canvas 524 307 398 281 META 0;
 #X text 1 20 LICENSE SIBSD;
-#X text 1 140 LIBRARY cyclone;
+#X text 1 140 LIBRARY nilwind;
 #X text 1 0 KEYWORDS send 1/0 binary specific;
 #X text 1 40 DESCRIPTION send out 1/0 to a specific outlet;
 #X text 1 120 OUTLET_N float;
@@ -59,7 +59,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 80 323 cnv 17 3 17 empty empty 2 5 9 0 16 -228856 -162280 0
 ;
 #X text 111 322 toggle;
-#X obj 184 164 cyclone/Decode 3;
+#X obj 184 164 nilwind/Decode 3;
 #X text 180 321 - disable all outlets (overrides inlet 1);
 #X obj 277 231 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;

@@ -5,7 +5,7 @@
 ;
 #N canvas 373 345 428 264 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 100 LIBRARY cyclone;
+#X text 0 100 LIBRARY nilwind;
 #X text 0 80 OUTLET_0 signal;
 #X text 0 0 KEYWORDS signal impulse band;
 #X text 0 40 DESCRIPTION generate an impulse;
@@ -47,7 +47,7 @@ samples);
 #X text 164 375 - signal based on impulse value stored;
 #X text 84 422 1) float;
 #X obj 502 4 click~;
-#X obj 69 158 cyclone/click~;
+#X obj 69 158 nilwind/click~;
 #X obj 69 236 output~;
 #X obj 69 76 t b b;
 #X obj 69 53 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1

@@ -5,7 +5,7 @@
 ;
 #N canvas 599 279 373 266 META 0;
 #X text 1 19 LICENSE SIBSD;
-#X text 1 152 LIBRARY cyclone;
+#X text 1 152 LIBRARY nilwind;
 #X text 1 76 INLET_1 float;
 #X text 1 114 OUTLET_0 float;
 #X text 1 0 KEYWORDS min max minimum maximum range;
@@ -61,7 +61,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 112 401 float;
 #X text 204 401 - output if number from inlet 0 in range;
 #X text 112 425 float;
-#X obj 81 176 cyclone/split 10 20;
+#X obj 81 176 nilwind/split 10 20;
 #X text 204 342 - set minimum;
 #X text 204 367 - set maximum;
 #X text 204 462 - initial minimum;

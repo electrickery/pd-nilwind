@@ -5,7 +5,7 @@
 ;
 #N canvas 618 277 360 227 META 0;
 #X text 1 19 LICENSE SIBSD;
-#X text 1 95 LIBRARY cyclone;
+#X text 1 95 LIBRARY nilwind;
 #X text 1 76 OUTLET_0 signal;
 #X text 1 0 KEYWORDS signal sample playback play position;
 #X text 1 38 DESCRIPTION position based sample playback;
@@ -27,7 +27,7 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 320 399 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 70 47 cyclone/index~;
+#X obj 70 47 nilwind/index~;
 #X restore 208 566 pd Related_objects;
 #X obj 81 387 cnv 17 3 35 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -100,7 +100,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X restore 397 133 pd sampFreq;
 #X floatatom 397 160 5 0 0 0 - - -;
 #X text 181 386 - signal to control positional playback in ms;
-#X obj 299 227 cyclone/play~ \$0-voice;
+#X obj 299 227 nilwind/play~ \$0-voice;
 #X msg 80 279 read -resize voice.wav \$1-voice;
 #X obj 156 337 table \$0-voice;
 #X connect 23 0 30 0;

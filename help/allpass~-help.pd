@@ -5,7 +5,7 @@
 ;
 #N canvas 378 396 407 280 META 0;
 #X text 0 19 LICENSE SIBSD;
-#X text 0 133 LIBRARY cyclone;
+#X text 0 133 LIBRARY nilwind;
 #X text 0 57 INLET_0 signal;
 #X text 0 0 KEYWORDS filter pass;
 #X text 0 76 INLET_1 float delay time;
@@ -31,8 +31,8 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 128 614 428 72 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 15 36 cyclone/svf~;
-#X obj 103 37 cyclone/comb~;
+#X obj 15 36 nilwind/svf~;
+#X obj 103 37 nilwind/comb~;
 #X restore 202 667 pd Related_objects;
 #X obj 82 403 cnv 17 3 25 empty empty 1 5 9 0 16 -228856 -162280 0
 ;
@@ -92,7 +92,7 @@ does this by varying its propogation delay with frequency.;
 #X obj 146 308 output~;
 #X text 97 530 1) float - maximum delay time (default 10ms);
 #X text 97 543 2) float - initial delay time;
-#X obj 145 241 cyclone/allpass~ 100 4 0.7;
+#X obj 145 241 nilwind/allpass~ 100 4 0.7;
 #X text 97 555 3) float - initial gain coefficient;
 #X text 199 121 specified using signals. When;
 #X text 114 377 clear;

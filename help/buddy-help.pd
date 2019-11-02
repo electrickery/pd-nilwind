@@ -53,7 +53,7 @@ data in parallel simultaneously.;
 #X text 12 23 sync inputs when all inlets receive data;
 #X text 52 95 stored values;
 #X text 52 82 clear all;
-#X obj 189 168 cyclone/buddy 3;
+#X obj 189 168 nilwind/buddy 3;
 #X text 112 333 float;
 #X connect 12 0 28 0;
 #X connect 13 0 28 1;

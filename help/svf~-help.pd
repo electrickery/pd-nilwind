@@ -5,7 +5,7 @@
 ;
 #N canvas 617 315 365 289 META 0;
 #X text 0 18 LICENSE SIBSD;
-#X text 0 180 LIBRARY cyclone;
+#X text 0 180 LIBRARY nilwind;
 #X text 0 0 KEYWORDS signal filter state variable state-variable cutoff
 ;
 #X text 0 36 DESCRIPTION state-variable filter;
@@ -152,7 +152,7 @@ in radians input mode);
 #X text 179 710 - initial resonance (0-1);
 #X obj 109 381 *~ 0.7;
 #X obj 109 410 output~;
-#X obj 109 261 cyclone/svf~ 797 0.5;
+#X obj 109 261 nilwind/svf~ 797 0.5;
 #X connect 30 0 48 0;
 #X connect 32 0 63 0;
 #X connect 33 0 49 0;

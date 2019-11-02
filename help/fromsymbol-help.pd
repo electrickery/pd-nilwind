@@ -5,7 +5,7 @@
 ;
 #N canvas 600 370 364 234 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 100 LIBRARY cyclone;
+#X text 0 100 LIBRARY nilwind;
 #X text 0 0 KEYWORDS symbol transform messages numbers;
 #X text 0 60 INLET_0 symbol list;
 #X text 0 80 OUTLET_0 list;
@@ -28,7 +28,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
 #X obj 124 35 symbol;
-#X obj 10 35 cyclone/tosymbol;
+#X obj 10 35 nilwind/tosymbol;
 #X restore 200 509 pd Related_objects;
 #X obj 79 369 cnv 17 3 37 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -66,10 +66,10 @@ symbols;
 #X text 428 189 ...becomes a symbol;
 #X text 384 311 ...and can be transformed;
 #X text 402 325 back into a list;
-#X obj 35 164 cyclone/tosymbol;
-#X obj 35 240 cyclone/fromsymbol;
-#X obj 255 169 cyclone/tosymbol;
-#X obj 255 240 cyclone/fromsymbol;
+#X obj 35 164 nilwind/tosymbol;
+#X obj 35 240 nilwind/fromsymbol;
+#X obj 255 169 nilwind/tosymbol;
+#X obj 255 240 nilwind/fromsymbol;
 #X obj 72 139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 81 318 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -77,7 +77,7 @@ symbols;
 #X obj 35 291 route float bang;
 #X text 446 201 with spaces...;
 #X text 171 368 - the symbol to be transformed;
-#X obj 160 90 cyclone/tosymbol;
+#X obj 160 90 nilwind/tosymbol;
 #X connect 17 0 37 0;
 #X connect 20 0 35 0;
 #X connect 35 0 36 0;

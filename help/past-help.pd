@@ -17,7 +17,7 @@
 Wilkes for Pd-extended 0.42 to conform to the PDDP template. Alex Cleveland
 updated this patch for Pd-l2ork version 2013.05.28. Fred Jan Kraan
 adapted the patch to pd-extended 2015-02-02;
-#X text 1 109 LIBRARY cyclone;
+#X text 1 109 LIBRARY nilwind;
 #X text 0 39 DESCRIPTION report when input increases beyond a certain
 number;
 #X restore 500 506 pd META;
@@ -73,8 +73,8 @@ list;
 #X text 67 25 now theses are a bit strange:;
 #X text 23 265 this is a quote from an email Krzysztof Czaja sent:
 ;
-#X obj 70 182 cyclone/past 2 5;
-#X obj 295 186 cyclone/past 10 20 30;
+#X obj 70 182 nilwind/past 2 5;
+#X obj 295 186 nilwind/past 10 20 30;
 #X obj -1 3 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0
 ;
 #X text 2 4 different behaviour for floats and lists;
@@ -93,7 +93,7 @@ list;
 #X connect 19 0 0 0;
 #X connect 20 0 9 0;
 #X restore 426 187 pd weirdness;
-#X obj 85 158 cyclone/past 4;
+#X obj 85 158 nilwind/past 4;
 #X obj 0 452 cnv 3 550 3 empty empty more_info 8 12 0 13 -228856 -1
 0;
 #X text 222 187 list behaviour is a bit strange:;

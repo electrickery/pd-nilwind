@@ -1,6 +1,6 @@
 # Makefile for pure data externals in lib cyclone
 
-lib.name = cyclone
+lib.name = nilwind
 
 # for the MINGW which has the timespec struct defined twice
 cflags = -Ishared -DHAVE_STRUCT_TIMESPEC
@@ -353,7 +353,7 @@ help/test.mid \
 help/voice.wav \
 LICENSE.txt \
 README.md \
-cyclone-meta.pd
+nilwind-meta.pd
 
 
 ################################################################################
@@ -366,13 +366,15 @@ cyclone-meta.pd
 
 externalsdir = ../..
 
-PDLIBBUILDER_DIR=.
+-include ../Makefile.cross
+
+PDLIBBUILDER_DIR ?= .
 include $(firstword $(wildcard $(PDLIBBUILDER_DIR)/Makefile.pdlibbuilder \
   $(externalsdir)/Makefile.pdlibbuilder))
 
 
 ################################################################################
-### cyclone extra targets ######################################################
+### nilwind extra targets ######################################################
 ################################################################################
 
 install: install-aliases install-cyclist

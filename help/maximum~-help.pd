@@ -5,7 +5,7 @@
 ;
 #N canvas 602 233 360 245 META 0;
 #X text 0 20 LICENSE SIBSD;
-#X text 0 120 LIBRARY cyclone;
+#X text 0 120 LIBRARY nilwind;
 #X text 0 100 OUTLET_0 signal;
 #X text 0 0 KEYWORDS signal max maximum;
 #X text 0 40 DESCRIPTION output the maximum of two signals;
@@ -59,11 +59,11 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 286 45 outputs the current maximum;
 #X obj 306 82 cycle~ 200;
 #X obj 399 82 cycle~ 314;
-#X obj 47 162 cyclone/maximum~ 0.5;
+#X obj 47 162 nilwind/maximum~ 0.5;
 #X obj 305 175 tabwrite~ \$0maximum;
-#X obj 305 131 cyclone/maximum~;
+#X obj 305 131 nilwind/maximum~;
 #X obj 224 306 output~;
-#X obj 47 215 cyclone/Snapshot~ 100;
+#X obj 47 215 nilwind/Snapshot~ 100;
 #X obj 313 157 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 309 201 1;

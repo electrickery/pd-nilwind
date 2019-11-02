@@ -5,7 +5,7 @@
 ;
 #N canvas 617 192 359 207 META 0;
 #X text 0 19 LICENSE SIBSD;
-#X text 0 95 LIBRARY cyclone;
+#X text 0 95 LIBRARY nilwind;
 #X text 0 76 OUTLET_0 signal;
 #X text 0 0 KEYWORDS signal wrap -pi pi phase;
 #X text 0 38 DESCRIPTION wrap a signal between -pi and pi;
@@ -47,12 +47,12 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 178 384 - the wrapped signal;
 #X text 113 424 (none);
 #X text 20 54 modify the incoming signal;
-#X obj 29 174 cyclone/phasewrap~;
-#X obj 30 248 cyclone/Snapshot~ 100;
+#X obj 29 174 nilwind/phasewrap~;
+#X obj 30 248 nilwind/Snapshot~ 100;
 #X text 93 270 wrapped output;
 #X text 24 295 (always in the range of -pi to pi);
 #X obj 277 103 *~ 1;
-#X obj 277 161 cyclone/phasewrap~;
+#X obj 277 161 nilwind/phasewrap~;
 #X obj 312 216 metro 100;
 #X obj 293 217 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;

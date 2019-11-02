@@ -157,7 +157,7 @@ void teeth_tilde_setup(void)
   CLASS_MAINSIGNALIN(teeth_class, /* pointer to the class struct */
 		     t_teeth,    /* pointer to the object struct */
 		     f);	      /* dummy variable */
-//    logpost(NULL, 4, "this is cyclone/teeth~ %s, %dth %s build",
+//    logpost(NULL, 4, "this is nilwind/teeth~ %s, %dth %s build",
 //	CYCLONE_VERSION, CYCLONE_BUILD, CYCLONE_RELEASE);		     
 }
 

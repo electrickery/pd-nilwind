@@ -5,7 +5,7 @@
 ;
 #N canvas 599 282 358 193 META 0;
 #X text 2 18 LICENSE SIBSD;
-#X text 2 72 LIBRARY cyclone;
+#X text 2 72 LIBRARY nilwind;
 #X text 2 54 INLET_0 anything;
 #X text 2 0 KEYWORDS send remote message;
 #X text 2 36 DESCRIPTION send remote messages;
@@ -52,7 +52,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 437 139 receive bar;
 #X text 112 349 (none);
 #X text 315 111 receive remotely gets the message;
-#X obj 48 224 cyclone/forward foo;
+#X obj 48 224 nilwind/forward foo;
 #X text 180 396 - initial receiver;
 #X text 140 137 select receiver;
 #X text 112 290 send;
