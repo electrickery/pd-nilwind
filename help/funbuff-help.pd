@@ -45,8 +45,6 @@ goto interp interptab min next paste print read select set undo write
 #X obj 85 814 cnv 17 3 17 empty empty 1 5 9 0 16 -228856 -162280 0
 ;
 #X text 13 23 store x \, y pairs of numbers together;
-#X obj 500 9 funbuff;
-#C restore;
 #N canvas 424 299 618 472 more 0;
 #X msg 22 30 1 10 \, 2 20 \, 3 3.33;
 #X floatatom 137 124 5 0 0 0 - - -;
@@ -263,15 +261,17 @@ next greater x is send.;
 #X text 179 896 - on a next message the difference with the previous
 x value is send;
 #X msg 126 66 1 11 \, 2 22 \, 4 44 \, 8 88;
-#X connect 14 0 73 0;
-#X connect 14 1 75 0;
-#X connect 14 2 20 0;
-#X connect 15 0 14 0;
-#X connect 16 0 14 0;
-#X connect 17 0 14 0;
-#X connect 18 0 14 0;
-#X connect 19 0 14 0;
-#X connect 74 0 14 0;
-#X connect 76 0 14 0;
-#X connect 77 0 14 0;
-#X connect 79 0 14 0;
+#X obj 454 7 nilwind/funbuff;
+#C restore;
+#X connect 13 0 72 0;
+#X connect 13 1 74 0;
+#X connect 13 2 19 0;
+#X connect 14 0 13 0;
+#X connect 15 0 13 0;
+#X connect 16 0 13 0;
+#X connect 17 0 13 0;
+#X connect 18 0 13 0;
+#X connect 73 0 13 0;
+#X connect 75 0 13 0;
+#X connect 76 0 13 0;
+#X connect 78 0 13 0;

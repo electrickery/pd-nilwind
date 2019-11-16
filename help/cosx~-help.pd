@@ -60,7 +60,6 @@ values between 0 and 2pi (unlike cos~ which is designed to work with
 phasor~'s output from 0 to 1);
 #X text 168 335 - input to cos function;
 #X text 168 371 - output of cos function;
-#X obj 508 4 cosx~;
 #X text 312 45 cosine function (cos(x)) for signals;
 #X obj 79 335 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -73,7 +72,7 @@ phasor~'s output from 0 to 1);
 #X text 40 169 1;
 #X text 33 299 -1;
 #X obj 52 174 hsl 195 140 0 127 0 0 blank_outlet blank_inlet empty
--2 -8 0 10 -262144 -262144 -262144 3300 1;
+-2 -8 0 10 -262144 -262144 -262144 0 1;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array osc-cosx 1024 float 1;
 #A 0 -0.961646 -0.96977 -0.976941 -0.983153 -0.988398 -0.992673 -0.995972
@@ -217,9 +216,10 @@ phasor~'s output from 0 to 1);
 -0.961661 -0.952594 -0.942591 -0.931662;
 #X coords 0 1 1023 -1 200 140 1 0 0;
 #X restore 49 174 graph;
-#X connect 12 0 22 0;
-#X connect 19 0 20 0;
-#X connect 22 0 20 0;
-#X connect 22 0 21 0;
-#X connect 22 0 21 1;
-#X connect 23 0 12 0;
+#X obj 457 4 nilwind/cosx~;
+#X connect 12 0 21 0;
+#X connect 18 0 19 0;
+#X connect 21 0 19 0;
+#X connect 21 0 20 0;
+#X connect 21 0 20 1;
+#X connect 22 0 12 0;

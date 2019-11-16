@@ -1,47 +1,34 @@
-#N canvas 456 349 569 596 10;
+#N canvas 660 76 569 596 10;
 #X declare -lib nettles;
-#X obj 23 165 ==~;
-#X obj 23 240 !=~;
-#X obj 23 265 <~;
-#X obj 23 290 >~;
-#X obj 23 321 <=~;
-#X obj 23 350 >=~;
-#X obj 23 409 !/~;
-#X obj 23 443 %~;
-#X obj 23 523 +=~;
-#X obj 23 190 _==1~;
-#X obj 23 215 _==2~;
-#X obj 23 91 !-;
-#X obj 23 115 !/;
-#X obj 23 380 !-~;
-#X text 71 190 sigeq - outlet is 1 when inlets are equal as floats
+#X text 106 190 sigeq - outlet is 1 when inlets are equal as floats
 ;
-#X text 72 164 sigeq - outlet is 1 when inlets are equal as ints?;
+#X text 107 164 sigeq - outlet is 1 when inlets are equal as ints?
+;
 #X msg 23 140 _algo n;
-#X text 85 141 switch mode: 0 \, 1 \, 2;
-#X text 71 114 rdiv : output = right inlet / left inlet;
-#X text 70 91 rminus : output = right inlet - left inlet;
-#X text 72 241 signeq : output = 1 when inlets are unequal;
-#X text 72 266 siglt : output = 1 when left inlet is larger than right
+#X text 120 141 switch mode: 0 \, 1 \, 2;
+#X text 106 114 rdiv : output = right inlet / left inlet;
+#X text 105 91 rminus : output = right inlet - left inlet;
+#X text 107 241 signeq : output = 1 when inlets are unequal;
+#X text 107 266 siglt : output = 1 when left inlet is larger than right
 ;
-#X text 68 521 sigaccum : is the accumulation of all previous samples
+#X text 103 521 sigaccum : is the accumulation of all previous samples
 ;
-#X text 74 409 sigrover : outlet is the remainder of the left inlet
+#X text 109 409 sigrover : outlet is the remainder of the left inlet
 divided by the right inlet;
-#X text 74 442 sigmod : outlet is the right inlet divided through the
-left inlet;
-#X text 73 379 sigrminus : outlet = 1 when inlets are unequal;
-#X text 73 350 siggeq : outlet = 1 when left inlet is greater or equal
+#X text 109 442 sigmod : outlet is the right inlet divided through
+the left inlet;
+#X text 108 379 sigrminus : outlet = 1 when inlets are unequal;
+#X text 108 350 siggeq : outlet = 1 when left inlet is greater or equal
 than right;
-#X text 73 321 sigleq : outlet = 1 when left inlet is less or equal
+#X text 108 321 sigleq : outlet = 1 when left inlet is less or equal
 than right;
-#X text 72 289 siggt : outlet = 1 when left inlet is greater than right
-;
+#X text 107 289 siggt : outlet = 1 when left inlet is greater than
+right;
 #X obj 22 503 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 21 482 set 0;
-#X text 67 481 set sum to a value;
-#X text 69 502 set sum to 0;
+#X text 102 481 set sum to a value;
+#X text 104 502 set sum to 0;
 #X obj 0 557 cnv 15 552 21 empty empty empty 20 12 0 14 -233017 -33289
 0;
 #N canvas 319 385 428 109 Related_objects 0;
@@ -50,7 +37,7 @@ than right;
 #X restore 205 559 pd Related_objects;
 #X obj 0 0 cnv 15 552 40 empty empty nettles 3 12 0 18 -204280 -1 0
 ;
-#X text 72 214 sigeq - fast compare \, 8 samples at once;
+#X text 107 214 sigeq - fast compare \, 8 samples at once;
 #N canvas 616 258 377 299 META 0;
 #X text 0 20 LICENSE SIBSD;
 #X text 0 100 LIBRARY nilwind;
@@ -140,23 +127,23 @@ than right;
 #X obj 442 603 sig~;
 #X obj 396 659 Snapshot~ 100;
 #X obj 395 634 %~;
-#X floatatom 442 582 5 0 0 0 - - -, f 5;
-#X floatatom 394 582 5 0 0 0 - - -, f 5;
+#X floatatom 442 582 5 0 0 0 - - -;
+#X floatatom 394 582 5 0 0 0 - - -;
 #X text 390 543 sigrover : outlet is the remainder of the left inlet
 divided by the right inlet;
-#X floatatom 396 686 5 0 0 0 - - -, f 5;
+#X floatatom 396 686 5 0 0 0 - - -;
 #X obj 10 603 sig~;
 #X obj 58 603 sig~;
 #X obj 12 659 Snapshot~ 100;
-#X floatatom 58 582 5 0 0 0 - - -, f 5;
-#X floatatom 10 582 5 0 0 0 - - -, f 5;
-#X floatatom 12 686 5 0 0 0 - - -, f 5;
+#X floatatom 58 582 5 0 0 0 - - -;
+#X floatatom 10 582 5 0 0 0 - - -;
+#X floatatom 12 686 5 0 0 0 - - -;
 #X obj 11 634 !/~;
 #X text 4 542 sigmod : outlet is the right inlet divided through the
 left inlet;
 #X obj 777 621 sig~;
 #X obj 779 677 Snapshot~ 100;
-#X floatatom 779 704 8 0 0 0 - - -, f 8;
+#X floatatom 779 704 8 0 0 0 - - -;
 #X obj 778 652 +=~;
 #X obj 777 571 hradio 15 1 1 5 empty empty empty 0 -8 0 10 -262144
 -1 -1 2;
@@ -169,14 +156,14 @@ left inlet;
 -1 -1;
 #X msg 842 625 set 42;
 #X obj 0 0 cnv 15 552 40 empty empty empty 3 12 0 18 -204280 -1 0;
-#X floatatom 765 183 5 0 0 0 - - -, f 5;
+#X floatatom 765 183 5 0 0 0 - - -;
 #X text 759 52 sigrminus : outlet = left inlet minus right inlet;
 #X obj 777 467 dspSwitch~;
 #X obj 86 115 sig~;
 #X obj 134 115 sig~;
 #X obj 88 171 Snapshot~ 100;
-#X floatatom 134 94 5 0 0 0 - - -, f 5;
-#X floatatom 86 94 5 0 0 0 - - -, f 5;
+#X floatatom 134 94 5 0 0 0 - - -;
+#X floatatom 86 94 5 0 0 0 - - -;
 #X obj 87 146 ==~;
 #X msg 17 74 _algo 0;
 #X msg 18 94 _algo 1;
@@ -270,8 +257,8 @@ left inlet;
 #X msg 33 80 -1;
 #X text 28 55 rminus : output = right inlet - left inlet;
 #X text 25 219 rdiv : output = right inlet / left inlet;
-#X floatatom 59 176 5 0 0 0 - - -, f 5;
-#X floatatom 75 347 5 0 0 0 - - -, f 5;
+#X floatatom 59 176 5 0 0 0 - - -;
+#X floatatom 75 347 5 0 0 0 - - -;
 #X connect 2 0 16 0;
 #X connect 3 0 2 0;
 #X connect 4 0 2 1;
@@ -287,6 +274,20 @@ left inlet;
 #X restore 424 103 pd control ops;
 #X obj 413 44 declare -lib nettles;
 #X text 12 23 logical operators;
-#X connect 16 0 0 0;
-#X connect 29 0 8 0;
-#X connect 30 0 8 0;
+#X obj 23 91 nilwind/!-;
+#X obj 23 115 nilwind/!/;
+#X obj 23 165 nilwind/==~;
+#X obj 24 240 nilwind/!=~;
+#X obj 23 265 nilwind/<~;
+#X obj 23 290 nilwind/>~;
+#X obj 23 321 nilwind/<=~;
+#X obj 23 350 nilwind/>=~;
+#X obj 23 380 nilwind/!-~;
+#X obj 23 409 nilwind/!/~;
+#X obj 23 443 nilwind/%~;
+#X obj 23 523 nilwind/+=~;
+#X obj 23 190 nilwind/_==1~;
+#X obj 24 214 nilwind/_==2~;
+#X connect 2 0 30 0;
+#X connect 15 0 39 0;
+#X connect 16 0 39 0;

@@ -36,7 +36,6 @@ adapted the patch to pd-extended 2015-02-02;
 ;
 #X obj 0 0 cnv 15 552 40 empty empty universal 3 12 0 18 -204280 -1
 0;
-#X obj 483 12 universal;
 #X text 109 555 message;
 #X text 177 555 - message to send to all instances of same class in
 patch;
@@ -196,21 +195,22 @@ patch;
 #X text 93 645 1) float;
 #X text 177 645 - nonzero arg means all subpatches get the message
 too;
-#X text 46 336 send message to all objecs in patch and its subpatches:
+#X text 46 335 send message to all objecs in patch and its subpatches:
 ;
 #X text 43 52 send message to all objects of same class in patch:;
 #X msg 106 397 bng color 16;
 #X obj 63 204 nilwind/universal;
 #X obj 310 199 nilwind/universal;
 #X obj 94 439 nilwind/universal 1;
-#X connect 16 0 54 0;
-#X connect 17 0 56 0;
-#X connect 22 0 54 0;
-#X connect 23 0 54 0;
-#X connect 24 0 54 0;
-#X connect 41 0 55 0;
+#X obj 439 8 nilwind/universal;
+#X connect 15 0 53 0;
+#X connect 16 0 55 0;
+#X connect 21 0 53 0;
+#X connect 22 0 53 0;
+#X connect 23 0 53 0;
+#X connect 40 0 54 0;
+#X connect 41 0 40 0;
+#X connect 41 0 43 0;
 #X connect 42 0 41 0;
-#X connect 42 0 44 0;
-#X connect 43 0 42 0;
-#X connect 44 0 55 0;
-#X connect 53 0 56 0;
+#X connect 43 0 54 0;
+#X connect 52 0 55 0;

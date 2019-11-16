@@ -31,9 +31,9 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 262 480 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 12 31 select;
-#X obj 63 31 gate;
+#X obj 144 31 select;
 #X obj 102 31 route;
+#X obj 11 31 nilwind/gate;
 #X restore 201 492 pd Related_objects;
 #X obj 80 271 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -41,7 +41,6 @@ adapted the patch to pd-extended 2015-02-02;
 ;
 #X obj 0 0 cnv 15 552 40 empty empty Decode 3 12 0 18 -204280 -1 0
 ;
-#X obj 501 4 Decode;
 #X text 12 23 send out 1/0 to a specific outlet;
 #X obj 230 95 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
 ;
@@ -61,12 +60,12 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 111 322 toggle;
 #X obj 184 164 nilwind/Decode 3;
 #X text 180 321 - disable all outlets (overrides inlet 1);
-#X obj 277 231 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 277 231 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 230 231 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 230 231 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 234 245 1;
-#X obj 184 231 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 184 231 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 275 245 2 or more;
 #X text 148 245 0 or less;
@@ -83,12 +82,13 @@ than 0 \, it is send to the leftmost outlet;
 #X text 276 76 disable;
 #X text 203 64 write to all;
 #X text 180 295 - write 0 or 1 to all outlets;
-#X connect 12 0 24 1;
-#X connect 13 0 24 2;
-#X connect 24 0 29 0;
-#X connect 24 1 27 0;
-#X connect 24 2 26 0;
-#X connect 32 0 34 0;
-#X connect 33 0 24 0;
-#X connect 34 0 33 0;
-#X connect 37 0 24 0;
+#X obj 452 4 nilwind/Decode;
+#X connect 11 0 23 1;
+#X connect 12 0 23 2;
+#X connect 23 0 28 0;
+#X connect 23 1 26 0;
+#X connect 23 2 25 0;
+#X connect 31 0 33 0;
+#X connect 32 0 23 0;
+#X connect 33 0 32 0;
+#X connect 36 0 23 0;

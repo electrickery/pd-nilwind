@@ -62,7 +62,6 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 154 245 - the number to take acos of;
 #X text 154 306 - acos of input;
 #X text 154 266 - output acos of stored value;
-#X obj 517 2 acos;
 #X text 71 42 acos outputs the arccosine value of the input float value.
 ;
 #X obj 79 247 cnv 17 3 35 empty empty 0 5 9 0 16 -228856 -162280 0
@@ -76,7 +75,8 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 383 87 argument inside acos;
 #X text 383 102 object;
 #X text 11 21 arc-cosine(x) function;
-#X connect 8 0 27 0;
-#X connect 11 0 26 0;
-#X connect 26 0 10 0;
-#X connect 27 0 9 0;
+#X obj 461 2 nilwind/acos;
+#X connect 8 0 26 0;
+#X connect 11 0 25 0;
+#X connect 25 0 10 0;
+#X connect 26 0 9 0;

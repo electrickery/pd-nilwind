@@ -33,7 +33,6 @@ updated this patch for pd-extended 2014-12-02.;
 #X obj 84 443 cnv 17 3 17 empty empty 1 5 9 0 16 -228856 -162280 0
 ;
 #X obj 0 0 cnv 15 552 40 empty empty Line~ 3 12 0 18 -204280 -1 0;
-#X obj 511 10 Line~;
 #X text 12 24 Generate signal ramp or envelope;
 #X text 111 392 float;
 #X obj 84 485 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
@@ -64,17 +63,18 @@ inlet;
 #X obj 149 309 nilwind/Snapshot~ 100;
 #X obj 150 244 nilwind/Line~ 0.5;
 #X obj 152 360 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6350 1;
+-1 -1 0 1;
 #X obj 519 349 dspSwitch~;
 #X text 173 411 - stop \, pause \, resume. Do the obvious.;
-#X connect 20 0 36 0;
-#X connect 21 0 35 0;
-#X connect 22 0 35 1;
-#X connect 23 0 35 0;
-#X connect 24 0 35 0;
-#X connect 30 0 35 0;
-#X connect 31 0 35 0;
-#X connect 32 0 35 0;
-#X connect 33 0 35 0;
-#X connect 34 0 20 0;
-#X connect 35 0 34 0;
+#X obj 464 7 nilwind/Line~;
+#X connect 19 0 35 0;
+#X connect 20 0 34 0;
+#X connect 21 0 34 1;
+#X connect 22 0 34 0;
+#X connect 23 0 34 0;
+#X connect 29 0 34 0;
+#X connect 30 0 34 0;
+#X connect 31 0 34 0;
+#X connect 32 0 34 0;
+#X connect 33 0 19 0;
+#X connect 34 0 33 0;

@@ -36,7 +36,6 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 80 291 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
 #X obj 0 0 cnv 15 552 40 empty empty spell 3 12 0 18 -204280 -1 0;
-#X obj 506 9 spell;
 #X text 12 23 convert input to ascii values;
 #X text 119 253 list;
 #X text 119 291 list;
@@ -50,8 +49,9 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 180 253 - list of any numbers \, text \, etc to convert to
 ascii;
 #X obj 170 167 nilwind/spell;
-#X connect 15 0 21 0;
-#X connect 16 0 21 0;
-#X connect 17 0 21 0;
-#X connect 18 0 21 0;
-#X connect 21 0 14 0;
+#X obj 459 8 nilwind/spell;
+#X connect 14 0 20 0;
+#X connect 15 0 20 0;
+#X connect 16 0 20 0;
+#X connect 17 0 20 0;
+#X connect 20 0 13 0;

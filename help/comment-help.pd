@@ -28,7 +28,6 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 1 40 DESCRIPTION a text comment with formatting options \,
 meant to be Max/MSP compatible;
 #X restore 502 722 pd META;
-#X obj 495 4 _comment;
 #X text 96 550 (none);
 #X text 96 505 (none);
 #X text 15 43 comment;
@@ -78,3 +77,4 @@ Times ? 0 255 128 0];
 ;
 #X obj 333 216 nilwind/comment 88 14 Helvetica ? 0 0 0 0 [comment 100
 14 Helvetica];
+#X obj 448 4 nilwind/_comment;

@@ -48,12 +48,11 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 67 132 cycle~ 440;
 #X text 244 94 bitwise boolean operation on signals as integers;
 #X obj 341 263 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 -1 256;
+-262144 -1 -1 0 256;
 #X obj 341 238 Snapshot~ 100;
 #X text 102 458 1) float;
 #X text 175 366 - signal to do bitwise not with;
 #X text 175 411 - output signal of bitwise not for mask and mode;
-#X obj 499 4 bitnot~;
 #X obj 84 367 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
 #X text 20 24 Performs bitwise boolean operations on a float signal.
@@ -68,14 +67,15 @@ by inverting all bits.;
 #X text 175 457 - modes (defaults to 0):;
 #X text 187 471 0: treat floating point signal input as raw 32 bit
 value \; 1: convert floating point signal input to integer \;;
+#X obj 452 6 nilwind/bitnot~;
 #X connect 10 0 15 0;
 #X connect 11 0 12 0;
-#X connect 12 0 29 0;
+#X connect 12 0 28 0;
 #X connect 13 0 14 0;
-#X connect 14 0 29 0;
-#X connect 15 0 26 0;
-#X connect 15 0 26 1;
-#X connect 16 0 30 0;
+#X connect 14 0 28 0;
+#X connect 15 0 25 0;
+#X connect 15 0 25 1;
+#X connect 16 0 29 0;
 #X connect 19 0 18 0;
-#X connect 29 0 19 0;
-#X connect 30 0 10 0;
+#X connect 28 0 19 0;
+#X connect 29 0 10 0;

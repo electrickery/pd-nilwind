@@ -1,8 +1,8 @@
-#N canvas 459 81 569 530 10;
-#X obj 0 557 cnv 15 552 21 empty empty empty 20 12 0
-14 -233017 -33289 0;
-#X obj 0 380 cnv 3 550 3 empty empty inlets 8 12 0 13
--228856 -1 0;
+#N canvas 466 76 569 530 10;
+#X obj 0 557 cnv 15 552 21 empty empty empty 20 12 0 14 -233017 -33289
+0;
+#X obj 0 380 cnv 3 550 3 empty empty inlets 8 12 0 13 -228856 -1 0
+;
 #N canvas 386 367 437 250 META 0;
 #X text 1 20 LICENSE SIBSD;
 #X text 1 100 LIBRARY nilwind;
@@ -20,20 +20,19 @@ Wilkes for Pd-extended 0.42 to conform to the PDDP template. Alex Cleveland
 updated this patch for Pd-l2ork version 2013.05.28. Fred Jan Kraan
 adapted the patch to pd-extended 2015-02-02;
 #X restore 501 559 pd META;
-#X obj 0 435 cnv 3 550 3 empty empty outlets 8 12 0
-13 -228856 -1 0;
-#X obj 0 475 cnv 3 550 3 empty empty arguments 8 12
-0 13 -228856 -1 0;
+#X obj 0 435 cnv 3 550 3 empty empty outlets 8 12 0 13 -228856 -1 0
+;
+#X obj 0 475 cnv 3 550 3 empty empty arguments 8 12 0 13 -228856 -1
+0;
 #N canvas 166 510 428 109 Related_objects 0;
-#X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0
-14 -204280 -1 0;
+#X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
 #X obj 13 33 change;
 #X restore 207 559 pd Related_objects;
-#X obj 80 445 cnv 17 3 17 empty empty 0 5 9 0 16 -228856
--162280 0;
-#X obj 0 0 cnv 15 552 40 empty empty change~ 3 12 0 18
--204280 -1 0;
+#X obj 80 445 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 0 0 cnv 15 552 40 empty empty change~ 3 12 0 18 -204280 -1 0
+;
 #X text 12 23 Detect signal change and direction;
 #X obj 397 273 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -65,9 +64,8 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 110 444 signal;
 #X text 179 444 - -1 then signal is decreasing \, 1 then signal is
 increasing \, 0 then signal is the same;
-#X obj 497 4 change~;
-#X obj 80 390 cnv 17 3 17 empty empty 0 5 9 0 16 -228856
--162280 0;
+#X obj 80 390 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
+;
 #X obj 100 143 nilwind/change~;
 #X text 296 317 detect when signal;
 #X text 296 329 is increasing;
@@ -81,21 +79,22 @@ increasing \, 0 then signal is the same;
 #X obj 12 214 nilwind/Snapshot~ 100;
 #X obj 100 194 nilwind/Snapshot~ 100;
 #X obj 518 345 dspSwitch~;
+#X obj 453 5 nilwind/change~;
 #X connect 11 0 17 0;
 #X connect 13 0 17 0;
 #X connect 14 0 17 0;
-#X connect 17 0 34 0;
-#X connect 17 0 44 0;
-#X connect 22 0 41 0;
-#X connect 23 0 40 0;
-#X connect 24 0 39 0;
-#X connect 34 0 22 0;
-#X connect 34 0 24 0;
-#X connect 34 0 23 0;
-#X connect 34 0 45 0;
-#X connect 39 0 16 0;
-#X connect 40 0 15 0;
-#X connect 41 0 12 0;
-#X connect 41 1 9 0;
-#X connect 44 0 26 0;
-#X connect 45 0 25 0;
+#X connect 17 0 33 0;
+#X connect 17 0 43 0;
+#X connect 22 0 40 0;
+#X connect 23 0 39 0;
+#X connect 24 0 38 0;
+#X connect 33 0 22 0;
+#X connect 33 0 24 0;
+#X connect 33 0 23 0;
+#X connect 33 0 44 0;
+#X connect 38 0 16 0;
+#X connect 39 0 15 0;
+#X connect 40 0 12 0;
+#X connect 40 1 9 0;
+#X connect 43 0 26 0;
+#X connect 44 0 25 0;

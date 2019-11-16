@@ -71,11 +71,11 @@ specified number of values \; 2) float - number of values to capture
 \; 3) float - the print precision (number of decimal places shown)
 \; 4) float - a list of up to 10 indices within a signal vector. If
 no indices present \, capture~ records the entire vector.;
-#X obj 491 4 capture~;
 #X text 13 23 Collect samples from a signal and examine in a text window
 ;
 #X obj 64 137 nilwind/capture~ f 1000 2 0;
 #X obj 517 140 dspSwitch~;
-#X connect 15 0 31 0;
-#X connect 16 0 31 0;
-#X connect 17 0 31 0;
+#X obj 446 4 nilwind/capture~;
+#X connect 15 0 30 0;
+#X connect 16 0 30 0;
+#X connect 17 0 30 0;

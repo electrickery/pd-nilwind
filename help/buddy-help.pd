@@ -26,7 +26,7 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 78 483 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 8 29 Bucket;
+#X obj 9 30 nilwind/Bucket;
 #X restore 215 409 pd Related_objects;
 #X obj 81 332 cnv 17 3 17 empty empty n 5 9 0 16 -228856 -162280 0
 ;
@@ -45,7 +45,6 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 166 297 - clear all stored values;
 #X text 166 333 - distributed all synced floats to outlets;
 #X text 166 374 - sets the number of inlets/outlets;
-#X obj 510 3 buddy;
 #X obj 81 278 cnv 17 3 34 empty empty n 5 9 0 16 -228856 -162280 0
 ;
 #X text 34 49 Once buddy receives all input data \, it outputs that
@@ -55,10 +54,11 @@ data in parallel simultaneously.;
 #X text 52 82 clear all;
 #X obj 189 168 nilwind/buddy 3;
 #X text 112 333 float;
-#X connect 12 0 28 0;
-#X connect 13 0 28 1;
-#X connect 14 0 28 2;
-#X connect 15 0 28 0;
-#X connect 28 0 9 0;
-#X connect 28 1 10 0;
-#X connect 28 2 11 0;
+#X obj 456 3 nilwind/buddy;
+#X connect 12 0 27 0;
+#X connect 13 0 27 1;
+#X connect 14 0 27 2;
+#X connect 15 0 27 0;
+#X connect 27 0 9 0;
+#X connect 27 1 10 0;
+#X connect 27 2 11 0;

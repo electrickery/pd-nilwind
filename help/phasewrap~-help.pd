@@ -24,7 +24,7 @@ adapted the patch to pd-extended 2015-02-02;
 ;
 #X obj 0 412 cnv 3 550 3 empty empty arguments 8 12 0 13 -228856 -1
 0;
-#N canvas 309 291 428 109 Related_objects 1;
+#N canvas 309 291 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
 #X restore 197 456 pd Related_objects;
@@ -34,7 +34,6 @@ adapted the patch to pd-extended 2015-02-02;
 ;
 #X obj 0 0 cnv 15 552 40 empty empty phasewrap~ 3 12 0 18 -204280 -1
 0;
-#X obj 477 10 phasewrap~;
 #X text 12 23 wrap a signal between -pi and pi;
 #X obj 29 98 sig~;
 #X obj 29 73 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
@@ -54,14 +53,14 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 277 103 *~ 1;
 #X obj 277 161 nilwind/phasewrap~;
 #X obj 312 216 metro 100;
-#X obj 293 217 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 293 217 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 262 47 5 0 0 0 - - -;
 #X obj 277 70 osc~ 100;
 #X obj 275 288 output~;
 #X obj 276 262 *~ 0.3;
 #X obj 301 49 hsl 128 15 0 10 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5100 1;
+-1 -1 0 1;
 #N canvas 867 510 430 300 view 0;
 #X text 44 194 The array is placed in a sub-patch to prevent audio
 dropouts;
@@ -71,24 +70,25 @@ dropouts;
 ;
 #X text 4 -11 Graph view;
 #X obj 85 45 hsl 195 140 0 127 0 0 GET_RID_OF_INLET GET_RID_OF_OUTLET
-empty -2 -8 0 10 -262144 -262144 -262144 15400 1;
+empty -2 -8 0 10 -262144 -262144 -262144 0 1;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array \$0-phasewrap 1024 float 0;
 #X coords 0 3.14 1023 -3.14 200 140 1 0 0;
 #X restore 82 45 graph;
 #X restore 350 259 pd view waveform;
 #X obj 286 236 tabwrite~ \$0-phasewrap;
-#X connect 11 0 20 0;
-#X connect 12 0 11 0;
-#X connect 20 0 21 0;
-#X connect 21 0 13 0;
-#X connect 24 0 25 0;
-#X connect 25 0 31 0;
-#X connect 25 0 34 0;
-#X connect 26 0 34 0;
-#X connect 27 0 26 0;
-#X connect 29 0 24 0;
-#X connect 31 0 30 0;
-#X connect 31 0 30 1;
-#X connect 32 0 28 0;
-#X connect 32 0 24 1;
+#X obj 426 8 nilwind/phasewrap~;
+#X connect 10 0 19 0;
+#X connect 11 0 10 0;
+#X connect 19 0 20 0;
+#X connect 20 0 12 0;
+#X connect 23 0 24 0;
+#X connect 24 0 30 0;
+#X connect 24 0 33 0;
+#X connect 25 0 33 0;
+#X connect 26 0 25 0;
+#X connect 28 0 23 0;
+#X connect 30 0 29 0;
+#X connect 30 0 29 1;
+#X connect 31 0 27 0;
+#X connect 31 0 23 1;

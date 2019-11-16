@@ -36,7 +36,6 @@ adapted the patch to pd-extended 2015-02-02;
 ;
 #X obj 0 0 cnv 15 552 40 empty empty fromsymbol 3 12 0 18 -204280 -1
 0;
-#X obj 483 4 fromsymbol;
 #X text 29 50 since pd lacks a quoting mechanism (like `foo bar`) there
 is;
 #X text 30 62 no support for spaces in symbols \, so the original max
@@ -78,13 +77,14 @@ symbols;
 #X text 446 201 with spaces...;
 #X text 171 368 - the symbol to be transformed;
 #X obj 160 90 nilwind/tosymbol;
-#X connect 17 0 37 0;
-#X connect 20 0 35 0;
-#X connect 35 0 36 0;
-#X connect 36 0 41 0;
+#X obj 436 4 nilwind/fromsymbol;
+#X connect 16 0 36 0;
+#X connect 19 0 34 0;
+#X connect 34 0 35 0;
+#X connect 35 0 40 0;
+#X connect 36 0 17 0;
+#X connect 36 0 37 0;
 #X connect 37 0 18 0;
-#X connect 37 0 38 0;
-#X connect 38 0 19 0;
-#X connect 39 0 35 0;
-#X connect 41 0 21 0;
-#X connect 41 1 40 0;
+#X connect 38 0 34 0;
+#X connect 40 0 20 0;
+#X connect 40 1 39 0;

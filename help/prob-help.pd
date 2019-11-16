@@ -28,17 +28,15 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 312 453 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 10 29 anal;
-#X obj 10 51 Histo;
-#X obj 9 74 mean;
+#X obj 10 29 nilwind/anal;
+#X obj 10 51 nilwind/Histo;
+#X obj 9 74 nilwind/mean;
 #X restore 200 528 pd Related_objects;
 #X obj 78 282 cnv 17 3 125 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
 #X obj 78 461 cnv 17 3 17 empty empty 1 5 9 0 16 -228856 -162280 0
 ;
 #X obj 0 0 cnv 15 552 40 empty empty prob 3 12 0 18 -204280 -1 0;
-#X obj 515 6 prob;
-#C restore;
 #X text 12 23 weighted series of random numbers;
 #X text 45 62 markov chain and outputs a number according to it.;
 #X text 237 101 0 has a 80% chance to be followed by 1 \, and;
@@ -92,7 +90,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X msg 174 386 reset n;
 #X text 228 385 is send (n being a valid value);
 #X obj 12 53 metro 100;
-#X obj 12 28 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 12 28 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X text 61 351 0;
 #X text 123 351 4;
@@ -147,8 +145,10 @@ followed by y;
 #X text 178 386 - set a default n \, for when a number is reached for
 which there is no rule;
 #X text 167 178 <- click will show table in viewer;
-#X connect 25 0 28 0;
-#X connect 26 0 28 0;
-#X connect 27 0 26 0;
-#X connect 28 0 13 0;
-#X connect 28 0 29 0;
+#X obj 470 5 nilwind/prob;
+#C restore;
+#X connect 24 0 27 0;
+#X connect 25 0 27 0;
+#X connect 26 0 25 0;
+#X connect 27 0 12 0;
+#X connect 27 0 28 0;

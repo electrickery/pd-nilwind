@@ -1,4 +1,4 @@
-#N canvas 496 104 572 531 10;
+#N canvas 500 76 572 531 10;
 #X obj 0 692 cnv 15 552 21 empty empty empty 20 12 0 14 -233017 -33289
 0;
 #X obj 2 369 cnv 3 550 3 empty empty inlets 8 12 0 13 -228856 -1 0
@@ -58,7 +58,6 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 92 612 4) float;
 #X text 178 612 - 0 or 1 \, autoreset counter if dsp goes off and back
 on;
-#X obj 504 2 count~;
 #X text 178 579 - the maximum value;
 #X text 110 528 signal;
 #X text 110 456 set;
@@ -124,12 +123,12 @@ on again;
 #X msg 108 74 stop;
 #X obj 98 223 nilwind/count~ 0 62079 0 0;
 #X msg 126 119 set 10000 40000;
-#X obj 154 167 hsl 165 15 0 62079 0 0 stop-slider stop-slider-R empty
+#X obj 154 170 hsl 165 15 0 62079 0 0 stop-slider stop-slider-R empty
 -2 -8 0 10 -262144 -1 -1 16400 1;
 #X obj 153 141 hsl 165 15 0 62079 0 0 start-slider start-slider-R empty
 -2 -8 0 10 -262144 -1 -1 0 1;
 #X text 287 122 start;
-#X text 293 180 stop;
+#X text 293 183 stop;
 #X obj 435 256 table \$0-voice;
 #X obj 98 287 nilwind/index~ \$0-voice;
 #X text 138 50 start playback;
@@ -168,7 +167,6 @@ on again;
 #X connect 3 0 4 0;
 #X connect 4 0 5 0;
 #X connect 5 0 0 0;
-#X connect 6 0 3 0;
 #X connect 7 0 9 0;
 #X connect 7 1 2 0;
 #X connect 11 0 22 0;
@@ -183,16 +181,17 @@ on again;
 #X connect 20 0 13 0;
 #X connect 20 0 16 0;
 #X restore 434 234 pd load voice;
-#X text 149 151 continuous soft and relaxing;
+#X text 149 154 continuous soft and relaxing;
 #X text 92 647 The [count~] object does not support the signal-in to
 control the counter (zero = stop counter \, non-zero = start counter)
 ;
-#X connect 37 0 40 0;
-#X connect 38 0 40 0;
-#X connect 39 0 40 0;
-#X connect 40 0 47 0;
-#X connect 41 0 40 0;
-#X connect 42 0 40 1;
-#X connect 43 0 40 0;
-#X connect 47 0 36 0;
-#X connect 47 0 36 1;
+#X obj 460 4 nilwind/count~;
+#X connect 36 0 39 0;
+#X connect 37 0 39 0;
+#X connect 38 0 39 0;
+#X connect 39 0 46 0;
+#X connect 40 0 39 0;
+#X connect 41 0 39 1;
+#X connect 42 0 39 0;
+#X connect 46 0 35 0;
+#X connect 46 0 35 1;

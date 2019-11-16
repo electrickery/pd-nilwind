@@ -50,12 +50,11 @@ RMS mode in many level-detection tasks.;
 #X msg 238 73 bipolar;
 #X msg 294 73 absolute;
 #X obj 149 99 *~;
-#X floatatom 149 268 5 0 0 0 - - -, f 5;
+#X floatatom 149 268 5 0 0 0 - - -;
 #X text 102 329 message;
 #X text 169 414 average~ reports the running mean amplitude of a signal
 \, averaged over a specified number of samples. There are three methods
 of averaging available:;
-#X obj 495 2 average~;
 #X text 89 479 1) float - sets maximum averaging interval. default
 is 100 2) message - sets mode \, as shown above. default is bipolar.
 ;
@@ -86,15 +85,16 @@ compatible.;
 #X text 17 21 Max/MSP compatibility;
 #X connect 0 0 1 0;
 #X restore 401 215 pd max-msp compatibility;
+#X obj 449 5 nilwind/average~;
 #X connect 13 0 19 1;
 #X connect 14 0 19 0;
-#X connect 15 0 31 0;
-#X connect 16 0 31 0;
-#X connect 17 0 31 0;
-#X connect 18 0 31 0;
-#X connect 19 0 31 0;
-#X connect 28 0 31 0;
-#X connect 29 0 31 0;
-#X connect 30 0 31 0;
-#X connect 31 0 20 0;
-#X connect 31 0 27 0;
+#X connect 15 0 30 0;
+#X connect 16 0 30 0;
+#X connect 17 0 30 0;
+#X connect 18 0 30 0;
+#X connect 19 0 30 0;
+#X connect 27 0 30 0;
+#X connect 28 0 30 0;
+#X connect 29 0 30 0;
+#X connect 30 0 20 0;
+#X connect 30 0 26 0;

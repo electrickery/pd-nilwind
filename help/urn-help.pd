@@ -30,16 +30,15 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 323 507 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 17 74 random;
-#X obj 17 31 decide;
-#X obj 17 53 drunk;
+#X obj 17 31 nilwind/decide;
+#X obj 17 53 nilwind/drunk;
+#X obj 17 74 nilwind/random;
 #X restore 208 502 pd Related_objects;
 #X obj 82 292 cnv 17 3 55 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
 #X obj 82 406 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
 #X obj 0 0 cnv 15 552 40 empty empty urn 3 12 0 18 -204280 -1 0;
-#X obj 517 11 urn;
 #X floatatom 85 231 5 0 0 0 - - -;
 #X obj 85 61 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
@@ -69,10 +68,11 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 112 430 bang;
 #X text 197 430 - sent out all different values;
 #X obj 85 165 nilwind/urn 4;
-#X connect 11 0 34 0;
-#X connect 12 0 34 0;
-#X connect 13 0 34 1;
-#X connect 14 0 34 0;
-#X connect 15 0 14 0;
-#X connect 34 0 10 0;
-#X connect 34 1 16 0;
+#X obj 470 7 nilwind/urn;
+#X connect 10 0 33 0;
+#X connect 11 0 33 0;
+#X connect 12 0 33 1;
+#X connect 13 0 33 0;
+#X connect 14 0 13 0;
+#X connect 33 0 9 0;
+#X connect 33 1 15 0;

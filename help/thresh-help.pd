@@ -40,7 +40,6 @@ adapted the patch to pd-extended 2015-02-02;
 ;
 #X text 111 260 float;
 #X text 93 342 1) float;
-#X obj 501 10 thresh;
 #X obj 160 201 print thresh;
 #X floatatom 160 56 5 0 0 0 - - -;
 #X floatatom 265 57 5 0 0 0 - - -;
@@ -55,6 +54,7 @@ a list;
 #X text 179 299 - list of numbers stored that a recieved within interval
 ;
 #X text 179 233 - numbers to store into list;
-#X connect 14 0 19 0;
-#X connect 15 0 19 1;
-#X connect 19 0 13 0;
+#X obj 452 7 nilwind/thresh;
+#X connect 13 0 18 0;
+#X connect 14 0 18 1;
+#X connect 18 0 12 0;

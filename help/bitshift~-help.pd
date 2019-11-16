@@ -51,7 +51,6 @@ to integer \;;
 #X text 168 404 - signal to bitshift \, can be treated as signal of
 bits or signal as float/int;
 #X text 168 497 - output of signal bit shifted;
-#X obj 486 3 bitshift~;
 #X text 19 52 Works on floating point signal as bits or as an integer:
 ;
 #X obj 77 405 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
@@ -134,15 +133,16 @@ empty -2 -8 0 10 -262144 -262144 -262144 0 1;
 #X text 15 75 bitwise operation on a signal as integer;
 #X text 18 22 Performs bitwise boolean operations on a float signal.
 ;
+#X obj 439 5 nilwind/bitshift~;
 #X connect 10 0 11 0;
-#X connect 11 0 29 0;
-#X connect 12 0 27 0;
-#X connect 12 0 26 1;
+#X connect 11 0 28 0;
 #X connect 12 0 26 0;
-#X connect 12 0 35 0;
-#X connect 13 0 31 0;
-#X connect 27 0 28 0;
-#X connect 29 0 32 0;
-#X connect 31 0 29 0;
-#X connect 32 0 12 0;
-#X connect 40 0 35 0;
+#X connect 12 0 25 1;
+#X connect 12 0 25 0;
+#X connect 12 0 34 0;
+#X connect 13 0 30 0;
+#X connect 26 0 27 0;
+#X connect 28 0 31 0;
+#X connect 30 0 28 0;
+#X connect 31 0 12 0;
+#X connect 39 0 34 0;

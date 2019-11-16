@@ -1,4 +1,4 @@
-#N canvas 528 109 568 531 10;
+#N canvas 544 76 568 531 10;
 #X obj 0 578 cnv 15 552 21 empty empty empty 20 12 0 14 -233017 -33289
 0;
 #X obj 0 372 cnv 3 550 3 empty empty inlets 8 12 0 13 -228856 -1 0
@@ -63,7 +63,6 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 110 535 input signal values outside the -1 to 1 range cause
 acos~ to output the value zero;
 #X text 110 511 outputs signal from 0 to pi when input is -1 to 1;
-#X obj 508 2 acos~;
 #X obj 83 387 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
 #X text 13 24 Arc-cosine function acos(x) for signals;
@@ -341,21 +340,22 @@ acos~ to output the value zero;
 1.50482 1.49573 1.48663 1.47752 1.46841 1.45928 1.45015;
 #X coords 0 3.14 1023 0 200 140 1 0 0;
 #X restore 231 226 graph;
-#X connect 9 0 27 0;
+#X obj 464 5 nilwind/acos~;
+#X connect 9 0 26 0;
 #X connect 10 0 9 0;
-#X connect 23 0 31 0;
-#X connect 24 0 28 0;
-#X connect 25 0 10 0;
-#X connect 26 0 32 0;
-#X connect 27 0 30 0;
+#X connect 22 0 30 0;
+#X connect 23 0 27 0;
+#X connect 24 0 10 0;
+#X connect 25 0 31 0;
+#X connect 26 0 29 0;
+#X connect 26 0 30 0;
+#X connect 27 0 28 0;
 #X connect 27 0 31 0;
-#X connect 28 0 29 0;
-#X connect 28 0 32 0;
+#X connect 33 0 35 0;
 #X connect 34 0 36 0;
-#X connect 35 0 37 0;
-#X connect 36 0 33 0;
-#X connect 36 0 33 1;
-#X connect 37 0 33 1;
-#X connect 37 0 33 0;
-#X connect 38 0 37 1;
-#X connect 39 0 36 1;
+#X connect 35 0 32 0;
+#X connect 35 0 32 1;
+#X connect 36 0 32 1;
+#X connect 36 0 32 0;
+#X connect 37 0 36 1;
+#X connect 38 0 35 1;

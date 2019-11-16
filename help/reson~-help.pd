@@ -40,7 +40,6 @@ adapted the patch to pd-extended 2015-02-02;
 ;
 #X obj 0 0 cnv 15 552 40 empty empty reson~ 3 12 0 18 -204280 -1 0
 ;
-#X obj 487 10 reson~;
 #X text 111 393 signal;
 #X text 208 393 - input signal to send through bandpass filter;
 #X obj 82 420 cnv 17 3 33 empty empty 1 5 9 0 16 -228856 -162280 0
@@ -81,11 +80,12 @@ unit generator in cmusic.;
 #X text 208 600 - initial gain (default 0);
 #X text 208 617 - initial center freq (default 0);
 #X text 208 633 - initial Q range (default 0.01);
-#X connect 31 0 36 0;
-#X connect 31 0 36 1;
-#X connect 32 0 38 3;
+#X obj 455 9 nilwind/reson~;
+#X connect 30 0 35 0;
+#X connect 30 0 35 1;
+#X connect 31 0 37 3;
+#X connect 32 0 36 0;
 #X connect 33 0 37 0;
-#X connect 34 0 38 0;
-#X connect 35 0 38 1;
-#X connect 37 0 38 2;
-#X connect 38 0 31 0;
+#X connect 34 0 37 1;
+#X connect 36 0 37 2;
+#X connect 37 0 30 0;

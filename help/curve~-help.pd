@@ -59,7 +59,6 @@ is used if there are two arguments) \, or a list with two or more value
 in a single list. The object's approximation of the exponential becomes
 better when the vector size is smaller \, but the object also becomes
 more computationally expensive.;
-#X obj 500 3 curve~;
 #X obj 89 448 cnv 17 3 80 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
 #X obj 89 534 cnv 17 3 30 empty empty 1 5 9 0 16 -228856 -162280 0
@@ -299,21 +298,22 @@ duration is set to other than 0 via second inlet.;
 #X obj 417 230 nilwind/Snapshot~ 100;
 #X text 79 280 1;
 #X text 79 412 0;
-#X connect 30 0 44 0;
-#X connect 31 0 44 0;
+#X obj 460 5 nilwind/curve~;
+#X connect 29 0 43 0;
+#X connect 30 0 43 0;
+#X connect 31 0 29 0;
+#X connect 31 0 30 0;
 #X connect 32 0 30 0;
-#X connect 32 0 31 0;
-#X connect 33 0 31 0;
-#X connect 33 0 30 0;
-#X connect 34 0 38 0;
-#X connect 34 0 46 0;
-#X connect 34 1 41 0;
-#X connect 35 0 31 0;
-#X connect 35 0 30 0;
-#X connect 36 0 34 0;
+#X connect 32 0 29 0;
+#X connect 33 0 37 0;
+#X connect 33 0 45 0;
+#X connect 33 1 40 0;
+#X connect 34 0 30 0;
+#X connect 34 0 29 0;
+#X connect 35 0 33 0;
+#X connect 36 0 37 1;
+#X connect 37 0 38 0;
 #X connect 37 0 38 1;
-#X connect 38 0 39 0;
-#X connect 38 0 39 1;
-#X connect 40 0 31 0;
-#X connect 40 0 30 0;
-#X connect 46 0 45 0;
+#X connect 39 0 30 0;
+#X connect 39 0 29 0;
+#X connect 45 0 44 0;

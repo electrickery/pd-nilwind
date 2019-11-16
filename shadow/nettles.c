@@ -485,81 +485,81 @@ static void *sigaccum_new(t_floatarg f)
 
 void nettles_setup(void)
 {
-    rminus_class = class_new(gensym("!-"),
+    rminus_class = class_new(gensym("nilwind/!-"),
 			     (t_newmethod)rminus_new, 0,
 			     sizeof(t_rbinop), 0, A_DEFFLOAT, 0);
     class_addbang(rminus_class, rminus_bang);
     class_addfloat(rminus_class, rminus_float);
     class_sethelpsymbol(rminus_class, gensym("nettles"));
     
-    rdiv_class = class_new(gensym("!/"),
+    rdiv_class = class_new(gensym("nilwind/!/"),
 			   (t_newmethod)rdiv_new, 0,
 			   sizeof(t_rbinop), 0, A_DEFFLOAT, 0);
     class_addbang(rdiv_class, rdiv_bang);
     class_addfloat(rdiv_class, rdiv_float);
     class_sethelpsymbol(rdiv_class, gensym("nettles"));
     
-    sigeq_class = class_new(gensym("==~"),
+    sigeq_class = class_new(gensym("nilwind/==~"),
 			    (t_newmethod)sigeq_new, 0,
 			    sizeof(t_sigeq), 0, A_GIMME, 0);
     class_addcreator((t_newmethod)sigeq_new,
-		     gensym("_==1~"), A_GIMME, 0);
+		     gensym("nilwind/_==1~"), A_GIMME, 0);
     class_addcreator((t_newmethod)sigeq_new,
-		     gensym("_==2~"), A_GIMME, 0);
+		     gensym("nilwind/_==2~"), A_GIMME, 0);
     sic_setup(sigeq_class, sigeq_dsp, SIC_FLOATTOSIGNAL);
     class_addmethod(sigeq_class, (t_method)sigeq__algo,
-		    gensym("_algo"), A_FLOAT, 0);
+		    gensym("nilwind/_algo"), A_FLOAT, 0);
     class_sethelpsymbol(sigeq_class, gensym("nettles"));
 
-    signeq_class = class_new(gensym("!=~"),
+    signeq_class = class_new(gensym("nilwind/!=~"),
 			     (t_newmethod)signeq_new, 0,
 			     sizeof(t_signeq), 0, A_GIMME, 0);
     sic_setup(signeq_class, signeq_dsp, SIC_FLOATTOSIGNAL);
     class_sethelpsymbol(signeq_class, gensym("nettles"));
     
-    siglt_class = class_new(gensym("<~"),
+    siglt_class = class_new(gensym("nilwind/<~"),
 			    (t_newmethod)siglt_new, 0,
 			    sizeof(t_siglt), 0, A_GIMME, 0);
     sic_setup(siglt_class, siglt_dsp, SIC_FLOATTOSIGNAL);
     class_sethelpsymbol(siglt_class, gensym("nettles"));
     
-    siggt_class = class_new(gensym(">~"),
+    siggt_class = class_new(gensym("nilwind/>~"),
 			    (t_newmethod)siggt_new, 0,
 			    sizeof(t_siggt), 0, A_GIMME, 0);
     sic_setup(siggt_class, siggt_dsp, SIC_FLOATTOSIGNAL);
     class_sethelpsymbol(siggt_class, gensym("nettles"));
     
-    sigleq_class = class_new(gensym("<=~"),
+    sigleq_class = class_new(gensym("nilwind/<=~"),
 			     (t_newmethod)sigleq_new, 0,
 			     sizeof(t_sigleq), 0, A_GIMME, 0);
     sic_setup(sigleq_class, sigleq_dsp, SIC_FLOATTOSIGNAL);
     class_sethelpsymbol(sigleq_class, gensym("nettles"));
     
-    siggeq_class = class_new(gensym(">=~"),
+    siggeq_class = class_new(gensym("nilwind/>=~"),
 			     (t_newmethod)siggeq_new, 0,
 			     sizeof(t_siggeq), 0, A_GIMME, 0);
     sic_setup(siggeq_class, siggeq_dsp, SIC_FLOATTOSIGNAL);
     class_sethelpsymbol(siggeq_class, gensym("nettles"));
     
-    sigrminus_class = class_new(gensym("!-~"),
+    sigrminus_class = class_new(gensym("nilwind/!-~"),
 				(t_newmethod)sigrminus_new, 0,
 				sizeof(t_sigrminus), 0, A_GIMME, 0);
     sic_setup(sigrminus_class, sigrminus_dsp, SIC_FLOATTOSIGNAL);
     class_sethelpsymbol(sigrminus_class, gensym("nettles"));
     
-    sigrover_class = class_new(gensym("!/~"),
+    sigrover_class = class_new(gensym("nilwind/!/~"),
 			       (t_newmethod)sigrover_new, 0,
 			       sizeof(t_sigrover), 0, A_GIMME, 0);
     sic_setup(sigrover_class, sigrover_dsp, SIC_FLOATTOSIGNAL);
     class_sethelpsymbol(sigrover_class, gensym("nettles"));
     
-    sigmod_class = class_new(gensym("%~"),
+    sigmod_class = class_new(gensym("nilwind/%~"),
 			     (t_newmethod)sigmod_new, 0,
 			     sizeof(t_sigmod), 0, A_GIMME, 0);
     sic_setup(sigmod_class, sigmod_dsp, SIC_FLOATTOSIGNAL);
     class_sethelpsymbol(sigmod_class, gensym("nettles"));
     
-    sigaccum_class = class_new(gensym("+=~"),
+    sigaccum_class = class_new(gensym("nilwind/+=~"),
 			       (t_newmethod)sigaccum_new, 0,
 			       sizeof(t_sigaccum), 0, A_DEFFLOAT, 0);
     sic_setup(sigaccum_class, sigaccum_dsp, SIC_FLOATTOSIGNAL);

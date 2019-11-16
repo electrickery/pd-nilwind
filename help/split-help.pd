@@ -36,7 +36,6 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 80 401 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
 #X obj 0 0 cnv 15 552 40 empty empty split 3 12 0 18 -204280 -1 0;
-#X obj 504 10 split;
 #X text 12 23 look for a range of numbers;
 #X floatatom 81 256 5 0 0 0 - - -;
 #X floatatom 192 256 5 0 0 0 - - -;
@@ -74,11 +73,12 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 204 320 - input value;
 #X text 204 293 - format: the input value \, minimum \, maximum. Minimum
 and maximum are set first \, then the value is compared;
-#X connect 13 0 31 0;
-#X connect 16 0 31 1;
-#X connect 17 0 31 2;
-#X connect 18 0 31 0;
-#X connect 31 0 11 0;
-#X connect 31 0 37 0;
-#X connect 31 1 12 0;
-#X connect 31 1 36 0;
+#X obj 457 7 nilwind/split;
+#X connect 12 0 30 0;
+#X connect 15 0 30 1;
+#X connect 16 0 30 2;
+#X connect 17 0 30 0;
+#X connect 30 0 10 0;
+#X connect 30 0 36 0;
+#X connect 30 1 11 0;
+#X connect 30 1 35 0;

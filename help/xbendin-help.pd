@@ -43,7 +43,6 @@ objects 14 bit;
 ;
 #X obj 0 0 cnv 15 552 40 empty empty xbendin 3 12 0 18 -204280 -1 0
 ;
-#X obj 497 12 xbendin;
 #X floatatom 179 228 5 0 0 0 - - -;
 #X floatatom 278 228 5 0 0 0 - - -;
 #X floatatom 179 50 5 0 0 0 - - -;
@@ -66,8 +65,9 @@ objects 14 bit;
 #X obj 179 168 nilwind/xbendin 0;
 #X text 12 23 deconstruct extra precision midi pitchbend objects 14
 bit;
-#X connect 13 0 28 0;
-#X connect 14 0 28 1;
-#X connect 28 0 29 0;
-#X connect 29 0 11 0;
-#X connect 29 1 12 0;
+#X obj 445 8 nilwind/xbendin;
+#X connect 12 0 27 0;
+#X connect 13 0 27 1;
+#X connect 27 0 28 0;
+#X connect 28 0 10 0;
+#X connect 28 1 11 0;

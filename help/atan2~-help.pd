@@ -55,7 +55,6 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 116 425 signal;
 #X text 116 383 signal;
 #X text 116 470 (none);
-#X obj 510 3 asin~;
 #X obj 84 383 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
 #X obj 102 202 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -189,8 +188,9 @@ wave form will do.;
 1.5708 1.5708 1.5708 1.5708 1.5708;
 #X coords 0 2 1023 -2 200 140 1 0 0;
 #X restore 244 202 graph;
-#X connect 13 0 20 0;
-#X connect 14 0 15 0;
-#X connect 15 0 20 0;
-#X connect 15 0 21 0;
-#X connect 23 0 22 0;
+#X obj 451 3 nilwind/atan2~;
+#X connect 12 0 19 0;
+#X connect 13 0 14 0;
+#X connect 14 0 19 0;
+#X connect 14 0 20 0;
+#X connect 22 0 21 0;

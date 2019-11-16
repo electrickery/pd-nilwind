@@ -59,7 +59,6 @@ adapted the patch to pd-extended 2015-02-02;
 #X floatatom 279 204 0 0 0 0 - - -;
 #X floatatom 174 204 0 0 0 0 - - -;
 #X floatatom 174 80 0 0 0 0 - - -;
-#X obj 516 4 asin;
 #X text 50 42 acos outputs the arccosine value of the input float value.
 ;
 #X obj 79 249 cnv 17 3 35 empty empty 0 5 9 0 16 -228856 -162280 0
@@ -76,7 +75,8 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 160 307 - arc-sine of input;
 #X text 160 267 - output arc-sine of argument;
 #X text 160 245 - the number to take arc-sine of;
-#X connect 13 0 27 0;
-#X connect 16 0 26 0;
-#X connect 26 0 15 0;
-#X connect 27 0 14 0;
+#X obj 460 4 nilwind/asin;
+#X connect 13 0 26 0;
+#X connect 16 0 25 0;
+#X connect 25 0 15 0;
+#X connect 26 0 14 0;

@@ -42,7 +42,6 @@ signal;
 -1;
 #X obj 454 297 output~;
 #X obj 79 339 tabwrite~ \$0-signal;
-#X obj 516 4 log~;
 #X text 8 23 outputs the log (to a specified base) of a signal;
 #X obj 78 209 nilwind/log~;
 #X text 230 223 0;
@@ -65,7 +64,7 @@ used to generate a pitch glissando and a logarithmic amplitude envelope.
 #X text 160 453 - The logarithm of the inlet signal;
 #X text 96 490 default base of the logarithm;
 #X obj 247 229 hsl 195 140 0 127 0 0 eliminate_outlet eliminate_inlet
-empty -2 -8 0 10 -262144 -262144 -262144 12200 1;
+empty -2 -8 0 10 -262144 -262144 -262144 0 1;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array \$0-signal 1024 float 1;
 #A 0 -23.0113 -23.0113 -23.0113 -23.0113 -23.0113 -23.0113 -23.0113
@@ -208,12 +207,13 @@ empty -2 -8 0 10 -262144 -262144 -262144 12200 1;
 -23.0113;
 #X coords 0 0 1023 -23 200 140 1 0 0;
 #X restore 244 229 graph;
+#X obj 471 5 nilwind/log~;
 #X connect 12 0 14 0;
-#X connect 17 0 14 0;
-#X connect 17 0 25 0;
-#X connect 20 0 13 0;
-#X connect 20 0 13 1;
-#X connect 21 0 17 0;
-#X connect 23 0 17 1;
-#X connect 24 0 20 0;
-#X connect 26 0 17 1;
+#X connect 16 0 14 0;
+#X connect 16 0 24 0;
+#X connect 19 0 13 0;
+#X connect 19 0 13 1;
+#X connect 20 0 16 0;
+#X connect 22 0 16 1;
+#X connect 23 0 19 0;
+#X connect 25 0 16 1;

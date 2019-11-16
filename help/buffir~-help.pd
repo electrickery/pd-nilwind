@@ -1,4 +1,4 @@
-#N canvas 421 91 572 530 10;
+#N canvas 483 76 572 530 10;
 #X obj 0 594 cnv 15 552 21 empty empty empty 20 12 0 14 -233017 -33289
 0;
 #X obj 0 336 cnv 3 550 3 empty empty inlets 8 12 0 13 -228856 -1 0
@@ -109,7 +109,6 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 103 542 buffir~ is a table based FIR (finite impulse response)
 filter. an input signal is convolved with n samples of a buffer. Currently
 the maximum number of points is 256;
-#X obj 499 2 buffir~;
 #X text 12 23 table based FIR (finite impulse response) convolution
 filter;
 #X obj 80 347 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
@@ -190,7 +189,7 @@ filter;
 #X text 56 38 clears input history only;
 #X text 181 62 Offset (samps);
 #X obj 64 221 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 2.4283 256;
+-262144 -1 -1 0 256;
 #X text 263 138 Initial args:;
 #X text 263 150 buffer \, offset(samps) \,;
 #X text 263 162 length(samps);
@@ -208,15 +207,16 @@ filter;
 #X obj 378 226 nilwind/peek~ \$0-fir_buf;
 #X obj 377 248 table \$0-fir_buf 128;
 #X obj 82 182 nilwind/buffir~ \$0-fir_buf 0 10;
+#X obj 455 6 nilwind/buffir~;
 #X connect 19 0 20 0;
 #X connect 20 0 21 0;
-#X connect 21 0 48 0;
-#X connect 22 0 50 2;
-#X connect 23 0 44 0;
-#X connect 24 0 41 0;
-#X connect 24 0 41 1;
-#X connect 42 0 22 0;
-#X connect 43 0 44 1;
-#X connect 44 0 50 0;
-#X connect 45 0 44 2;
-#X connect 50 0 24 0;
+#X connect 21 0 47 0;
+#X connect 22 0 49 2;
+#X connect 23 0 43 0;
+#X connect 24 0 40 0;
+#X connect 24 0 40 1;
+#X connect 41 0 22 0;
+#X connect 42 0 43 1;
+#X connect 43 0 49 0;
+#X connect 44 0 43 2;
+#X connect 49 0 24 0;

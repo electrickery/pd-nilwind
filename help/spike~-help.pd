@@ -1,8 +1,9 @@
 #N canvas 621 81 557 484 10;
-#X obj 0 457 cnv 15 552 21 empty empty empty 20 12 0
-14 -233017 -33289 0;
-#X obj 0 294 cnv 3 550 3 empty empty inlets 8 12 0 13
--228856 -1 0;
+#X declare -lib nilwind/nettles;
+#X obj 0 457 cnv 15 552 21 empty empty empty 20 12 0 14 -233017 -33289
+0;
+#X obj 0 294 cnv 3 550 3 empty empty inlets 8 12 0 13 -228856 -1 0
+;
 #N canvas 579 244 378 247 META 0;
 #X text 1 32 LICENSE SIBSD;
 #X text 1 127 LIBRARY nilwind;
@@ -23,26 +24,25 @@ Wilkes for Pd-extended 0.42 to conform to the PDDP template. Alex Cleveland
 updated this patch for Pd-l2ork version 2013.05.28. Fred Jan Kraan
 adapted the patch to pd-extended 2015-02-02;
 #X restore 501 459 pd META;
-#X obj 0 355 cnv 3 550 3 empty empty outlets 8 12 0
-13 -228856 -1 0;
-#X obj 0 414 cnv 3 550 3 empty empty arguments 8 12
-0 13 -228856 -1 0;
+#X obj 0 355 cnv 3 550 3 empty empty outlets 8 12 0 13 -228856 -1 0
+;
+#X obj 0 414 cnv 3 550 3 empty empty arguments 8 12 0 13 -228856 -1
+0;
 #N canvas 306 384 428 109 Related_objects 0;
-#X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0
-14 -204280 -1 0;
+#X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
 #X restore 205 459 pd Related_objects;
-#X obj 82 303 cnv 17 3 17 empty empty 0 5 9 0 16 -228856
--162280 0;
-#X obj 82 366 cnv 17 3 35 empty empty 0 5 9 0 16 -228856
--162280 0;
-#X obj 0 0 cnv 15 552 40 empty empty spike~ 3 12 0 18
--204280 -1 0;
+#X obj 82 303 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 82 366 cnv 17 3 35 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 0 0 cnv 15 552 40 empty empty spike~ 3 12 0 18 -204280 -1 0
+;
 #X text 12 23 Report intervals of zero to non-zero transitions;
 #X text 109 303 signal;
 #X text 182 303 - input signal to detect transitions;
-#X obj 82 329 cnv 17 3 17 empty empty 1 5 9 0 16 -228856
--162280 0;
+#X obj 82 329 cnv 17 3 17 empty empty 1 5 9 0 16 -228856 -162280 0
+;
 #X text 110 329 float;
 #X text 110 364 float;
 #X text 182 364 - report time interval of zero to non-zero transitions
@@ -50,26 +50,27 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 105 425 (none);
 #X text 111 386 bang;
 #X text 182 386 - bang when number output;
-#X obj 500 10 spike~;
 #X obj 89 251 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X floatatom 170 126 0 0 0 0 - - -;
 #X floatatom 89 270 0 0 0 0 - - -;
 #X obj 89 182 nilwind/spike~;
-#X obj 87 85 nilwind/cycle~ 20;
-#X obj 88 111 >~ 0;
-#X msg 87 52 20;
-#X msg 121 53 50;
+#X obj 88 85 nilwind/cycle~ 20;
+#X msg 88 52 20;
+#X msg 122 53 50;
 #X text 157 50 Hz;
 #X text 145 269 ms;
 #X text 182 329 - set refractory period \, the maximal reporting rate
 ;
 #X text 199 127 set refractory frequency;
 #X obj 519 259 dspSwitch~;
-#X connect 21 0 23 1;
-#X connect 23 0 20 0;
-#X connect 23 0 22 0;
-#X connect 24 0 25 0;
+#X obj 448 8 nilwind/spike~;
+#X obj 89 111 nilwind/>~ 0;
+#X obj 371 57 declare -lib nilwind/nettles;
+#X connect 20 0 22 1;
+#X connect 22 0 19 0;
+#X connect 22 0 21 0;
+#X connect 23 0 32 0;
+#X connect 24 0 23 0;
 #X connect 25 0 23 0;
-#X connect 26 0 24 0;
-#X connect 27 0 24 0;
+#X connect 32 0 22 0;

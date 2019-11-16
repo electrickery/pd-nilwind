@@ -112,7 +112,6 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 118 655 signal;
 #X text 91 697 1) float;
 #X text 91 715 2) float;
-#X obj 499 4 bitand~;
 #X text 18 22 Performs bitwise boolean operations on a float signal.
 ;
 #X text 55 46 Works on floating point signal as bits or as an integer:
@@ -225,9 +224,10 @@ sure the signal is larger than +/- 1;
 #X text 162 698 - mask: interpreted as integer. 0 is default \, -1
 is max.;
 #X text 171 512 - signal to execute bitwise-and on;
-#X connect 8 0 65 0;
-#X connect 8 0 53 0;
-#X connect 8 0 53 1;
+#X obj 453 5 nilwind/bitand~;
+#X connect 8 0 64 0;
+#X connect 8 0 52 0;
+#X connect 8 0 52 1;
 #X connect 10 0 42 0;
 #X connect 10 0 41 0;
 #X connect 10 0 40 0;
@@ -294,9 +294,9 @@ is max.;
 #X connect 42 0 43 1;
 #X connect 43 0 45 0;
 #X connect 44 0 43 0;
-#X connect 45 0 69 0;
-#X connect 45 0 75 0;
-#X connect 66 0 75 0;
-#X connect 68 0 44 0;
-#X connect 69 0 70 0;
-#X connect 75 0 8 0;
+#X connect 45 0 68 0;
+#X connect 45 0 74 0;
+#X connect 65 0 74 0;
+#X connect 67 0 44 0;
+#X connect 68 0 69 0;
+#X connect 74 0 8 0;

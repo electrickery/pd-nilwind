@@ -1,4 +1,4 @@
-#N canvas 164 221 570 530 10;
+#N canvas 537 76 570 530 10;
 #X obj 0 589 cnv 15 552 21 empty empty empty 20 12 0 14 -233017 -33289
 0;
 #X obj 0 369 cnv 3 550 3 empty empty inlets 8 12 0 13 -228856 -1 0
@@ -62,7 +62,6 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 80 547 input signal values outside the -1 to 1 range cause
 asin~ to output the value zero;
 #X text 176 383 - signal to take arcsine of;
-#X obj 510 3 asin~;
 #X obj 84 383 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
 #X text 82 519 outputs signal from -pi/2 to pi/2 when input is -1 to
@@ -372,21 +371,22 @@ asin~ to output the value zero;
 1;
 #X obj 464 275 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X connect 13 0 28 0;
+#X obj 464 5 nilwind/asin~;
+#X connect 13 0 27 0;
 #X connect 14 0 13 0;
-#X connect 24 0 23 0;
-#X connect 26 0 25 0;
-#X connect 27 0 23 0;
+#X connect 23 0 22 0;
+#X connect 25 0 24 0;
+#X connect 26 0 22 0;
+#X connect 26 0 30 0;
+#X connect 27 0 24 0;
 #X connect 27 0 31 0;
-#X connect 28 0 25 0;
-#X connect 28 0 32 0;
-#X connect 29 0 14 0;
-#X connect 30 0 27 0;
+#X connect 28 0 14 0;
+#X connect 29 0 26 0;
+#X connect 33 0 41 0;
 #X connect 34 0 42 0;
-#X connect 35 0 43 0;
-#X connect 42 0 33 0;
-#X connect 42 0 33 1;
-#X connect 43 0 33 1;
-#X connect 43 0 33 0;
-#X connect 44 0 43 1;
-#X connect 45 0 42 1;
+#X connect 41 0 32 0;
+#X connect 41 0 32 1;
+#X connect 42 0 32 1;
+#X connect 42 0 32 0;
+#X connect 43 0 42 1;
+#X connect 44 0 41 1;

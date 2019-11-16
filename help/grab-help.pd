@@ -35,7 +35,6 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 83 460 cnv 17 3 17 empty empty n 5 9 0 16 -228856 -162280 0
 ;
 #X obj 0 0 cnv 15 552 40 empty empty grab 3 12 0 18 -204280 -1 0;
-#X obj 517 5 grab;
 #X text 12 23 intercept the output of another object;
 #X obj 119 260 * 10;
 #X floatatom 119 286 5 0 0 0 - - -;
@@ -96,15 +95,16 @@ to grabbed object's outlets);
 #X text 97 571 by connecting grab to the inlet of an object \, it can
 intercept data to the objects outlets and redirect it to its own leftmost
 outlet or send it to another object.;
-#X connect 11 0 12 0;
-#X connect 14 0 43 0;
-#X connect 15 0 11 1;
-#X connect 16 0 45 0;
-#X connect 22 0 23 0;
-#X connect 23 0 45 0;
-#X connect 24 0 44 0;
-#X connect 33 0 44 0;
-#X connect 43 0 13 0;
-#X connect 43 1 11 0;
-#X connect 44 0 17 0;
-#X connect 44 1 21 0;
+#X obj 471 5 nilwind/grab;
+#X connect 10 0 11 0;
+#X connect 13 0 42 0;
+#X connect 14 0 10 1;
+#X connect 15 0 44 0;
+#X connect 21 0 22 0;
+#X connect 22 0 44 0;
+#X connect 23 0 43 0;
+#X connect 32 0 43 0;
+#X connect 42 0 12 0;
+#X connect 42 1 10 0;
+#X connect 43 0 16 0;
+#X connect 43 1 20 0;

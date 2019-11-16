@@ -30,8 +30,8 @@ adapted the patch to pd-extended 2015-02-02;
 #N canvas 275 455 428 109 Related_objects 0;
 #X obj 0 0 cnv 15 425 20 empty empty empty 3 12 0 14 -204280 -1 0;
 #X text 6 1 Related Objects;
-#X obj 10 29 count~;
-#X obj 58 29 framedelta~;
+#X obj 10 51 nilwind/framedelta~;
+#X obj 10 29 nilwind/count~;
 #X restore 202 423 pd Related_objects;
 #X obj 83 201 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
@@ -39,10 +39,9 @@ adapted the patch to pd-extended 2015-02-02;
 ;
 #X obj 0 0 cnv 15 552 40 empty empty frameaccum~ 3 12 0 18 -204280
 -1 0;
-#X obj 477 6 frameaccum~;
 #X obj 88 147 Snapshot~ 100;
 #X obj 88 170 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 55149 256;
+-262144 -1 -1 0 256;
 #X obj 88 60 sig~ 1;
 #X text 114 200 signal;
 #X text 183 200 - incoming signal vector;
@@ -63,22 +62,23 @@ frames;
 -PI and PI. 0 or no argument will accumulate the value without bounds.
 ;
 #X obj 237 169 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 3.09151 256;
+-262144 -1 -1 0 256;
 #X obj 237 59 sig~ 0.01;
 #X obj 237 103 nilwind/frameaccum~ 1;
 #X obj 347 169 hsl 128 15 -3.14153 3.14153 0 0 empty empty empty -2
--8 0 10 -262144 -1 -1 12599 1;
+-8 0 10 -262144 -1 -1 0 1;
 #X msg 313 47 -0.01;
 #X msg 314 69 0.01;
 #X obj 237 146 Snapshot~ 50;
 #X text 338 153 -PI;
 #X text 464 152 PI;
-#X connect 11 0 12 0;
-#X connect 13 0 21 0;
-#X connect 21 0 11 0;
-#X connect 26 0 27 0;
-#X connect 27 0 31 0;
-#X connect 29 0 26 0;
-#X connect 30 0 26 0;
-#X connect 31 0 25 0;
-#X connect 31 0 28 0;
+#X obj 423 5 nilwind/frameaccum~;
+#X connect 10 0 11 0;
+#X connect 12 0 20 0;
+#X connect 20 0 10 0;
+#X connect 25 0 26 0;
+#X connect 26 0 30 0;
+#X connect 28 0 25 0;
+#X connect 29 0 25 0;
+#X connect 30 0 24 0;
+#X connect 30 0 27 0;

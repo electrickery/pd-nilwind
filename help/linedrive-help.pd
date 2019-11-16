@@ -41,12 +41,10 @@ adapted the patch to pd-extended 2015-02-02;
 ;
 #X obj 0 0 cnv 15 552 40 empty empty linedrive 3 12 0 18 -204280 -1
 0;
-#X obj 484 2 linedrive;
 #X text 12 23 scale numbers exponentially for use with line~;
 #X text 78 66 integer message as input;
-#X text 171 274 outputs two values which can be sent to line~ as a
+#X text 217 274 outputs two values which can be sent to line~ as a
 destination and a time in milliseconds;
-#X obj 118 282 line~ 0;
 #X obj 129 251 print linedrive;
 #X text 107 410 message;
 #X text 107 436 float;
@@ -85,17 +83,19 @@ output (float) \; 3) is the base value (float);
 #X obj 519 365 dspSwitch~;
 #X text 99 558 4) is the time value (for Line~) in milliseconds (int)
 ;
-#X connect 14 0 27 1;
-#X connect 14 0 35 0;
-#X connect 26 0 27 0;
-#X connect 27 0 28 0;
-#X connect 27 0 28 1;
-#X connect 29 0 34 0;
-#X connect 30 0 34 0;
-#X connect 31 0 34 0;
-#X connect 32 0 34 1;
-#X connect 33 0 34 1;
-#X connect 34 0 14 0;
-#X connect 34 0 15 0;
-#X connect 35 0 37 0;
-#X connect 35 0 36 0;
+#X obj 441 5 nilwind/linedrive;
+#X obj 118 282 nilwind/line~ 0;
+#X connect 24 0 25 0;
+#X connect 25 0 26 0;
+#X connect 25 0 26 1;
+#X connect 27 0 32 0;
+#X connect 28 0 32 0;
+#X connect 29 0 32 0;
+#X connect 30 0 32 1;
+#X connect 31 0 32 1;
+#X connect 32 0 13 0;
+#X connect 32 0 41 0;
+#X connect 33 0 35 0;
+#X connect 33 0 34 0;
+#X connect 41 0 25 1;
+#X connect 41 0 33 0;

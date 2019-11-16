@@ -33,8 +33,7 @@ updated this patch for pd-extended 2014-12-02.;
 #X obj 84 298 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
 ;
 #X text 12 24 report if window is active / inactive;
-#X obj 511 10 active;
-#X obj 76 171 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
+#X obj 76 171 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
 ;
 #X text 101 172 focus / unfocus window and watch the toggle;
 #X text 111 298 float;
@@ -42,4 +41,5 @@ updated this patch for pd-extended 2014-12-02.;
 #X text 106 334 none;
 #X text 173 298 - "0" - window is inactive \, "1" - window is active
 ;
-#X connect 13 0 10 0;
+#X obj 450 10 nilwind/active;
+#X connect 12 0 9 0;

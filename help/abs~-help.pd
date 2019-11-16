@@ -17,7 +17,6 @@
 #X text 96 467 (none);
 #X obj 371 113 osc~ 200;
 #X obj 449 113 osc~ 220;
-#X obj 516 4 abs~;
 #X text 162 387 - The signal that was input;
 #X text 160 430 - The absolute value of input;
 #X text 73 54 abs~ can be used for a rough instantaneous measure of
@@ -194,12 +193,13 @@ adapted the patch to pd-extended 2015-02-02;
 0.180632;
 #X coords 0 1 1023 0 200 140 1 0 0;
 #X restore 78 229 graph;
-#X connect 1 0 29 0;
-#X connect 1 0 29 1;
+#X obj 460 4 nilwind/abs~;
+#X connect 1 0 28 0;
+#X connect 1 0 28 1;
 #X connect 2 0 1 0;
 #X connect 11 0 2 0;
-#X connect 12 0 28 0;
-#X connect 21 0 30 0;
-#X connect 22 0 27 0;
-#X connect 27 0 30 0;
-#X connect 28 0 2 1;
+#X connect 12 0 27 0;
+#X connect 20 0 29 0;
+#X connect 21 0 26 0;
+#X connect 26 0 29 0;
+#X connect 27 0 2 1;

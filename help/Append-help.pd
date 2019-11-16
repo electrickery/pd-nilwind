@@ -32,7 +32,6 @@ updated this patch for Pd-l2ork version 2013.05.28. Fred Jan Kraan
 adapted the patch to pd-extended 2015-02-02;
 #X text 1 40 DESCRIPTION append a message to the incoming message;
 #X restore 502 432 pd META;
-#X obj 504 5 Append;
 #X text 8 23 append a message to the incoming message;
 #X obj 74 195 print;
 #X msg 74 66 foo;
@@ -57,10 +56,11 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 162 288 - sends the lanything with the stored value appended
 ;
 #X obj 74 142 nilwind/Append FOO;
-#X connect 12 0 31 0;
-#X connect 13 0 31 0;
-#X connect 14 0 31 0;
-#X connect 17 0 31 0;
-#X connect 23 0 31 0;
-#X connect 24 0 31 0;
-#X connect 31 0 11 0;
+#X obj 451 5 nilwind/Append;
+#X connect 11 0 30 0;
+#X connect 12 0 30 0;
+#X connect 13 0 30 0;
+#X connect 16 0 30 0;
+#X connect 22 0 30 0;
+#X connect 23 0 30 0;
+#X connect 30 0 10 0;

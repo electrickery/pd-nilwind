@@ -1,4 +1,4 @@
-#N canvas 390 99 574 532 10;
+#N canvas 489 76 574 532 10;
 #X obj 0 959 cnv 15 552 21 empty empty empty 20 12 0 14 -233017 -33289
 0;
 #X obj 0 407 cnv 3 550 3 empty empty inlets 8 12 0 13 -228856 -1 0
@@ -59,7 +59,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 154 242 vsl 15 110 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X msg 88 205 triglevel \$1;
-#X floatatom 116 337 5 0 0 0 - - -, f 5;
+#X floatatom 116 337 5 0 0 0 - - -;
 #X text 265 647 - the signel level to fire the trigger;
 #X text 98 663 click (6 ints);
 #X text 265 565 - time delay between trigger and sample display;
@@ -72,7 +72,6 @@ adapted the patch to pd-extended 2015-02-02;
 #X text 265 597 - mode 0 - free running mode;
 #X msg 359 174 frgb 0 255 0 \, brgb 7 31 7;
 #X msg 359 197 frgb 255 255 255 \, brgb 0 0 255;
-#X msg 498 9 Scope~;
 #X obj 178 214 r \$0-timebase;
 #X text 336 174 crt;
 #X text 336 197 lcd;
@@ -89,7 +88,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 230 72 osc~ 400;
 #X obj 70 276 hsl 128 15 2 32 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 2600 1;
-#X floatatom 32 276 5 0 0 0 - - -, f 5;
+#X floatatom 32 276 5 0 0 0 - - -;
 #X msg 288 71 0;
 #X text 215 34 Click to reset the phase of this;
 #X text 216 48 osc~ relative to the other one;
@@ -102,7 +101,7 @@ get fragmented. By finding a proper setting \, this can be minimalized.
 -1 -1 0 1;
 #X msg 261 97 400.1;
 #X text 252 117 Or change the frequency;
-#X floatatom 10 169 5 0 0 0 - - -, f 5;
+#X floatatom 10 169 5 0 0 0 - - -;
 #X connect 3 0 0 0;
 #X connect 4 0 0 1;
 #X connect 5 0 0 0;
@@ -127,7 +126,7 @@ base) * 44100 (sample rate) * 130 (buffer size) is more than 24 seconds.
 #X text 307 362 time base;
 #X obj 208 104 hsl 60 15 0.01 1 1 0 empty empty level 2 8 1 10 -204786
 -1 -1 0 1;
-#X floatatom 136 77 5 0 0 0 - - -, f 5;
+#X floatatom 136 77 5 0 0 0 - - -;
 #X text 278 448 values between 2 and 8192;
 #X text 265 434 - time base as fraction of the sample rate \,;
 #X obj 172 128 *~ 0.9;
@@ -142,7 +141,7 @@ color (102 \, 255 \, 51) \, 14/16-background color (135 \, 135 \, 135)
 #X text 277 489 scope.;
 #X obj 172 362 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 4;
-#X floatatom 232 383 5 0 0 0 - #0-timebase -, f 5;
+#X floatatom 232 383 5 0 0 0 - #0-timebase -;
 #N canvas 1020 546 450 300 powOf2 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-powOf2 8 float 3;
@@ -170,8 +169,9 @@ color (102 \, 255 \, 51) \, 14/16-background color (135 \, 135 \, 135)
 #X text 98 856 The Max scope~ object has no arguments \, but many attributes.
 ;
 #X text 99 463 bufsize <int>;
+#X msg 453 9 nilwind/Scope~;
 #X connect 19 0 39 0;
-#X connect 19 0 62 0;
+#X connect 19 0 61 0;
 #X connect 21 0 18 0;
 #X connect 25 0 18 0;
 #X connect 26 0 25 0;
@@ -179,10 +179,10 @@ color (102 \, 255 \, 51) \, 14/16-background color (135 \, 135 \, 135)
 #X connect 30 0 31 0;
 #X connect 30 0 32 0;
 #X connect 31 0 18 0;
-#X connect 39 0 65 0;
+#X connect 39 0 64 0;
 #X connect 43 0 18 0;
 #X connect 44 0 18 0;
-#X connect 46 0 18 0;
-#X connect 61 0 65 1;
-#X connect 65 0 18 0;
-#X connect 69 0 71 0;
+#X connect 45 0 18 0;
+#X connect 60 0 64 1;
+#X connect 64 0 18 0;
+#X connect 68 0 70 0;
