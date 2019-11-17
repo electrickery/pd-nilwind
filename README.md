@@ -8,6 +8,13 @@ Within the nilwind file set, the transition to a new build system, started with 
 
 The new build system is pd-lib-builder based and only builds each object in a separate file. The old build configuration also compiled to the hammer and sickle library objects and included a cyclone meta-library. The original location of this repository is https://github.com/electrickery/pd-nilwind.
 
+The project was <a href="https://github.com/porres/pd-cyclone">forked</a> with the intention of
+creating an object set with maximum compatibility with current Max versions. To reduce confusion, the
+current repository was renamed <a href="https://github.com/electrickery/pd-miXedSon">pd-miXedSon</a>
+after the pd-extended directory in which it resides (at SourceForge). As the Max-oriented fork gains
+features, it also generates instabilities and incompatibilities. So there is more room for a backward
+compatible distribution which just fixes the real bugs, some emerging from new platforms. 
+
 <strong>Goals</strong>
 
 The original goal of cyclone was to create a collection of Max/MSP objects for PureData. This was in the 2000s area, Max/MSP version 4.6. Since then MAX evolved its architecture and file format to something that is incompatible with PureData. Compatibility in patch file level is limited to this very old version of Max/MSP.
