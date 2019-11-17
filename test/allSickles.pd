@@ -1,4 +1,4 @@
-#N canvas 568 78 583 516 10;
+#N canvas 568 78 583 549 10;
 #X obj 14 5 nilwind/abs~;
 #X obj 14 30 nilwind/acos~;
 #X obj 14 55 nilwind/acosh~;
@@ -38,8 +38,8 @@
 #X obj 149 406 nilwind/Line~;
 #X obj 149 431 nilwind/linedrive;
 #X obj 149 456 nilwind/log~;
-#X obj 14 1005 nilwind/lookup~;
-#X obj 149 480 nilwind/lores~;
+#X obj 149 480 nilwind/lookup~;
+#X obj 149 504 nilwind/lores~;
 #X obj 288 6 nilwind/matrix~ 2 2;
 #X obj 288 31 nilwind/maximum~;
 #X obj 288 56 nilwind/minimum~;
@@ -77,5 +77,5 @@
 #X obj 430 406 nilwind/triangle~;
 #X obj 430 431 nilwind/vectral~;
 #X obj 430 456 nilwind/wave~;
-#X obj 436 1005 nilwind/zerox~;
-#X obj 432 489 nilwind/nettles-help;
+#X obj 430 481 nilwind/zerox~;
+#X obj 431 511 nilwind/nettles-help;

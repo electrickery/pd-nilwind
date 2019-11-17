@@ -5,10 +5,8 @@ lib.name = nilwind
 # for the MINGW which has the timespec struct defined twice
 cflags = -Ishared -DHAVE_STRUCT_TIMESPEC
 
-uname := $(shell uname -s)
-ifeq (MINGW,$(findstring MINGW,$(uname)))
-    exe.extension = .exe
-endif
+forWindows = exe.extension = .exe
+forLinux   = aliases=true
 
 ################################################################################
 ### hammer #####################################################################
@@ -342,11 +340,28 @@ vectral~.class.sources := sickle/vectral.c $(ssic)
 wave~.class.sources := sickle/wave.c $(sarsic)
 zerox~.class.sources := sickle/zerox.c $(ssic)
 
+
+################################################################################
+### shadow #####################################################################
+################################################################################
+
+
+# common sources for shadow types
+
 nettles.class.sources := shadow/nettles.c $(ssic)
+
+
+
+
+################################################################################
+### pdlibbuilder ###############################################################
+################################################################################
 
 
 datafiles = \
 $(wildcard help/*-help.pd) \
+test/allHammers.pd \
+test/allSickles.pd \
 help/dspSwitch~.pd \
 help/output~.pd \
 help/test.mid \
@@ -355,18 +370,13 @@ LICENSE.txt \
 README.md \
 nilwind-meta.pd
 
-
-################################################################################
-### pdlibbuilder ###############################################################
-################################################################################
+datadirs = test
 
 
 # Include Makefile.pdlibbuilder from this directory, or else from central
 # externals directory in pd-extended configuration.
 
 externalsdir = ../..
-
--include ../Makefile.cross
 
 PDLIBBUILDER_DIR ?= .
 include $(firstword $(wildcard $(PDLIBBUILDER_DIR)/Makefile.pdlibbuilder \
@@ -384,38 +394,38 @@ install-aliases: all
 ifeq ($(uname), Linux)
 	$(INSTALL_DIR) -v $(installpath)
 	cd $(installpath); \
-        ln -s -f Append.$(extension) append.$(extension); \
-        ln -s -f Append-help.pd append-help.pd; \
-        ln -s -f Borax.$(extension) borax.$(extension); \
-        ln -s -f Borax-help.pd borax-help.pd; \
-        ln -s -f Bucket.$(extension) bucket.$(extension); \
-        ln -s -f Bucket-help.pd bucket-help.pd; \
-        ln -s -f Clip.$(extension) clip.$(extension); \
-        ln -s -f Clip-help.pd clip-help.pd; \
-        ln -s -f Decode.$(extension) decode.$(extension); \
-        ln -s -f Decode-help.pd decode-help.pd; \
-        ln -s -f Histo.$(extension) histo.$(extension); \
-        ln -s -f Histo-help.pd histo-help.pd; \
-        ln -s -f MouseState.$(extension) mousestate.$(extension); \
-        ln -s -f MouseState-help.pd mousestate-help.pd; \
-        ln -s -f Peak.$(extension) peak.$(extension); \
-        ln -s -f Peak-help.pd peak-help.pd; \
-        ln -s -f Table.$(extension) table.$(extension); \
-        ln -s -f Table-help.pd table-help.pd; \
-        ln -s -f TogEdge.$(extension) togedge.$(extension); \
-        ln -s -f TogEdge-help.pd togedge-help.pd; \
-        ln -s -f Trough.$(extension) trough.$(extension); \
-        ln -s -f Trough-help.pd trough-help.pd; \
-        ln -s -f Uzi.$(extension) uzi.$(extension); \
-        ln -s -f Uzi-help.pd uzi-help.pd; \
-        ln -s -f Clip~.$(extension) clip~.$(extension); \
-        ln -s -f Clip~-help.pd clip~-help.pd; \
-        ln -s -f Line~.$(extension) line~.$(extension); \
-        ln -s -f Line~-help.pd line~-help.pd; \
-        ln -s -f Scope~.$(extension) scope~.$(extension); \
-        ln -s -f Scope~-help.pd scope~-help.pd; \
-        ln -s -f Snapshot~.$(extension) snapshot~.$(extension); \
-        ln -s -f Snapshot~-help.pd snapshot~-help.pd
+        ln -rs -f Append.$(extension) append.$(extension); \
+        ln -rs -f Append-help.pd append-help.pd; \
+        ln -rs -f Borax.$(extension) borax.$(extension); \
+        ln -rs -f Borax-help.pd borax-help.pd; \
+        ln -rs -f Bucket.$(extension) bucket.$(extension); \
+        ln -rs -f Bucket-help.pd bucket-help.pd; \
+        ln -rs -f Clip.$(extension) clip.$(extension); \
+        ln -rs -f Clip-help.pd clip-help.pd; \
+        ln -rs -f Decode.$(extension) decode.$(extension); \
+        ln -rs -f Decode-help.pd decode-help.pd; \
+        ln -rs -f Histo.$(extension) histo.$(extension); \
+        ln -rs -f Histo-help.pd histo-help.pd; \
+        ln -rs -f MouseState.$(extension) mousestate.$(extension); \
+        ln -rs -f MouseState-help.pd mousestate-help.pd; \
+        ln -rs -f Peak.$(extension) peak.$(extension); \
+        ln -rs -f Peak-help.pd peak-help.pd; \
+        ln -rs -f Table.$(extension) table.$(extension); \
+        ln -rs -f Table-help.pd table-help.pd; \
+        ln -rs -f TogEdge.$(extension) togedge.$(extension); \
+        ln -rs -f TogEdge-help.pd togedge-help.pd; \
+        ln -rs -f Trough.$(extension) trough.$(extension); \
+        ln -rs -f Trough-help.pd trough-help.pd; \
+        ln -rs -f Uzi.$(extension) uzi.$(extension); \
+        ln -rs -f Uzi-help.pd uzi-help.pd; \
+        ln -rs -f Clip~.$(extension) clip~.$(extension); \
+        ln -rs -f Clip~-help.pd clip~-help.pd; \
+        ln -rs -f Line~.$(extension) line~.$(extension); \
+        ln -rs -f Line~-help.pd line~-help.pd; \
+        ln -rs -f Scope~.$(extension) scope~.$(extension); \
+        ln -rs -f Scope~-help.pd scope~-help.pd; \
+        ln -rs -f Snapshot~.$(extension) snapshot~.$(extension); \
+        ln -rs -f Snapshot~-help.pd snapshot~-help.pd
 endif
 
 all: cyclist$(exe.extension)

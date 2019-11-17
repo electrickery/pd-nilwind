@@ -3,7 +3,7 @@
 0;
 #X obj 0 313 cnv 3 550 3 empty empty inlets 8 12 0 13 -228856 -1 0
 ;
-#N canvas 616 303 358 235 META 0;
+#N canvas 616 303 432 369 META 1;
 #X text 0 20 LICENSE SIBSD;
 #X text 0 120 LIBRARY nilwind;
 #X text 0 0 KEYWORDS toggle edge transition zero non-zero nz;
@@ -36,9 +36,9 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 0 0 cnv 15 552 40 empty empty TogEdge 3 12 0 18 -204280 -1 0
 ;
 #X floatatom 199 67 5 0 0 0 - - -;
-#X obj 223 142 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+#X obj 321 68 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
-#X msg 219 115 1;
+#X msg 277 67 1;
 #X text 109 323 float;
 #X text 160 323 - number to input \, check for transitions;
 #X text 109 343 bang;
@@ -51,7 +51,7 @@ adapted the patch to pd-extended 2015-02-02;
 #X obj 161 89 - 3;
 #X floatatom 161 111 5 0 0 0 - - -;
 #X obj 199 215 nilwind/TogEdge;
-#X msg 218 90 0;
+#X msg 243 68 0;
 #X obj 86 68 hradio 15 1 0 7 empty empty empty 0 -8 0 10 -262144 -1
 -1 0;
 #X text 87 50 -3;
