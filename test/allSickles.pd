@@ -1,4 +1,5 @@
 #N canvas 183 83 583 549 10;
+#X declare -path ../;
 #X obj 14 5 nilwind/abs~;
 #X obj 14 30 nilwind/acos~;
 #X obj 14 55 nilwind/acosh~;
@@ -78,4 +79,5 @@
 #X obj 430 431 nilwind/vectral~;
 #X obj 430 456 nilwind/wave~;
 #X obj 430 481 nilwind/zerox~;
-#X obj 431 511 nilwind/nettles-help;
+#X obj 288 516 nilwind/nettles-help;
+#X obj 431 515 declare -path ../;

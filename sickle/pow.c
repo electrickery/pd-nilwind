@@ -47,8 +47,9 @@ static void *pow_new(t_floatarg f)
 
 void pow_tilde_setup(void)
 {
-    pow_class = class_new(gensym("pow~"),
+    pow_class = class_new(gensym("nilwind/pow~"),
 			  (t_newmethod)pow_new, 0,
 			  sizeof(t_pow), 0, A_DEFFLOAT, 0);
     sic_setup(pow_class, pow_dsp, SIC_FLOATTOSIGNAL);
+    class_sethelpsymbol(pow_class, gensym("pow~"));
 }

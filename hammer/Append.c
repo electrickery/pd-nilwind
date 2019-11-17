@@ -32,7 +32,6 @@ typedef struct _appendxy
 } t_appendxy;
 
 static t_class *append_class;
-static t_class *appendxy_class;
 
 static int append_iscompatible = 0;  /* FIXME per-object */
 
@@ -114,7 +113,7 @@ static void append_anything(t_append *x, t_symbol *s, int ac, t_atom *av)
     else
     {
 	/* LATER consider using the stack if ntotal <= MAXSTACK */
-	if (buf = getbytes(ntotal * sizeof(*buf)))
+	if ((buf = getbytes(ntotal * sizeof(*buf))))
 	{
 	    if (ac)
 		memcpy(buf, av, ac * sizeof(*buf));
@@ -193,7 +192,7 @@ static void append_doset(t_append *x, t_symbol *s, int ac, t_atom *av)
 		freebytes(x->x_auxbuf, x->x_auxsize * sizeof(*x->x_auxbuf));
 		x->x_auxsize = 0;
 	    }
-	    if (x->x_auxbuf = getbytes(newsize * sizeof(*x->x_auxbuf)))
+	    if ((x->x_auxbuf = getbytes(newsize * sizeof(*x->x_auxbuf))))
 	    {
 		t_atom *ap = x->x_auxbuf + ac;
 		if (s)
@@ -249,44 +248,6 @@ static void append_set(t_append *x, t_symbol *s, int ac, t_atom *av)
 	append_doset(x, 0, ac, av);
 }
 
-static void appendxy_bang(t_appendxy *xy)
-{
-    append_doset(xy->xy_owner, 0, 0, 0);  /* LATER rethink */
-}
-
-static void appendxy_float(t_appendxy *xy, t_float f)
-{
-    t_atom at;
-    SETFLOAT(&at, f);
-    append_doset(xy->xy_owner, 0, 1, &at);
-}
-
-static void appendxy_symbol(t_appendxy *xy, t_symbol *s)
-{
-    t_atom at;
-    if (!s || s == &s_)
-	s = &s_symbol;  /* LATER rethink */
-    SETSYMBOL(&at, s);
-    append_doset(xy->xy_owner, 0, 1, &at);
-}
-
-static void appendxy_list(t_appendxy *xy, t_symbol *s, int ac, t_atom *av)
-{
-    if (ac)
-	append_doset(xy->xy_owner, 0, ac, av);
-    else
-    {  /* LATER rethink */
-	t_atom at;
-	SETSYMBOL(&at, &s_list);
-	append_doset(xy->xy_owner, 0, 1, &at);
-    }
-}
-
-static void appendxy_anything(t_appendxy *xy, t_symbol *s, int ac, t_atom *av)
-{
-    append_doset(xy->xy_owner, s, ac, av);
-}
-
 static void append_free(t_append *x)
 {
     if (x->x_messbuf != x->x_messini)
@@ -316,7 +277,7 @@ static void *append_new(t_symbol *s, int ac, t_atom *av)
     }
     else
     {
-	x->x_proxy = pd_new(appendxy_class);
+	x->x_proxy = pd_new(append_class);
 	((t_appendxy *)x->x_proxy)->xy_owner = x;
 	inlet_new((t_object *)x, x->x_proxy, 0, 0);
     }
@@ -331,7 +292,7 @@ static void append_fitter(void)
 
 void Append_setup(void)
 {
-    append_class = class_new(gensym("Append"),
+    append_class = class_new(gensym("nilwind/Append"),
 			     (t_newmethod)append_new,
 			     (t_method)append_free,
 			     sizeof(t_append), 0,
@@ -343,14 +304,8 @@ void Append_setup(void)
     class_addanything(append_class, append_anything);
     class_addmethod(append_class, (t_method)append_set,
 		    gensym("set"), A_GIMME, 0);
-
-    appendxy_class = class_new(gensym("append"), 0, 0, sizeof(t_appendxy),
-			       CLASS_PD | CLASS_NOINLET, 0);
-    class_addbang(appendxy_class, appendxy_bang);
-    class_addfloat(appendxy_class, appendxy_float);
-    class_addsymbol(appendxy_class, appendxy_symbol);
-    class_addlist(appendxy_class, appendxy_list);
-    class_addanything(appendxy_class, appendxy_anything);
+    class_addcreator((t_newmethod)append_new, gensym("nilwind/append"), A_GIMME, 0);
+    class_sethelpsymbol(append_class, gensym("Append"));
 
     fitter_setup(append_class, append_fitter);
 }

@@ -143,12 +143,11 @@ static void *snapshot_new(t_floatarg f1, t_floatarg f2)
 
 void Snapshot_tilde_setup(void)
 {
-    snapshot_class = class_new(gensym("Snapshot~"),
+    snapshot_class = class_new(gensym("nilwind/Snapshot~"),
 			       (t_newmethod)snapshot_new,
 			       (t_method)snapshot_free,
 			       sizeof(t_snapshot), 0,
 			       A_DEFFLOAT, A_DEFFLOAT, 0);
-    class_addcreator((t_newmethod)snapshot_new, gensym("snapshot~"), A_DEFFLOAT, A_DEFFLOAT, 0);
     class_addcreator((t_newmethod)snapshot_new, gensym("nilwind/snapshot~"), A_DEFFLOAT, A_DEFFLOAT, 0);
     sic_setup(snapshot_class, snapshot_dsp, snapshot_float);
     class_addbang(snapshot_class, snapshot_bang);
@@ -160,6 +159,7 @@ void Snapshot_tilde_setup(void)
 		    gensym("start"), 0);
     class_addmethod(snapshot_class, (t_method)snapshot_stop,
 		    gensym("stop"), 0);
+    class_sethelpsymbol(snapshot_class, gensym("Snapshot~"));
 }
 
 void snapshot_tilde_setup(void)

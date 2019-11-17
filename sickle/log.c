@@ -65,10 +65,11 @@ static void *log_new(t_floatarg f)
 
 void log_tilde_setup(void)
 {
-    log_class = class_new(gensym("log~"),
+    log_class = class_new(gensym("nilwind/log~"),
 			  (t_newmethod)log_new, 0,
 			  sizeof(t_log), 0, A_DEFFLOAT, 0);
     sic_setup(log_class, log_dsp, SIC_FLOATTOSIGNAL);
     class_addmethod(log_class, (t_method)log_ft1,
 		    gensym("ft1"), A_FLOAT, 0);
+    class_sethelpsymbol(log_class, gensym("log~"));
 }

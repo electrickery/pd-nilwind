@@ -319,11 +319,10 @@ static void *line_new(t_floatarg f)
 
 void Line_tilde_setup(void)
 {
-    line_class = class_new(gensym("Line~"),
+    line_class = class_new(gensym("nilwind/Line~"),
 			   (t_newmethod)line_new,
 			   (t_method)line_free,
 			   sizeof(t_line), 0, A_DEFFLOAT, 0);
-    class_addcreator((t_newmethod)line_new, gensym("line~"), A_DEFFLOAT, 0);
     class_addcreator((t_newmethod)line_new, gensym("nilwind/line~"), A_DEFFLOAT, 0);
     sic_setup(line_class, line_dsp, SIC_NOMAINSIGNALIN);
     class_addfloat(line_class, line_float);
@@ -338,6 +337,7 @@ void Line_tilde_setup(void)
 		    gensym("resume"), 0);
 //    logpost(NULL, 4, "this is nilwind/Line~ %s, %dth %s build",
 //	 CYCLONE_VERSION, CYCLONE_BUILD, CYCLONE_RELEASE);
+    class_sethelpsymbol(line_class, gensym("Line~"));
 }
 
 void line_tilde_setup(void)
