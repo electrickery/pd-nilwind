@@ -7,8 +7,7 @@ pushd .. || exit
 
 tar cvzf ${CURRENTPROJECT}_sources.tgz \
  ${CURRENTPROJECT}/build_counter \
- ${CURRENTPROJECT}/abstractions/ \
- ${CURRENTPROJECT}/cyclone-meta.pd \
+ ${CURRENTPROJECT}/nilwind-meta.pd \
  ${CURRENTPROJECT}/hammer/ \
  ${CURRENTPROJECT}/help/ \
  ${CURRENTPROJECT}/LICENSE.txt \

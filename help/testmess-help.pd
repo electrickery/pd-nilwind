@@ -1,4 +1,4 @@
-#N canvas 488 79 557 508 10;
+#N canvas 183 83 557 508 10;
 #X msg 126 120 1;
 #X obj 126 188 print;
 #X msg 166 120 asdf;

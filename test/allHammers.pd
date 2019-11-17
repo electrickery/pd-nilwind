@@ -1,4 +1,4 @@
-#N canvas 587 76 604 527 10;
+#N canvas 183 83 604 527 10;
 #X obj 26 25 nilwind/accum;
 #X obj 26 50 nilwind/acos;
 #X obj 26 75 nilwind/active;
