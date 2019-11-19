@@ -391,7 +391,7 @@ install: install-aliases install-cyclist
 
 # on Linux, add symbolic links for lower case aliases
 install-aliases: all
-ifeq ($(uname), Linux)
+ifeq ($(aliases), true)
 	$(INSTALL_DIR) -v $(installpath)
 	cd $(installpath); \
         ln -rs -f Append.$(extension) append.$(extension); \
