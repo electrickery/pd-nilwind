@@ -616,13 +616,14 @@ static void scope_select(t_gobj *z, t_glist *glist, int state)
 		sh->h_pathname, SCOPEHANDLE_WIDTH, SCOPEHANDLE_HEIGHT);
 		sh->h_selectedmode = 1;
 	}
+        printf("sh->h_pathname: %s\n", sh->h_pathname);
 
 	sys_vgui(".x%lx.c create window %f %f -anchor nw\
  -width %d -height %d -window %s -tags %s\n",
 		 cv, x2 - (SCOPEHANDLE_WIDTH - SCOPE_SELBDWIDTH),
 		 y2 - (SCOPEHANDLE_HEIGHT - SCOPE_SELBDWIDTH),
 		 SCOPEHANDLE_WIDTH, SCOPEHANDLE_HEIGHT,
-		 sh->h_pathname, x->x_tag);
+		 sh->h_pathname, x->x_tag); // the yellow handle
 	sys_vgui("bind %s <Button> {pdsend [concat %s _click 1 \\;]}\n",
 		 sh->h_pathname, sh->h_bindsym->s_name);
 	sys_vgui("bind %s <ButtonRelease> {pdsend [concat %s _click 0 \\;]}\n",
@@ -979,7 +980,7 @@ static void scopehandle__clickhook(t_scopehandle *sh, t_floatarg f)
 	{
 	    sys_vgui(".x%lx.c delete %s\n", cv, sh->h_outlinetag);
 	    scope_revis(x, cv);
-	    sys_vgui("destroy %s\n", sh->h_pathname);
+//	    sys_vgui("destroy %s\n", sh->h_pathname);
 	    scope_select((t_gobj *)x, x->x_glist, 1);
 	    canvas_fixlinesfor(x->x_glist, (t_text *)x);  /* 2nd inlet */
 	}
