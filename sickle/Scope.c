@@ -661,9 +661,9 @@ static void scope_drawfgmono(t_scope *x, t_canvas *cv,
 	 i < x->x_bufsize; i++, xx += dx, bp++)
     {
 	yy = ((y1 + height - 1) - sc * (*bp - x->x_minval));
-//#ifndef SCOPE_DEBUG
-//	if (yy > y2) yy = y2; else if (yy < y1) yy = y1;
-//#endif
+#ifndef SCOPE_DEBUG
+	if (yy > y1 + height) yy = y1 + height; else if (yy < y1) yy = y1;
+#endif
 	sys_vgui("%d %d \\\n", (int)xx, (int)yy);
     }
     sys_vgui("-fill #%2.2x%2.2x%2.2x -width %f -tags {%s %s}\n",
@@ -685,6 +685,7 @@ static void scope_drawfgmono(t_scope *x, t_canvas *cv,
 static void scope_drawfgxy(t_scope *x, t_canvas *cv,
 			   int x1, int y1, int x2, int y2)
 {
+    int zoom = (int)x->x_glist->gl_zoom;
     int nleft = x->x_bufsize;
     float *xbp = x->x_xbuffer, *ybp = x->x_ybuffer;
     char chunk[200 * SCOPE_GUICHUNKXY];  /* LATER estimate */
@@ -693,8 +694,10 @@ static void scope_drawfgxy(t_scope *x, t_canvas *cv,
     float xx, yy, xsc, ysc;
     xx = yy = 0;
     /* subtract 1-pixel margins, see below */
-    xsc = ((float)x->x_width - 2.) / (float)(x->x_maxval - x->x_minval);
-    ysc = ((float)x->x_height - 2.) / (float)(x->x_maxval - x->x_minval);
+    int width  = (x2 - x1) * zoom;
+    int height = (y2 - y1) * zoom;
+    xsc = ((float)x->x_width - 2.) * zoom / (float)(x->x_maxval - x->x_minval);
+    ysc = ((float)x->x_height - 2.) * zoom / (float)(x->x_maxval - x->x_minval);
     sprintf(cmd1, ".x%lx.c create line", (unsigned long)cv);
     sprintf(cmd2, "-fill #%2.2x%2.2x%2.2x -width %f -tags {%s %s}\n ",
 	    x->x_fgred, x->x_fggreen, x->x_fgblue,
@@ -706,12 +709,12 @@ static void scope_drawfgxy(t_scope *x, t_canvas *cv,
 	{
 	    float oldx = xx, oldy = yy, dx, dy;
 	    xx = x1 + xsc * (*xbp++ - x->x_minval);
-	    yy = y2 - ysc * (*ybp++ - x->x_minval);
+	    yy = y1 + height - ysc * (*ybp++ - x->x_minval);
 	    /* using 1-pixel margins */
 	    dx = (xx > oldx ? 1. : -1.);
 	    dy = (yy > oldy ? 1. : -1.);
 #ifndef SCOPE_DEBUG
-	    if (xx < x1 || xx > x2 || yy < y1 || yy > y2)
+	    if (xx < x1 || xx > x1 + width || yy < y1 || yy > y1 + height)
 		continue;
 #endif
 	    sprintf(chunkp, "%s %d %d %d %d %s", cmd1,
@@ -724,16 +727,16 @@ static void scope_drawfgxy(t_scope *x, t_canvas *cv,
 	chunkp = chunk;
 	nleft -= SCOPE_GUICHUNKXY;
     }
-    while (nleft--)
+    while (0) //nleft--)
     {
 	float oldx = xx, oldy = yy, dx, dy;
 	xx = x1 + xsc * (*xbp++ - x->x_minval);
-	yy = y2 - ysc * (*ybp++ - x->x_minval);
+	yy = y1 + height - ysc * (*ybp++ - x->x_minval);
 	/* using 1-pixel margins */
 	dx = (xx > oldx ? 1. : -1.);
 	dy = (yy > oldy ? 1. : -1.);
 #ifndef SCOPE_DEBUG
-	if (xx < x1 || xx > x2 || yy < y1 || yy > y2)
+	if (xx < x1 || xx > x1 + width || yy < y1 || yy > y1 + height)
 	    continue;
 #endif
 	sprintf(chunkp, "%s %d %d %d %d %s", cmd1,
@@ -802,9 +805,9 @@ static void scope_redrawmono(t_scope *x, t_canvas *cv) // the dynamic line with 
 	while (i--)
 	{
 	    yy = (y1 + height - 1) - sc * (*bp++ - x->x_minval);
-//#ifndef SCOPE_DEBUG
-//	    if (yy > y2) yy = y2; else if (yy < y1) yy = y1;
-//#endif
+#ifndef SCOPE_DEBUG
+	    if (yy > y1 + height) yy = y1 + height; else if (yy < y1) yy = y1;
+#endif
 	    sprintf(chunkp, "%d %d ", (int)xx, (int)yy);
 	    chunkp += strlen(chunkp);
 	    xx += dx;
