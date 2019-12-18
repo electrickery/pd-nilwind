@@ -112,6 +112,7 @@ typedef struct _scope
     int        x_frozen;
     t_clock   *x_clock;
     t_pd      *x_handle;
+    int        x_zoom;
 } t_scope;
 
 typedef struct _scopehandle
@@ -645,21 +646,24 @@ static void scope_delete(t_gobj *z, t_glist *glist)
 }
 
 static void scope_drawfgmono(t_scope *x, t_canvas *cv,
-			     int x1, int y1, int x2, int y2)
+			     int x1, int y1, int x2, int y2) // the static line, when dsp is off
 {
     int i;
+    t_int zoom = (int)x->x_glist->gl_zoom;
+
     float dx, dy, xx, yy, sc;
     float *bp;
-    dx = (float)(x2 - x1) / (float)x->x_bufsize;
-    sc = ((float)x->x_height - 2.) / (float)(x->x_maxval - x->x_minval);
+    int height = (y2 - y1) * zoom;
+    dx = (float)(x2 - x1) * zoom / (float)x->x_bufsize;
+    sc = ((float)x->x_height - 2.) * zoom / (float)(x->x_maxval - x->x_minval);
     sys_vgui(".x%lx.c create line \\\n", cv);
     for (i = 0, xx = x1, bp = x->x_xbuffer;
 	 i < x->x_bufsize; i++, xx += dx, bp++)
     {
-	yy = (y2 - 1) - sc * (*bp - x->x_minval);
-#ifndef SCOPE_DEBUG
-	if (yy > y2) yy = y2; else if (yy < y1) yy = y1;
-#endif
+	yy = ((y1 + height - 1) - sc * (*bp - x->x_minval));
+//#ifndef SCOPE_DEBUG
+//	if (yy > y2) yy = y2; else if (yy < y1) yy = y1;
+//#endif
 	sys_vgui("%d %d \\\n", (int)xx, (int)yy);
     }
     sys_vgui("-fill #%2.2x%2.2x%2.2x -width %f -tags {%s %s}\n",
@@ -746,22 +750,25 @@ static void scope_drawbg(t_scope *x, t_canvas *cv,
 {
     int i;
     float dx, dy, xx, yy;
-    dx = (x2 - x1) * 0.125;
-    dy = (y2 - y1) * 0.25;
+    t_int zoom = (int)x->x_glist->gl_zoom;
+    dx = (x2 - x1) * 0.125 * zoom;
+    dy = (y2 - y1) * 0.25 * zoom;
+    int width = (x2 - x1) * zoom;
+    int height = (y2 - y1) * zoom;
     sys_vgui(".x%lx.c create rectangle %d %d %d %d\
  -fill #%2.2x%2.2x%2.2x -width %f -tags {%s %s}\n",
-	     cv, x1, y1, x2, y2,
+	     cv, x1, y1, x1 + width, y1 + height,
 	     x->x_bgred, x->x_bggreen, x->x_bgblue,
 	     SCOPE_GRIDWIDTH, x->x_bgtag, x->x_tag);
                  
     for (i = 0, xx = x1 + dx; i < 7; i++, xx += dx) 
 	sys_vgui(".x%lx.c create line %f %d %f %d\
- -width %f -tags {%s %s} -fill #%2.2x%2.2x%2.2x\n", cv, xx, y1, xx, y2,
+ -width %f -tags {%s %s} -fill #%2.2x%2.2x%2.2x\n", cv, xx, y1, xx, y1 + height,
 		 SCOPE_GRIDWIDTH, x->x_gridtag, x->x_tag, 
 		 x->x_grred, x->x_grgreen, x->x_grblue);
     for (i = 0, yy = y1 + dy; i < 3; i++, yy += dy)
 	sys_vgui(".x%lx.c create line %d %f %d %f\
- -width %f -tags {%s %s} -fill #%2.2x%2.2x%2.2x\n", cv, x1, yy, x2, yy,
+ -width %f -tags {%s %s} -fill #%2.2x%2.2x%2.2x\n", cv, x1, yy, x1 + width, yy,
 		 SCOPE_GRIDWIDTH, x->x_gridtag, x->x_tag,
 		 x->x_grred, x->x_grgreen, x->x_grblue);
 }
@@ -774,8 +781,9 @@ static void scope_drawmono(t_scope *x, t_canvas *cv)
     scope_drawfgmono(x, cv, x1, y1, x2, y2);
 }
 
-static void scope_redrawmono(t_scope *x, t_canvas *cv)
+static void scope_redrawmono(t_scope *x, t_canvas *cv) // the dynamic line with dsp on
 {
+    t_int zoom = (int)x->x_glist->gl_zoom;
     int nleft = x->x_bufsize;
     float *bp = x->x_xbuffer;
     char chunk[32 * SCOPE_GUICHUNKMONO];  /* LATER estimate */
@@ -783,8 +791,9 @@ static void scope_redrawmono(t_scope *x, t_canvas *cv)
     int x1, y1, x2, y2;
     float dx, dy, xx, yy, sc;
     scope_getrect((t_gobj *)x, x->x_glist, &x1, &y1, &x2, &y2);
-    dx = (float)(x2 - x1) / (float)x->x_bufsize;
-    sc = ((float)x->x_height - 2.) / (float)(x->x_maxval - x->x_minval);
+    int height = (y2 - y1) * zoom;
+    dx = (float)(x2 - x1) * zoom / (float)x->x_bufsize;
+    sc = ((float)x->x_height - 2.) * zoom / (float)(x->x_maxval - x->x_minval);
     xx = x1;
     sys_vgui(".x%lx.c coords %s \\\n", cv, x->x_fgtag);
     while (nleft > SCOPE_GUICHUNKMONO)
@@ -792,10 +801,10 @@ static void scope_redrawmono(t_scope *x, t_canvas *cv)
 	int i = SCOPE_GUICHUNKMONO;
 	while (i--)
 	{
-	    yy = (y2 - 1) - sc * (*bp++ - x->x_minval);
-#ifndef SCOPE_DEBUG
-	    if (yy > y2) yy = y2; else if (yy < y1) yy = y1;
-#endif
+	    yy = (y1 + height - 1) - sc * (*bp++ - x->x_minval);
+//#ifndef SCOPE_DEBUG
+//	    if (yy > y2) yy = y2; else if (yy < y1) yy = y1;
+//#endif
 	    sprintf(chunkp, "%d %d ", (int)xx, (int)yy);
 	    chunkp += strlen(chunkp);
 	    xx += dx;
@@ -805,12 +814,12 @@ static void scope_redrawmono(t_scope *x, t_canvas *cv)
 	chunkp = chunk;
 	nleft -= SCOPE_GUICHUNKMONO;
     }
-    while (nleft--)
+    while (nleft--) // The last partial chunk
     {
-	yy = (y2 - 1) - sc * (*bp++ - x->x_minval);
-#ifndef SCOPE_DEBUG
-	if (yy > y2) yy = y2; else if (yy < y1) yy = y1;
-#endif
+	yy = (y1 + height - 1) - sc * (*bp++ - x->x_minval);
+//#ifndef SCOPE_DEBUG
+//	if (yy > y2) yy = y2; else if (yy < y1) yy = y1;
+//#endif
 	sprintf(chunkp, "%d %d ", (int)xx, (int)yy);
 	chunkp += strlen(chunkp);
 	xx += dx;
@@ -1014,9 +1023,17 @@ static void scopehandle__motionhook(t_scopehandle *sh,
     }
 }
 
+void scope_zoom(t_scope *x, t_floatarg zoom)
+{
+     x->x_glist->gl_zoom = (zoom < 1) ? 1 : (int)zoom;
+}
+
+
 void scope_status(t_scope *x) {
         printf("----====#### Scope status ####====----\n");
-        printf("x->x_period    %d\n", x->x_period);
+        printf("x->x_period:    %d\n", x->x_period);
+        printf("x->zoom:        %d\n", x->x_zoom);
+        printf("gl_zoom:        %d\n", x->x_glist->gl_zoom);
 }
 
 static void scope_free(t_scope *x)
@@ -1113,9 +1130,11 @@ void Scope_tilde_setup(void)
     class_addmethod(scope_class, (t_method)scope_click,
 		    gensym("click"),
 		    A_FLOAT, A_FLOAT, A_FLOAT, A_FLOAT, A_FLOAT, 0);
-     class_addmethod(scope_class, (t_method)scope_resize,
+    class_addmethod(scope_class, (t_method)scope_resize,
 		    gensym("resize"),
 		    A_FLOAT, A_FLOAT, 0);
+    class_addmethod(scope_class, (t_method)scope_zoom,
+                    gensym("zoom"), A_CANT, 0);
     class_addmethod(scope_class, (t_method)scope_status, gensym("status"), 0);            
     class_setwidget(scope_class, &scope_widgetbehavior);
     forky_setsavefn(scope_class, scope_save);
