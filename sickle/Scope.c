@@ -573,11 +573,12 @@ static void scope_getrect(t_gobj *z, t_glist *glist,
 			  int *xp1, int *yp1, int *xp2, int *yp2)
 {
     t_scope *x = (t_scope *)z;
+    int zoom = (int)x->x_glist->gl_zoom;
     float x1, y1, x2, y2;
     x1 = text_xpix((t_text *)x, glist);
     y1 = text_ypix((t_text *)x, glist);
-    x2 = x1 + x->x_width;
-    y2 = y1 + x->x_height;
+    x2 = x1 + x->x_width * zoom;
+    y2 = y1 + x->x_height * zoom;
     *xp1 = x1;
     *yp1 = y1;
     *xp2 = x2;
@@ -603,6 +604,7 @@ static void scope_select(t_gobj *z, t_glist *glist, int state)
     t_scope *x = (t_scope *)z;
     t_canvas *cv = scope_getcanvas(x, glist);
     t_scopehandle *sh = (t_scopehandle *)x->x_handle;
+    int zoom = (int)x->x_glist->gl_zoom;
     if (state)
     {
 	int x1, y1, x2, y2;
@@ -616,14 +618,13 @@ static void scope_select(t_gobj *z, t_glist *glist, int state)
 		sh->h_pathname, SCOPEHANDLE_WIDTH, SCOPEHANDLE_HEIGHT);
 		sh->h_selectedmode = 1;
 	}
-        printf("sh->h_pathname: %s\n", sh->h_pathname);
-
+        // the yellow handle
 	sys_vgui(".x%lx.c create window %f %f -anchor nw\
  -width %d -height %d -window %s -tags %s\n",
 		 cv, x2 - (SCOPEHANDLE_WIDTH - SCOPE_SELBDWIDTH),
 		 y2 - (SCOPEHANDLE_HEIGHT - SCOPE_SELBDWIDTH),
 		 SCOPEHANDLE_WIDTH, SCOPEHANDLE_HEIGHT,
-		 sh->h_pathname, x->x_tag); // the yellow handle
+		 sh->h_pathname, x->x_tag); 
 	sys_vgui("bind %s <Button> {pdsend [concat %s _click 1 \\;]}\n",
 		 sh->h_pathname, sh->h_bindsym->s_name);
 	sys_vgui("bind %s <ButtonRelease> {pdsend [concat %s _click 0 \\;]}\n",
@@ -636,7 +637,8 @@ static void scope_select(t_gobj *z, t_glist *glist, int state)
 	sys_vgui(".x%lx.c itemconfigure %s -outline black -width %f\
  -fill #%2.2x%2.2x%2.2x\n", cv, x->x_bgtag, SCOPE_GRIDWIDTH,
 		 x->x_bgred, x->x_bggreen, x->x_bgblue);
-	sys_vgui("destroy %s\n", sh->h_pathname);
+        if (sh->h_selectedmode != 0)
+	    sys_vgui("destroy %s\n", sh->h_pathname);
 	sh->h_selectedmode = 0;
     }
 }
@@ -654,16 +656,15 @@ static void scope_drawfgmono(t_scope *x, t_canvas *cv,
 
     float dx, dy, xx, yy, sc;
     float *bp;
-    int height = (y2 - y1) * zoom;
-    dx = (float)(x2 - x1) * zoom / (float)x->x_bufsize;
+    dx = (float)(x2 - x1) / (float)x->x_bufsize;
     sc = ((float)x->x_height - 2.) * zoom / (float)(x->x_maxval - x->x_minval);
     sys_vgui(".x%lx.c create line \\\n", cv);
     for (i = 0, xx = x1, bp = x->x_xbuffer;
 	 i < x->x_bufsize; i++, xx += dx, bp++)
     {
-	yy = ((y1 + height - 1) - sc * (*bp - x->x_minval));
+	yy = ((y2 - 1) - sc * (*bp - x->x_minval));
 #ifndef SCOPE_DEBUG
-	if (yy > y1 + height) yy = y1 + height; else if (yy < y1) yy = y1;
+	if (yy > y2) yy = y2; else if (yy < y1) yy = y1;
 #endif
 	sys_vgui("%d %d \\\n", (int)xx, (int)yy);
     }
@@ -695,8 +696,6 @@ static void scope_drawfgxy(t_scope *x, t_canvas *cv,
     float xx, yy, xsc, ysc;
     xx = yy = 0;
     /* subtract 1-pixel margins, see below */
-    int width  = (x2 - x1) * zoom;
-    int height = (y2 - y1) * zoom;
     xsc = ((float)x->x_width - 2.) * zoom / (float)(x->x_maxval - x->x_minval);
     ysc = ((float)x->x_height - 2.) * zoom / (float)(x->x_maxval - x->x_minval);
     sprintf(cmd1, ".x%lx.c create line", (unsigned long)cv);
@@ -710,12 +709,12 @@ static void scope_drawfgxy(t_scope *x, t_canvas *cv,
 	{
 	    float oldx = xx, oldy = yy, dx, dy;
 	    xx = x1 + xsc * (*xbp++ - x->x_minval);
-	    yy = y1 + height - ysc * (*ybp++ - x->x_minval);
+	    yy = y2 - ysc * (*ybp++ - x->x_minval);
 	    /* using 1-pixel margins */
 	    dx = (xx > oldx ? 1. : -1.);
 	    dy = (yy > oldy ? 1. : -1.);
 #ifndef SCOPE_DEBUG
-	    if (xx < x1 || xx > x1 + width || yy < y1 || yy > y1 + height)
+	    if (xx < x1 || xx > x2 || yy < y1 || yy > y2)
 		continue;
 #endif
 	    sprintf(chunkp, "%s %d %d %d %d %s", cmd1,
@@ -732,12 +731,12 @@ static void scope_drawfgxy(t_scope *x, t_canvas *cv,
     {
 	float oldx = xx, oldy = yy, dx, dy;
 	xx = x1 + xsc * (*xbp++ - x->x_minval);
-	yy = y1 + height - ysc * (*ybp++ - x->x_minval);
+	yy = y2 - ysc * (*ybp++ - x->x_minval);
 	/* using 1-pixel margins */
 	dx = (xx > oldx ? 1. : -1.);
 	dy = (yy > oldy ? 1. : -1.);
 #ifndef SCOPE_DEBUG
-	if (xx < x1 || xx > x1 + width || yy < y1 || yy > y1 + height)
+	if (xx < x1 || xx > x2 || yy < y1 || yy > y2)
 	    continue;
 #endif
 	sprintf(chunkp, "%s %d %d %d %d %s", cmd1,
@@ -754,25 +753,22 @@ static void scope_drawbg(t_scope *x, t_canvas *cv,
 {
     int i;
     float dx, dy, xx, yy;
-    t_int zoom = (int)x->x_glist->gl_zoom;
-    dx = (x2 - x1) * 0.125 * zoom;
-    dy = (y2 - y1) * 0.25 * zoom;
-    int width = (x2 - x1) * zoom;
-    int height = (y2 - y1) * zoom;
+   dx = (x2 - x1) * 0.125;
+    dy = (y2 - y1) * 0.25;
     sys_vgui(".x%lx.c create rectangle %d %d %d %d\
  -fill #%2.2x%2.2x%2.2x -width %f -tags {%s %s}\n",
-	     cv, x1, y1, x1 + width, y1 + height,
+	     cv, x1, y1, x2, y2,
 	     x->x_bgred, x->x_bggreen, x->x_bgblue,
 	     SCOPE_GRIDWIDTH, x->x_bgtag, x->x_tag);
                  
     for (i = 0, xx = x1 + dx; i < 7; i++, xx += dx) 
 	sys_vgui(".x%lx.c create line %f %d %f %d\
- -width %f -tags {%s %s} -fill #%2.2x%2.2x%2.2x\n", cv, xx, y1, xx, y1 + height,
+ -width %f -tags {%s %s} -fill #%2.2x%2.2x%2.2x\n", cv, xx, y1, xx, y2,
 		 SCOPE_GRIDWIDTH, x->x_gridtag, x->x_tag, 
 		 x->x_grred, x->x_grgreen, x->x_grblue);
     for (i = 0, yy = y1 + dy; i < 3; i++, yy += dy)
 	sys_vgui(".x%lx.c create line %d %f %d %f\
- -width %f -tags {%s %s} -fill #%2.2x%2.2x%2.2x\n", cv, x1, yy, x1 + width, yy,
+ -width %f -tags {%s %s} -fill #%2.2x%2.2x%2.2x\n", cv, x1, yy, x2, yy,
 		 SCOPE_GRIDWIDTH, x->x_gridtag, x->x_tag,
 		 x->x_grred, x->x_grgreen, x->x_grblue);
 }
@@ -787,7 +783,6 @@ static void scope_drawmono(t_scope *x, t_canvas *cv)
 
 static void scope_redrawmono(t_scope *x, t_canvas *cv) // the dynamic line with dsp on
 {
-    t_int zoom = (int)x->x_glist->gl_zoom;
     int nleft = x->x_bufsize;
     float *bp = x->x_xbuffer;
     char chunk[32 * SCOPE_GUICHUNKMONO];  /* LATER estimate */
@@ -795,9 +790,8 @@ static void scope_redrawmono(t_scope *x, t_canvas *cv) // the dynamic line with 
     int x1, y1, x2, y2;
     float dx, dy, xx, yy, sc;
     scope_getrect((t_gobj *)x, x->x_glist, &x1, &y1, &x2, &y2);
-    int height = (y2 - y1) * zoom;
-    dx = (float)(x2 - x1) * zoom / (float)x->x_bufsize;
-    sc = ((float)x->x_height - 2.) * zoom / (float)(x->x_maxval - x->x_minval);
+    dx = (float)(x2 - x1) / (float)x->x_bufsize;
+    sc = ((float)x->x_height - 2.) / (float)(x->x_maxval - x->x_minval);
     xx = x1;
     sys_vgui(".x%lx.c coords %s \\\n", cv, x->x_fgtag);
     while (nleft > SCOPE_GUICHUNKMONO)
@@ -805,9 +799,9 @@ static void scope_redrawmono(t_scope *x, t_canvas *cv) // the dynamic line with 
 	int i = SCOPE_GUICHUNKMONO;
 	while (i--)
 	{
-	    yy = (y1 + height - 1) - sc * (*bp++ - x->x_minval);
+	    yy = (y2 - 1) - sc * (*bp++ - x->x_minval);
 #ifndef SCOPE_DEBUG
-	    if (yy > y1 + height) yy = y1 + height; else if (yy < y1) yy = y1;
+	    if (yy > y2) yy = y2; else if (yy < y1) yy = y1;
 #endif
 	    sprintf(chunkp, "%d %d ", (int)xx, (int)yy);
 	    chunkp += strlen(chunkp);
@@ -820,10 +814,10 @@ static void scope_redrawmono(t_scope *x, t_canvas *cv) // the dynamic line with 
     }
     while (nleft--) // The last partial chunk
     {
-	yy = (y1 + height - 1) - sc * (*bp++ - x->x_minval);
-//#ifndef SCOPE_DEBUG
-//	if (yy > y2) yy = y2; else if (yy < y1) yy = y1;
-//#endif
+	yy = (y2 - 1) - sc * (*bp++ - x->x_minval);
+#ifndef SCOPE_DEBUG
+	if (yy > y2) yy = y2; else if (yy < y1) yy = y1;
+#endif
 	sprintf(chunkp, "%d %d ", (int)xx, (int)yy);
 	chunkp += strlen(chunkp);
 	xx += dx;
@@ -973,14 +967,14 @@ static void scopehandle__clickhook(t_scopehandle *sh, t_floatarg f)
     if (sh->h_dragon && newstate == 0)
     {
 	t_scope *x = sh->h_master;
+        int zoom = (int)x->x_glist->gl_zoom;
 	t_canvas *cv;
-	x->x_width += sh->h_dragx;
-	x->x_height += sh->h_dragy;
+	x->x_width += sh->h_dragx / zoom;
+	x->x_height += sh->h_dragy / zoom;
 	if (cv = scope_isvisible(x))
 	{
 	    sys_vgui(".x%lx.c delete %s\n", cv, sh->h_outlinetag);
 	    scope_revis(x, cv);
-//	    sys_vgui("destroy %s\n", sh->h_pathname);
 	    scope_select((t_gobj *)x, x->x_glist, 1);
 	    canvas_fixlinesfor(x->x_glist, (t_text *)x);  /* 2nd inlet */
 	}
@@ -988,12 +982,11 @@ static void scopehandle__clickhook(t_scopehandle *sh, t_floatarg f)
     else if (!sh->h_dragon && newstate)
     {
 	t_scope *x = sh->h_master;
-	t_canvas *cv;
+        t_canvas *cv;
 	if (cv = scope_isvisible(x))
 	{
 	    int x1, y1, x2, y2;
 	    scope_getrect((t_gobj *)x, x->x_glist, &x1, &y1, &x2, &y2);
-	    sys_vgui("lower %s\n", sh->h_pathname);
 	    sys_vgui(".x%lx.c create rectangle %d %d %d %d\
  -outline blue -width %f -tags %s\n",
 		     cv, x1, y1, x2, y2, SCOPE_SELBDWIDTH, sh->h_outlinetag);
@@ -1010,12 +1003,13 @@ static void scopehandle__motionhook(t_scopehandle *sh,
     if (sh->h_dragon)
     {
 	t_scope *x = sh->h_master;
+        int zoom = (int)x->x_glist->gl_zoom;
 	int dx = (int)f1, dy = (int)f2;
 	int x1, y1, x2, y2, newx, newy;
 	scope_getrect((t_gobj *)x, x->x_glist, &x1, &y1, &x2, &y2);
 	newx = x2 + dx;
 	newy = y2 + dy;
-	if (newx > x1 + SCOPE_MINWIDTH && newy > y1 + SCOPE_MINHEIGHT)
+	if (newx > x1 + SCOPE_MINWIDTH * zoom && newy > y1 + SCOPE_MINHEIGHT * zoom)
 	{
 	    t_canvas *cv;
 	    if (cv = scope_isvisible(x))
