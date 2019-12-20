@@ -6,9 +6,10 @@ TODO for cyclone
     * adding parentheses
     * removed unused variable
  
-0.2.beta5
+0.2.2beta5
   * Scope: fixed Tk trace on resize
   * Scope: added zoom.
+  * Decided again to change version numbering. The current beta will lead to 0.2.2.
   
 02-beta4
   * enlarged message buffer for Tk-message in Scope_drawfgxy to accomodate 
