@@ -573,7 +573,7 @@ static void scope_getrect(t_gobj *z, t_glist *glist,
 			  int *xp1, int *yp1, int *xp2, int *yp2)
 {
     t_scope *x = (t_scope *)z;
-    int zoom = (int)x->x_glist->gl_zoom;
+    int zoom = (int)x->x_zoom;
     float x1, y1, x2, y2;
     x1 = text_xpix((t_text *)x, glist);
     y1 = text_ypix((t_text *)x, glist);
@@ -604,7 +604,7 @@ static void scope_select(t_gobj *z, t_glist *glist, int state)
     t_scope *x = (t_scope *)z;
     t_canvas *cv = scope_getcanvas(x, glist);
     t_scopehandle *sh = (t_scopehandle *)x->x_handle;
-    int zoom = (int)x->x_glist->gl_zoom;
+    int zoom = (int)x->x_zoom;
     if (state)
     {
 	int x1, y1, x2, y2;
@@ -652,7 +652,7 @@ static void scope_drawfgmono(t_scope *x, t_canvas *cv,
 			     int x1, int y1, int x2, int y2) // the static line, when dsp is off
 {
     int i;
-    t_int zoom = (int)x->x_glist->gl_zoom;
+    int zoom = (int)x->x_zoom;
 
     float dx, dy, xx, yy, sc;
     float *bp;
@@ -687,7 +687,7 @@ static void scope_drawfgmono(t_scope *x, t_canvas *cv,
 static void scope_drawfgxy(t_scope *x, t_canvas *cv,
 			   int x1, int y1, int x2, int y2)
 {
-    int zoom = (int)x->x_glist->gl_zoom;
+    int zoom = (int)x->x_zoom;
     int nleft = x->x_bufsize;
     float *xbp = x->x_xbuffer, *ybp = x->x_ybuffer;
     char chunk[200 * SCOPE_GUICHUNKXY];  /* LATER estimate */
@@ -783,6 +783,7 @@ static void scope_drawmono(t_scope *x, t_canvas *cv)
 
 static void scope_redrawmono(t_scope *x, t_canvas *cv) // the dynamic line with dsp on
 {
+    int zoom = (int)x->x_zoom;
     int nleft = x->x_bufsize;
     float *bp = x->x_xbuffer;
     char chunk[32 * SCOPE_GUICHUNKMONO];  /* LATER estimate */
@@ -791,7 +792,7 @@ static void scope_redrawmono(t_scope *x, t_canvas *cv) // the dynamic line with 
     float dx, dy, xx, yy, sc;
     scope_getrect((t_gobj *)x, x->x_glist, &x1, &y1, &x2, &y2);
     dx = (float)(x2 - x1) / (float)x->x_bufsize;
-    sc = ((float)x->x_height - 2.) / (float)(x->x_maxval - x->x_minval);
+    sc = ((float)x->x_height - 2.) * zoom / (float)(x->x_maxval - x->x_minval);
     xx = x1;
     sys_vgui(".x%lx.c coords %s \\\n", cv, x->x_fgtag);
     while (nleft > SCOPE_GUICHUNKMONO)
@@ -967,7 +968,7 @@ static void scopehandle__clickhook(t_scopehandle *sh, t_floatarg f)
     if (sh->h_dragon && newstate == 0)
     {
 	t_scope *x = sh->h_master;
-        int zoom = (int)x->x_glist->gl_zoom;
+        int zoom = (int)x->x_zoom;
 	t_canvas *cv;
 	x->x_width += sh->h_dragx / zoom;
 	x->x_height += sh->h_dragy / zoom;
@@ -1003,7 +1004,7 @@ static void scopehandle__motionhook(t_scopehandle *sh,
     if (sh->h_dragon)
     {
 	t_scope *x = sh->h_master;
-        int zoom = (int)x->x_glist->gl_zoom;
+        int zoom = (int)x->x_zoom;
 	int dx = (int)f1, dy = (int)f2;
 	int x1, y1, x2, y2, newx, newy;
 	scope_getrect((t_gobj *)x, x->x_glist, &x1, &y1, &x2, &y2);
@@ -1023,15 +1024,7 @@ static void scopehandle__motionhook(t_scopehandle *sh,
 
 void scope_zoom(t_scope *x, t_floatarg zoom)
 {
-     x->x_glist->gl_zoom = (zoom < 1) ? 1 : (int)zoom;
-}
-
-
-void scope_status(t_scope *x) {
-        printf("----====#### Scope status ####====----\n");
-        printf("x->x_period:    %d\n", x->x_period);
-        printf("x->zoom:        %d\n", x->x_zoom);
-        printf("gl_zoom:        %d\n", x->x_glist->gl_zoom);
+     x->x_zoom = (zoom < 1) ? 1 : (int)zoom;
 }
 
 static void scope_free(t_scope *x)
@@ -1088,6 +1081,7 @@ static void *scope_new(t_symbol *s, int ac, t_atom *av)
     inlet_new((t_object *)x, (t_pd *)x, &s_signal, &s_signal);
     x->x_clock = clock_new(x, (t_method)scope_tick);
     scope_clear(x, 0);
+    x->x_zoom = 1;
 
     x->x_handle = pd_new(scopehandle_class);
     sh = (t_scopehandle *)x->x_handle;
@@ -1133,7 +1127,6 @@ void Scope_tilde_setup(void)
 		    A_FLOAT, A_FLOAT, 0);
     class_addmethod(scope_class, (t_method)scope_zoom,
                     gensym("zoom"), A_CANT, 0);
-    class_addmethod(scope_class, (t_method)scope_status, gensym("status"), 0);            
     class_setwidget(scope_class, &scope_widgetbehavior);
     forky_setsavefn(scope_class, scope_save);
     scopehandle_class = class_new(gensym("_scopehandle"), 0, 0,
