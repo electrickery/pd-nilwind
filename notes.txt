@@ -5,7 +5,12 @@ TODO for cyclone
     * initializing variables
     * adding parentheses
     * removed unused variable
- 
+    
+0.3.0
+  * Converted to standard version notation
+  * Moved Makefile.pdlibbuilder to a standardized sub-directory,
+  * Updated Makefile to properly conform to tips&tricks and updated email.
+  
 0.2.2beta5
   * Scope: fixed Tk trace on resize
   * Scope: added zoom.

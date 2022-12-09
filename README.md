@@ -21,7 +21,7 @@ The original goal of cyclone was to create a collection of Max/MSP objects for P
 
 Since then an unknown number of patches is made for these objects in Pure Data. This leads to an additional goal of keeping the functionality backward compatible. Only bug fixes, new objects and if possible, different behaviour with extra arguments or messages will be added. Objects that are incompatible with current nilwind library should have another name or be placed in other libraries. 
 
-<strong>Compiling with pdlibbuilder</strong>
+<strong>Compiling with pd-lib-builder</strong>
 
 PdLibBuilder tries to find the Pd source directory at several common locations, but when this fails, yo have to specify the path yourself using the pdincludepath variable. Example:
 

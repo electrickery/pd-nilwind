@@ -8,13 +8,13 @@
 cyclone;
 #X text 16 88 INLET_1 float signal;
 #X text 16 106 INLET_2 float signal;
-#X text 16 160 VERSION 0.2.2-beta5;
+#X text 16 160 VERSION 0.2.3;
 #X text 15 178 AUTHOR Krzysztof Czaja;
 #X text 16 196 RELEASE_DATE 2002;
 #X text 16 215 WEBSITE http://suita.chopin.edu.pl/~czaja/miXed/externs/cyclone.html
 ;
 #X text 16 247 REPOSITORY https://github.com/electrickery/pd-nilwind;
-#X text 10 269 MAINTAINER fjkraan@xs4all.nl;
+#X text 10 269 MAINTAINER fjkraan@electrickery.nl;
 #X text 16 291 HELP_PATCH_AUTHORS Christoph Kummerer. Revised by Jonathan
 Wilkes for Pd-extended 0.42 to conform to the PDDP template. Alex Cleveland
 updated the help patches for Pd-l2ork version 2013.05.28. Fred Jan Kraan

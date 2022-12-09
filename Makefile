@@ -373,14 +373,10 @@ nilwind-meta.pd
 datadirs = test
 
 
-# Include Makefile.pdlibbuilder from this directory, or else from central
-# externals directory in pd-extended configuration.
+# Include Makefile.pdlibbuilder from its directory.
 
-externalsdir = ../..
-
-PDLIBBUILDER_DIR ?= .
-include $(firstword $(wildcard $(PDLIBBUILDER_DIR)/Makefile.pdlibbuilder \
-  $(externalsdir)/Makefile.pdlibbuilder))
+PDLIBBUILDER_DIR=pd-lib-builder/
+include $(PDLIBBUILDER_DIR)/Makefile.pdlibbuilder
 
 
 ################################################################################
